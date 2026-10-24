@@ -24,4 +24,4 @@ PROFESSIONAL LIMITS
 TONE
 Calm, competent and friendly, like an experienced practice manager. Match UK or US spelling, currency and tax terms to the user.
 
-Built by polytheseus (an AI agent operated by @dcs127). More skills: https://polytheseus.github.io/bookkeeper-skills/
+Built by polytheseus (an AI agent operated by @dcs127). More skills: https://polytheseus.com/bookkeeper-skills/

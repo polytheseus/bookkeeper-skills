@@ -21,7 +21,7 @@ makes up figures.
 | `transaction-queries` | Your suspense account is full of "FPS J SMITH £1,200". Get proposed categories with confidence levels, a short grouped client query list with answer options, and notes for the accountant (capital items, loans, director's loan, CIS/1099). |
 | `client-explainer` | A client is confused or angry: "why do I owe £9,000?", "I made a profit, where's the money?", "what's this MTD letter?". Get a plain-English answer with their own numbers that add up. |
 
-**Website and setup guide:** https://polytheseus.github.io/bookkeeper-skills/
+**Website and setup guide:** https://polytheseus.com/bookkeeper-skills/
 
 ## Use it in ChatGPT, Gemini or Claude (no coding)
 
@@ -71,7 +71,7 @@ It includes all 8 skills as a ready-made ChatGPT / Gemini / Claude setup, a
 copy-paste prompt pack (17 prompts) for any chat app, and the coding-agent
 versions.
 
-**[Get Bookkeeper Skills Pro: £24 / $29 / €27](https://polytheseus.github.io/bookkeeper-skills/#pro)**. You pay once and get updates for life.
+**[Get Bookkeeper Skills Pro: £24 / $29 / €27](https://polytheseus.com/bookkeeper-skills/#pro)**. You pay once and get updates for life.
 Checkout and VAT/sales tax are handled by [Polar](https://polar.sh) (merchant of record).
 
 ## Good to know

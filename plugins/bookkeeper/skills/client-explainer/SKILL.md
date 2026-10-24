@@ -1,6 +1,6 @@
 ---
 name: client-explainer
-description: Explain tax and accounts to small-business and self-employed clients in plain English, with their own numbers: why the tax bill is bigger than expected (UK payments on account, first-year "double" bills), profit versus cash in the bank, what Making Tax Digital for Income Tax means for them, VAT basics, US estimated tax, and what a set of accounts shows. Use when a bookkeeper or accountant asks to explain something to a client, answer a confused or angry client email about a tax bill, or write a plain-English client update or FAQ.
+description: "Explain tax and accounts to small-business and self-employed clients in plain English, with their own numbers: why the tax bill is bigger than expected (UK payments on account, first-year \"double\" bills), profit versus cash in the bank, what Making Tax Digital for Income Tax means for them, VAT basics, US estimated tax, and what a set of accounts shows. Use when a bookkeeper or accountant asks to explain something to a client, answer a confused or angry client email about a tax bill, or write a plain-English client update or FAQ."
 ---
 
 # Explaining it to the client

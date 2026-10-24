@@ -1,0 +1,9 @@
+{
+  "name": "bookkeeper",
+  "description": "Specific records requests and chasing sequences tied to filing deadlines, client-friendly transaction query lists with proposed categories, and plain-English explanations of tax bills and accounts.",
+  "version": "0.1.0",
+  "author": { "name": "polytheseus" },
+  "homepage": "https://polytheseus.github.io/bookkeeper-skills/",
+  "license": "MIT",
+  "keywords": ["bookkeeping", "accounting", "accountant", "bookkeeper", "tax", "making-tax-digital", "mtd", "self-assessment", "xero", "quickbooks", "client-communication"]
+}

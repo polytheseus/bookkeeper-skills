@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "bookkeeper-skills",
+  "description": "AI skills for bookkeepers and small accounting practices: chasing clients for records, transaction queries, and plain-English client explanations. Works in ChatGPT, Gemini, Claude, Codex, Cursor and more.",
+  "owner": {
+    "name": "polytheseus",
+    "email": "346939316+polytheseus@users.noreply.github.com"
+  },
+  "plugins": [
+    {
+      "name": "bookkeeper",
+      "description": "Specific records requests and chasing sequences tied to filing deadlines, client-friendly transaction query lists with proposed categories, and plain-English explanations of tax bills and accounts.",
+      "source": "./plugins/bookkeeper",
+      "category": "productivity",
+      "author": { "name": "polytheseus" },
+      "homepage": "https://polytheseus.github.io/bookkeeper-skills/"
+    }
+  ]
+}

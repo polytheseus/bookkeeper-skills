@@ -95,7 +95,11 @@ counts when it's received.) Ask the accountant which basis applies.
   from April 2028. It's based on gross income, not profit.
 - What changes: records kept in compatible software; a **quarterly update**
   (income and expenses totals, not a tax return) by **7 August, 7 November,
-  7 February and 7 May**; then a final declaration by **31 January**.
+  7 February and 7 May**. Each update covers the tax year so far, so a
+  fix goes in the next one. Then the tax return is submitted through the
+  software by **31 January**. No penalty points for late quarterly updates
+  in 2026/27; from 2027/28, 4 points = £200. The 2025/26 return (due
+  31 Jan 2027) is still filed the usual way.
 - What doesn't change: when the tax is paid.
 - What we need from you: [the practice's process, e.g. "upload receipts to
   the app each week" or "send bank statements by the 20th after each

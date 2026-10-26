@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uncategorised bank transactions: a client query list template clients actually answer (free builder)</title>
+<meta name="description" content="Clear the suspense account without a 60-line spreadsheet. Sort bank lines into confident, likely, ask-the-client and accountant items, send a short numbered query list, and use the free builder that drafts it from your pasted export. UK and US.">
+<link rel="canonical" href="https://polytheseus.com/bookkeeper-skills/guides/uncategorised-transactions-client-queries">
+<meta property="og:title" content="Uncategorised bank transactions: a client query list template clients actually answer">
+<meta property="og:description" content="Paste the bank lines, get a grouped, numbered query list, a WhatsApp version and notes for the accountant. Runs in your browser.">
+<link rel="stylesheet" href="../style.css">
+<style>
+.answer{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--green);border-radius:6px;padding:14px 18px;margin:28px 0}
+.answer p{margin:.3em 0}
+table.t{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;margin:12px 0 20px}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:#eef2f6;font-family:Georgia,serif}
+.toc{font-size:15px}
+.tool{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:18px 20px;margin:20px 0}
+.tool label{display:block;font-weight:600;margin:10px 0 2px}
+.tool label span{font-weight:400;color:var(--muted);font-size:14px}
+.tool input,.tool select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;width:100%;max-width:220px}
+.tool button{font:inherit;font-weight:600;border:0;border-radius:4px;padding:9px 18px;cursor:pointer;background:var(--green);color:#fff;margin:14px 0 0}
+#qb-out{margin-top:12px}
+#qb-out p{background:var(--green-l);border-radius:5px;padding:9px 12px;margin:8px 0}
+pre.email{white-space:pre-wrap;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;font:15px/1.55 -apple-system,Segoe UI,sans-serif}
+.cta{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:20px 22px;margin:34px 0}
+.tool textarea{font:14px/1.45 ui-monospace,Menlo,Consolas,monospace;width:100%;min-height:150px;padding:9px 10px;border:1px solid var(--rule);border-radius:5px}
+#qb-out h3 .qb-copy{font-size:14px;padding:4px 12px;margin:0 0 0 8px;vertical-align:middle}
+</style>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@graph": [
+{
+"@type": "Article",
+"headline": "Uncategorised bank transactions: how to get clients to answer your queries",
+"datePublished": "2026-10-26",
+"dateModified": "2026-10-26",
+"author": {
+"@type": "Organization",
+"name": "polytheseus",
+"url": "https://polytheseus.com/"
+}
+},
+{
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "How do I get clients to answer questions about their bank transactions?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Send one short list, grouped by type (money paid in, payments to people, Amazon orders) rather than by date, with every line numbered and answer options to pick from. Pre-fill your best guess where you have one (\"We think this is stock. Reply OK or correct it\"), put the biggest amounts first, keep it to 25 questions or fewer, and give a reply-by date. Clients can then answer \"1 OK, 2 personal, 3 van insurance\" from their phone."
+}
+},
+{
+"@type": "Question",
+"name": "What is a suspense account in bookkeeping?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "A temporary holding account for transactions you can't yet categorise. It should be cleared, not lived in: every line in it needs either a client answer or an accountant's decision before the accounts are finalised. Clearing it monthly with a short query list is far easier than facing a year of unknowns in January."
+}
+},
+{
+"@type": "Question",
+"name": "Should money paid into a client's account be treated as sales?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Not until you know what it is. Money in can be a sale, a loan, the owner's own money, a refund, a grant or a transfer from another of their accounts. Booking it all as sales overstates profit and tax; booking a sale as a loan understates it. Ask, and keep the answer."
+}
+},
+{
+"@type": "Question",
+"name": "What happens if a director pays personal tax from the company account?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "It isn't a company expense. It goes to the director's loan account. If the director owes the company money at the year end and it isn't repaid within 9 months, the company pays a temporary Corporation Tax charge of 33.75% of the amount outstanding (reclaimable once repaid), and loans over £10,000 can also be a taxable benefit. Flag it for the accountant."
+}
+},
+{
+"@type": "Question",
+"name": "Do I need a 1099-NEC for a contractor in 2026?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "For payments made in 2026, the IRS threshold for reporting non-employee compensation rose to $2,000 (it was $600 for 2025 payments) and may be adjusted for inflation from 2027. Get a W-9 from every contractor before you pay them, so you have what you need either way."
+}
+},
+{
+"@type": "Question",
+"name": "Can I paste a client's bank transactions into ChatGPT?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Only what the task needs. Strip account and card numbers (the builder on this page shows only the last 4 digits), use a client code instead of a name, and check your AI app's data settings and your practice's data-protection policy before pasting anything."
+}
+}
+]
+}
+]
+}
+</script>
+<!-- pt:head -->
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/brand.css">
+<meta property="og:image" content="https://polytheseus.com/assets/og/bookkeeper-skills.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- /pt:head -->
+</head>
+<body>
+<!-- pt:bar -->
+<nav class="pt-bar" aria-label="Polytheseus">
+  <div class="pt-bar-in">
+    <a class="pt-brand" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"><span>POLYTHESEUS</span></a>
+    <div class="pt-nav">
+      <a href="/#packs">Packs</a>
+      <a class="pt-hide-sm" href="/#how">How it works</a>
+      <a href="/#about">About</a>
+      <a class="pt-cta" href="/#packs">Start free</a>
+    </div>
+  </div>
+</nav>
+<!-- /pt:bar -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow"><a href="../">Bookkeeper Skills</a> · Guide</p>
+    <h1>Uncategorised bank transactions: <em>a client query list clients actually answer</em></h1>
+    <p class="lede">Every set of books has them: "FPS J SMITH £1,200", "AMZN MKTP £86.40", a £2,000 transfer in from someone called M Jones. Send the client a 60-line export and nothing comes back. Guess, and personal spending ends up as expenses and loans end up as sales. This guide shows how to sort the lines, what to ask about each kind, a template clients reply to in five minutes, and a free builder that drafts the whole list from your pasted bank lines.</p>
+    <p class="small" style="color:var(--muted)">Updated 26 October 2026 · UK and US · Tax points checked against gov.uk and irs.gov · General information, not tax advice</p>
+  </div>
+</header>
+<main class="wrap">
+<div class="answer">
+  <p><strong>In one paragraph:</strong> don't send clients a list of transactions, send them a list of <strong>questions</strong>. Categorise everything you reasonably can yourself, then ask only what only the client knows. Group the questions by type ("money paid in", "payments to people", "Amazon orders") rather than by date, <strong>number every line</strong>, give <strong>answer options</strong>, pre-fill your best guess where you have one ("We think this is stock. Reply OK or correct it"), put the biggest amounts first and stop at 25. Anything that needs professional judgement, like director's loans, capital items, CIS or 1099s, goes to the accountant, not the client.</p>
+</div>
+<p class="toc"><strong>Jump to:</strong> <a href="#builder">Free query-list builder</a> · <a href="#triage">Sort every line into four groups</a> · <a href="#patterns">What to ask about each kind</a> · <a href="#template">The client message</a> · <a href="#accountant">Notes for the accountant</a> · <a href="#rules">Bank rules</a> · <a href="#routine">A monthly routine</a> · <a href="#faq">FAQ</a></p>
+
+<section id="builder">
+<h2>Free query-list builder</h2>
+<div class="tool">
+  <p style="margin-top:0">Paste bank lines (one per line, from Xero, QuickBooks, FreeAgent, Sage or a CSV export) and get a triage of every line, a grouped and numbered client message, a WhatsApp version for short lists, notes for the accountant and a table to work from. <strong>Everything runs in your browser: nothing you paste is sent anywhere</strong>, and account or card numbers are cut to the last 4 digits.</p>
+  <label for="qb-lines">Bank lines <span>(date, description, amount; add IN/OUT, CR/DR or use a minus sign for money out)</span></label>
+  <textarea id="qb-lines" spellcheck="false">03/09 FPS J SMITH 1,200.00 OUT
+05/09 AMZN MKTP UK*2K4 86.40 OUT
+05/09 TESCO STORES 3301 42.17 OUT
+08/09 TFR FROM M JONES 2,000.00 IN
+12/09 ADOBE *CREATIVE CLD 56.98 OUT
+15/09 STRIPE PAYOUT 412.10 IN
+18/09 CASH ATM 200.00 OUT
+22/09 HMRC NDDS 1,500.00 OUT</textarea>
+  <label for="qb-country">Country</label>
+  <select id="qb-country"><option value="uk">UK</option><option value="us">US</option></select>
+  <label for="qb-entity">The client is</label>
+  <select id="qb-entity"><option value="sole">a sole trader / self-employed</option><option value="company">a limited company (UK) or corporation (US)</option></select>
+  <label for="qb-vat">VAT registered? <span>(UK)</span></label>
+  <select id="qb-vat"><option value="no">No</option><option value="yes">Yes</option></select>
+  <label for="qb-cap">Ask for evidence and flag possible capital items over</label>
+  <input id="qb-cap" inputmode="numeric" value="1000">
+  <label for="qb-unsigned">Lines with no IN/OUT and no minus sign are <span>(if any line has a minus sign, unsigned lines count as money in)</span></label>
+  <select id="qb-unsigned"><option value="out">money out</option><option value="in">money in</option></select>
+  <label for="qb-reply">Reply-by date for the client <span>(optional)</span></label>
+  <input id="qb-reply" placeholder="e.g. Friday 6 November">
+  <br><button id="qb-go" type="button">Build the query list</button>
+  <div id="qb-out" aria-live="polite"></div>
+  <p class="small" style="color:var(--muted);margin-bottom:0">The builder reads descriptions only, using common UK and US bank and supplier patterns, so it suggests rather than decides. It never books money in as sales without asking. Check every Low-confidence line and every accountant note before you post anything.</p>
+</div>
+</section>
+
+<section id="triage">
+<h2>Sort every line into four groups first</h2>
+<p>Before you write a single question, go through the lines once and put each into one of these. Most suspense accounts turn out to be half group A.</p>
+<table class="t">
+  <tr><th>Group</th><th>Meaning</th><th>Examples</th><th>What you do</th></tr>
+  <tr><td><strong>A. Confident</strong></td><td>Clear supplier and purpose</td><td>Adobe, Xero, bank charges, the client's Stripe or SumUp payouts</td><td>Categorise it. No question.</td></tr>
+  <tr><td><strong>B. Likely</strong></td><td>Probably X, worth one tap to confirm</td><td>Amazon, Screwfix, a supermarket, a phone bill</td><td>Categorise it provisionally and ask a yes/no question with your guess filled in.</td></tr>
+  <tr><td><strong>C. Unknown</strong></td><td>Only the client can say</td><td>Payments to individuals, cash withdrawals, money in from a person</td><td>Ask an open question with options.</td></tr>
+  <tr><td><strong>D. Flag</strong></td><td>Needs the accountant's judgement, not just the client's answer</td><td>Director's loan items, possible capital purchases, loans, CIS or 1099 questions</td><td>A note for the accountant (and usually a client question as well).</td></tr>
+</table>
+<p>Two checks before you go further: the <strong>number of lines</strong> and the <strong>totals in and out</strong> should match the export. A line that goes missing here goes missing from the accounts.</p>
+</section>
+
+<section id="patterns">
+<h2>What to ask about each kind of transaction</h2>
+<table class="t">
+  <tr><th>What you see</th><th>Why you can't just guess</th><th>The question to ask</th></tr>
+  <tr><td>Money in that isn't obviously a sale: a transfer from a person, a round amount, a family name</td><td>It could be a sale, a loan, the owner's own money, a refund, a grant or a transfer between their accounts. Booking it as sales overstates profit; booking a sale as a loan hides income.</td><td>"What was this money? Customer payment (which job?) / your own money / a loan / refund / grant / other."</td></tr>
+  <tr><td>Payments to individuals (FPS, Zelle, Venmo, a name)</td><td>Wages should go through payroll; a subcontractor may bring CIS (UK) or 1099 (US) duties; it could be a loan repayment or personal.</td><td>"Wages / subcontractor (do you have their invoice?) / loan repayment / refund to a customer / personal / other."</td></tr>
+  <tr><td>Cash withdrawals</td><td>Business cost, casual wages or personal. For a sole trader with no evidence, the usual default is drawings; for a company, cash with no receipt usually ends up on the director's loan account.</td><td>"What was this cash used for? Business cost (receipt?) / wages / personal."</td></tr>
+  <tr><td>Amazon, eBay, PayPal purchases</td><td>The description says where, not what.</td><td>Batch them: "These 9 Amazon orders look like business supplies. Reply OK, or give the number of any that weren't."</td></tr>
+  <tr><td>Card-processor and marketplace payouts in (Stripe, SumUp, Square, PayPal, Etsy, eBay)</td><td>Payouts are net of fees, so the payout isn't the sales figure.</td><td>Usually no question: record gross sales and the fees separately from the platform's report.</td></tr>
+  <tr><td>Supermarkets, restaurants, fuel</td><td>Mixed use is normal.</td><td>"Business or personal?" with "personal" pre-filled, or "what share was business?"</td></tr>
+  <tr><td>Phone, broadband, insurance</td><td>Often mixed use, or a personal policy paid from the business account.</td><td>"Business only, mixed (about what %), or personal?"</td></tr>
+  <tr><td>Large one-off purchases</td><td>Could be a capital asset (a van, a laptop, machinery) rather than an expense.</td><td>"What was this? Please send the invoice." Then flag it for the accountant.</td></tr>
+  <tr><td>Tax payments (HMRC, IRS, state)</td><td>VAT, payroll, Corporation Tax and personal tax are booked differently, and personal tax paid from a company account isn't a company expense.</td><td>"Which tax was this?" with the options.</td></tr>
+  <tr><td>Transfers between the client's own accounts</td><td>Not income or expense, and easy to count twice.</td><td>"Is this a move to your own account? Which one?" Then match both sides.</td></tr>
+  <tr><td>Refunds and chargebacks</td><td>Need linking to the original sale or purchase.</td><td>"Which order was this refund for?"</td></tr>
+</table>
+</section>
+
+<section id="template">
+<h2>The client message: a template to copy</h2>
+<p>This is the format the builder produces. What makes it work: one reason up front, a reply-by date, numbered lines, options to pick from, guesses to confirm, and the biggest amounts first.</p>
+<pre class="email">Subject: [4] quick questions about your bank statement (reply by [Friday 6 November])
+
+Hi [first name],
+
+We're doing your bookkeeping and there are 4 lines on your bank statement we can't work out on our own. Getting these right means your accounts and tax are correct, and that you don't pay more tax than you need to.
+
+Could you reply by [Friday 6 November]? Just reply with the numbers, e.g. "1 OK, 2 personal, 3 van insurance". If you have a receipt or invoice for anything over £1,000, please send that too.
+
+MONEY PAID IN
+1. 08/09  £2,000.00 in  TFR FROM M JONES
+   What was this money? Payment from a customer (which job/invoice?) / Your own money / Loan from someone else / Refund / Grant / Other: ___
+
+PAYMENTS TO PEOPLE
+2. 03/09  £1,200.00  FPS J SMITH
+   What was this payment for? Wages / Subcontractor (invoice?) / Loan repayment / Refund to a customer / Personal / Other: ___
+
+SHOPS, FOOD AND FUEL
+3. 05/09  £42.17  TESCO STORES 3301
+   We think this is personal. Reply OK or correct it.
+
+AMAZON ORDERS
+4. 05/09  £86.40  AMZN MKTP UK*2K4
+   We think this is business supplies. Reply OK or correct it.
+
+Thanks,
+[name]</pre>
+<h3>The rules behind it</h3>
+<ul>
+  <li><strong>Group by question type, not by date.</strong> A client can answer "payments to people" from memory; a date-ordered list makes them think about every line from scratch.</li>
+  <li><strong>Batch similar lines.</strong> Nine Amazon orders are one question, not nine.</li>
+  <li><strong>25 questions at most.</strong> Send the smaller ones next week. A long list gets parked "for the weekend" and never answered.</li>
+  <li><strong>Ask for evidence only where it matters:</strong> big amounts, possible capital items, and anything where VAT is being reclaimed.</li>
+  <li><strong>Never put your suspicions or the accountant's notes in the client message.</strong> Ask neutral, factual questions.</li>
+  <li><strong>No full account or card numbers,</strong> in either direction. Last 4 digits are enough.</li>
+</ul>
+<h3>WhatsApp or text version (under 6 questions)</h3>
+<pre class="email">Hi [name], quick one for your bookkeeping. Can you tell me what these were?
+1. £2,000.00 TFR FROM M JONES (08/09): What was this money?
+2. £1,200.00 FPS J SMITH (03/09): What was this payment for?
+3. £42.17 TESCO STORES 3301 (05/09): personal?
+Reply with the numbers. Thanks!</pre>
+<p class="small">Only text clients who've agreed to be contacted that way.</p>
+</section>
+
+<section id="accountant">
+<h2>Notes for the accountant: what not to decide yourself</h2>
+<p>These need professional judgement. List each with the amount and the facts, keep it neutral, and let the accountant decide.</p>
+<table class="t">
+  <tr><th>Item</th><th>Why it matters</th></tr>
+  <tr><td><strong>Personal costs or tax paid from a company account</strong> (UK)</td><td>They go to the director's loan account, not expenses. If the director owes the company money at the year end and doesn't repay it within 9 months, the company pays a temporary Corporation Tax charge of 33.75% on what's outstanding (reclaimable after repayment), and loans over £10,000 can also be a benefit in kind.</td></tr>
+  <tr><td><strong>Payments to subcontractors for construction work</strong> (UK)</td><td>Under CIS the contractor verifies the subcontractor with HMRC and deducts 20% (registered), 30% (unregistered) or 0% (gross payment status), and files a monthly return by the 19th.</td></tr>
+  <tr><td><strong>Payments to contractors</strong> (US)</td><td>Get a W-9 before paying. For payments made in 2026, non-employee compensation of $2,000 or more goes on a 1099-NEC (it was $600 for 2025 payments), and the threshold may be adjusted for inflation from 2027.</td></tr>
+  <tr><td><strong>Possible capital items</strong></td><td>Anything above the practice's capitalisation threshold may be an asset with capital allowances or depreciation rather than an expense.</td></tr>
+  <tr><td><strong>Loans and finance</strong></td><td>Loan receipts are liabilities, not income; repayments need splitting into capital and interest, and hire purchase or lease agreements need the paperwork.</td></tr>
+  <tr><td><strong>Payments to family members</strong></td><td>Are they on payroll and genuinely doing the work?</td></tr>
+  <tr><td><strong>VAT reclaims</strong> (UK)</td><td>VAT can only be reclaimed with a valid VAT invoice (a simplified invoice is allowed for supplies of £250 or less) and only on the business share of mixed-use costs. No VAT on business entertainment.</td></tr>
+  <tr><td><strong>Anything unusual for the business</strong></td><td>Large cash deposits, round-sum transfers from unknown sources, payments to unrelated third parties. Write "this needs review", not a theory. If it raises a money-laundering concern, it goes to the practice's nominated officer, and the client must not be told: in the UK, tipping off is an offence.</td></tr>
+</table>
+<p class="small">Sources: <a href="https://www.gov.uk/directors-loans">Director's loans</a>, <a href="https://www.gov.uk/what-you-must-do-as-a-cis-contractor">What you must do as a CIS contractor</a> and <a href="https://www.gov.uk/guidance/vat-guide-notice-700">VAT Notice 700</a> section 16 (gov.uk); <a href="https://www.irs.gov/forms-pubs/about-form-1099-nec">About Form 1099-NEC</a> and the <a href="https://www.irs.gov/instructions/i1099mec">1099-MISC and 1099-NEC instructions</a> (irs.gov). Read 26 October 2026.</p>
+</section>
+
+<section id="rules">
+<h2>Turn the answers into bank rules</h2>
+<p>Once a client confirms a recurring line, set a rule so you never ask again: "description contains SCREWFIX → Materials, 20% VAT", "ADOBE → Software". Two cautions:</p>
+<ul>
+  <li><strong>No rules for mixed-use suppliers.</strong> A rule that sends every Amazon or Tesco line to "Office costs" will be wrong sooner or later, and nobody will notice.</li>
+  <li><strong>No rules for payments to people.</strong> The same name can be wages one month and a loan repayment the next.</li>
+</ul>
+</section>
+
+<section id="routine">
+<h2>A monthly routine that keeps suspense near zero</h2>
+<ol>
+  <li><strong>Week 1:</strong> reconcile, apply bank rules, and sort what's left into groups A–D.</li>
+  <li>Send the query list (25 questions at most, biggest first) with a reply-by date about a week out.</li>
+  <li><strong>Week 2:</strong> post the answers, add rules for anything recurring, and send the accountant the group D notes.</li>
+  <li>If there's no reply, one nudge with the same list, then a text. If a client is regularly silent, our <a href="client-wont-send-records">records chasing guide</a> has the full chasing sequence.</li>
+  <li>Before the year end, anything still in suspense goes on a single list for the accountant with the amount and what you've already asked.</li>
+</ol>
+<p>Monthly lists of 5 to 10 questions get answered. A year's worth in January doesn't, and with <a href="making-tax-digital-income-tax">Making Tax Digital for Income Tax</a> in place since April 2026 for sole traders and landlords with qualifying income over £50,000, quarterly updates make "sort it out at the year end" much harder anyway.</p>
+</section>
+
+<div class="cta">
+  <p style="margin-top:0"><strong>Want ChatGPT, Gemini or Claude to do this with your client's real chart of accounts?</strong> The free <a href="../#setup">Bookkeeper Skills</a> include <strong>transaction-queries</strong>, the skill this guide is built from. Paste an export, tell it the client's business in one line, and it does the triage, the client list, the WhatsApp version, the accountant notes and the table, then suggests bank rules once the answers come back. It also includes <strong>records-chaser</strong> and <strong>client-explainer</strong>. Set-up takes about 3 minutes, no coding.</p>
+  <p>The <a href="../#pro">Pro pack</a> adds <strong>month-end-close</strong> (a reconciliation and review checklist that keeps suspense clear) and <strong>year-end-pack</strong> (the year-end questionnaire and document checklist for things clients forget).</p>
+  <p style="margin-bottom:0"><a class="btn" href="../#setup">Get the free skills</a> <a class="btn ghost" href="client-wont-send-records">Records chasing guide</a></p>
+</div>
+
+<section id="faq">
+<h2>FAQ</h2>
+<details><summary>How do I get clients to answer questions about their bank transactions?</summary><p>Send one short list, grouped by type (money paid in, payments to people, Amazon orders) rather than by date, with every line numbered and answer options to pick from. Pre-fill your best guess where you have one ("We think this is stock. Reply OK or correct it"), put the biggest amounts first, keep it to 25 questions or fewer, and give a reply-by date. Clients can then answer "1 OK, 2 personal, 3 van insurance" from their phone.</p></details>
+<details><summary>What is a suspense account in bookkeeping?</summary><p>A temporary holding account for transactions you can't yet categorise. It should be cleared, not lived in: every line in it needs either a client answer or an accountant's decision before the accounts are finalised. Clearing it monthly with a short query list is far easier than facing a year of unknowns in January.</p></details>
+<details><summary>Should money paid into a client's account be treated as sales?</summary><p>Not until you know what it is. Money in can be a sale, a loan, the owner's own money, a refund, a grant or a transfer from another of their accounts. Booking it all as sales overstates profit and tax; booking a sale as a loan understates it. Ask, and keep the answer.</p></details>
+<details><summary>What happens if a director pays personal tax from the company account?</summary><p>It isn't a company expense. It goes to the director's loan account. If the director owes the company money at the year end and it isn't repaid within 9 months, the company pays a temporary Corporation Tax charge of 33.75% of the amount outstanding (reclaimable once repaid), and loans over £10,000 can also be a taxable benefit. Flag it for the accountant.</p></details>
+<details><summary>Do I need a 1099-NEC for a contractor in 2026?</summary><p>For payments made in 2026, the IRS threshold for reporting non-employee compensation rose to $2,000 (it was $600 for 2025 payments) and may be adjusted for inflation from 2027. Get a W-9 from every contractor before you pay them, so you have what you need either way.</p></details>
+<details><summary>Can I paste a client's bank transactions into ChatGPT?</summary><p>Only what the task needs. Strip account and card numbers (the builder on this page shows only the last 4 digits), use a client code instead of a name, and check your AI app's data settings and your practice's data-protection policy before pasting anything.</p></details>
+</section>
+<p class="small">This page is general information written by an AI agent and checked against gov.uk and irs.gov (26 October 2026). It is not tax or legal advice: thresholds and rates change, and the accountant decides how items are treated. If you spot an error, please <a href="https://github.com/polytheseus/bookkeeper-skills/issues">open an issue</a>.</p>
+</main>
+<aside class="wrap small pagenote">Source on <a href="https://github.com/polytheseus/bookkeeper-skills">GitHub</a>. Not affiliated with HMRC, the IRS or any software provider.</aside>
+
+<script src="query-builder.js"></script>
+<!-- pt:foot -->
+<footer class="pt-foot">
+  <div class="pt-foot-in">
+    <div>
+      <a class="pt-brand" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"><span>POLYTHESEUS</span></a>
+      <p>Know-how packs that make ChatGPT, Gemini and Claude work like an experienced pro in your job. Free to start.</p>
+      <p><a href="mailto:support@polytheseus.com">support@polytheseus.com</a></p>
+    </div>
+    <div>
+      <h4>Packs</h4>
+      <ul><li><a href="/teacher-skills/">Teachers</a></li><li><a href="/trades-skills/">Trades</a></li><li><a href="/bookkeeper-skills/">Bookkeepers</a></li><li><a href="/real-estate-skills/">Real estate agents</a></li><li><a href="/seller-skills/">Online sellers</a></li><li><a href="/sre-skills/">SRE &amp; DevOps</a></li></ul>
+    </div>
+    <div>
+      <h4>Polytheseus</h4>
+      <ul>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="https://github.com/polytheseus">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pt-foot-base">Polytheseus is run by Robin Hale. The packs and this site are written and tested by Claude, an AI agent. <a href="/#about">How that works</a>.</div>
+</footer>
+<!-- /pt:foot -->
+</body>
+</html>

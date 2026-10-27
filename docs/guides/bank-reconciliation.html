@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to do a bank reconciliation: step by step, with a free template for Excel (UK and US)</title>
+<meta name="description" content="How to do a bank reconciliation for a small business: the six steps, a worked example, the reconciliation statement format (UK and US wording), how to find a difference that won't go away, and a free tool that builds the statement and downloads it for Excel or Google Sheets.">
+<link rel="canonical" href="https://polytheseus.com/bookkeeper-skills/guides/bank-reconciliation">
+<meta property="og:title" content="How to do a bank reconciliation (free template and checker)">
+<meta property="og:description" content="Six steps, a worked example, how to find the difference when it won't balance, and a free tool that builds the statement for Excel. Nothing leaves your browser.">
+<link rel="stylesheet" href="../style.css">
+<style>
+.answer{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--green);border-radius:6px;padding:14px 18px;margin:28px 0}
+.answer p{margin:.3em 0}
+table.t{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;margin:12px 0 20px}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:#eef2f6;font-family:Georgia,serif}
+.toc{font-size:15px}
+.tool{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:18px 20px;margin:20px 0}
+.tool label{display:block;font-weight:600;margin:10px 0 2px}
+.tool label span{font-weight:400;color:var(--muted);font-size:14px}
+.tool input,.tool select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;width:100%;max-width:240px}
+.tool fieldset{border:1px solid var(--rule);border-radius:6px;margin:12px 0;padding:8px 12px}
+.tool legend{font-weight:600;padding:0 4px}
+.tool fieldset label{display:inline-block;font-weight:400;margin:4px 14px 4px 0}
+.tool fieldset input{width:auto;margin-right:5px}
+.tool select{max-width:340px}
+.tool button{font:inherit;font-weight:600;border:0;border-radius:4px;padding:9px 18px;cursor:pointer;background:var(--green);color:#fff;margin:14px 6px 0 0}
+.tool button.ghost{background:transparent;color:var(--green);border:2px solid var(--green);padding:7px 16px}
+.qb-due{background:var(--green-l);border-radius:5px;padding:9px 12px}
+.qb-warn{background:var(--amber-l);border-radius:5px;padding:9px 12px}
+ul.me-list{list-style:none;padding-left:0}
+ul.me-list li{margin:6px 0}
+ul.me-list label{display:block;font-weight:400;margin:0}
+ul.me-list input{width:auto;margin-right:6px}
+.me-g{font-weight:600}
+.me-date{font-family:-apple-system,Segoe UI,sans-serif;font-size:15px;font-weight:400;color:var(--muted)}
+pre.email{white-space:pre-wrap;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;font:15px/1.55 -apple-system,Segoe UI,sans-serif}
+.cta{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:20px 22px;margin:34px 0}
+h3{margin-top:1.4em}
+table.br-st td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+table.br-st tr.br-item td:first-child{padding-left:26px;color:var(--muted)}
+table.br-st tr.br-tot td{font-weight:700;border-top:2px solid var(--ink,#222)}
+.tool textarea{font:15px/1.45 ui-monospace,Menlo,Consolas,monospace;width:100%;min-height:84px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;box-sizing:border-box}
+.tool .row2{display:flex;gap:16px;flex-wrap:wrap}
+.tool .row2>div{flex:1 1 200px}
+@media print{
+  .pt-bar,.pt-foot,header.hero,.answer,.toc,main>section:not(#builder),.cta,aside,.pagenote,main>p.small,.tool>*:not(#br-out-res),#br-out-res button,#br-msg{display:none!important}
+  .tool{border:0;padding:0;margin:0}
+}
+</style>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@graph": [
+{
+"@type": "Article",
+"headline": "How to do a bank reconciliation (with a free template and checker)",
+"datePublished": "2026-10-27",
+"dateModified": "2026-10-27",
+"author": {
+"@type": "Organization",
+"name": "polytheseus",
+"url": "https://polytheseus.com/"
+}
+},
+{
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "What is a bank reconciliation?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "A check that the bank balance in your books agrees with the bank statement on the same date. You start from the statement balance, add money you've recorded as paid in that the bank hasn't shown yet, take off payments you've recorded that haven't cleared, and compare the result with the balance in your books after adding the items the bank shows that you haven't recorded yet (fees, interest, direct debits). If the two adjusted balances agree, the account is reconciled."
+}
+},
+{
+"@type": "Question",
+"name": "How do you do a bank reconciliation step by step?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "1. Get the statement for the period and note its closing balance. 2. Note the balance in your books on the same date. 3. Tick off every item that appears in both. 4. List what's in the books but not on the statement: uncleared lodgements (deposits in transit) and unpresented cheques or payments (outstanding checks). 5. List what's on the statement but not in the books, such as bank charges, interest and direct debits, and post them. 6. Compare the adjusted bank balance with the adjusted book balance. If they don't agree, find the difference before you close the month."
+}
+},
+{
+"@type": "Question",
+"name": "What if my bank reconciliation doesn't balance?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Look at the size of the difference. If it matches one item exactly, that item is missing or entered twice. If half the difference matches an item, it was entered the wrong way round. If the difference divides exactly by 9, two digits were probably swapped or a decimal point slipped. If it's round, check that last month's reconciled balance hasn't changed because someone edited a closed period. Don't post the difference to suspense to make it balance."
+}
+},
+{
+"@type": "Question",
+"name": "Is there a free bank reconciliation template for Excel?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Yes. The free tool on this page builds the reconciliation statement from your balances and the items you paste, checks whether it balances, suggests where the difference is, and downloads it as a CSV that opens in Excel or Google Sheets. Nothing you type leaves your browser."
+}
+},
+{
+"@type": "Question",
+"name": "Is reconciling in Xero or QuickBooks the same as a bank reconciliation?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Not quite. Matching bank-feed lines to transactions is part of it, but the check that matters is the statement's closing balance against the balance in the software on the same date. Feeds can duplicate or miss lines, so compare the balances from the PDF statement, not just the feed."
+}
+},
+{
+"@type": "Question",
+"name": "How often should you reconcile a bank account?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "At least monthly, at every month end before you review or report. Busy accounts are easier to reconcile weekly. Reconcile every account the business uses: current and savings accounts, credit cards, loans, and payment processors like Stripe, PayPal and Square."
+}
+}
+]
+}
+]
+}
+</script>
+<!-- pt:head -->
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/brand.css">
+<meta property="og:image" content="https://polytheseus.com/assets/og/bookkeeper-skills.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- /pt:head -->
+</head>
+<body>
+<!-- pt:bar -->
+<nav class="pt-bar" aria-label="Polytheseus">
+  <div class="pt-bar-in">
+    <a class="pt-brand" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"><span>POLYTHESEUS</span></a>
+    <div class="pt-nav">
+      <a href="/#packs">Packs</a>
+      <a href="/tools">Free tools</a>
+      <a class="pt-hide-sm" href="/#how">How it works</a>
+      <a class="pt-hide-sm" href="/#about">About</a>
+      <a class="pt-cta" href="/#packs">Start free</a>
+    </div>
+  </div>
+</nav>
+<!-- /pt:bar -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow"><a href="../">Bookkeeper Skills</a> · Guide</p>
+    <h1>How to do a bank reconciliation: <em>step by step, and what to do when it won't balance</em></h1>
+    <p class="lede">A bank reconciliation proves the bank balance in the books is real. It's the first job at every month end, because every later check (the VAT return, the trial balance, the profit figure you tell the client) depends on it. This guide walks through the six steps with a worked example, shows the statement format in UK and US wording, and gives you a free tool that builds the reconciliation, checks it, and tells you where to look when there's a difference.</p>
+    <p class="small" style="color:var(--muted)">Updated 27 October 2026 · UK and US · Record-keeping rules checked against gov.uk and irs.gov · General information, not accounting or tax advice</p>
+  </div>
+</header>
+<main class="wrap">
+<div class="answer">
+  <p><strong>In one paragraph:</strong> take the <strong>closing balance on the bank statement</strong>, add money you've recorded as paid in that isn't on the statement yet, and take off payments you've recorded that haven't cleared. That's the <strong>adjusted bank balance</strong>. Then take the <strong>balance in your books</strong> on the same date, add anything the bank shows coming in that you haven't recorded (interest, a customer payment), and take off anything going out you haven't recorded (bank charges, direct debits). That's the <strong>adjusted book balance</strong>. The two should agree to the penny. If they don't, there's a mistake to find, not a figure to post to suspense.</p>
+</div>
+<p class="toc"><strong>Jump to:</strong> <a href="#builder">Free reconciliation tool</a> · <a href="#steps">The six steps</a> · <a href="#example">Worked example</a> · <a href="#format">The statement format (UK and US)</a> · <a href="#difference">When it won't balance</a> · <a href="#software">Xero, QuickBooks and bank feeds</a> · <a href="#other">Cards, PayPal, Stripe and loans</a> · <a href="#ai">Using AI</a> · <a href="#faq">FAQ</a></p>
+
+<section id="builder">
+<h2>Free tool: build and check a bank reconciliation</h2>
+<div class="tool">
+  <p style="margin-top:0">Enter the two balances, then paste the items on one side but not the other, one per line, with the amount last (<code>30/10/2026 | Paid in: Harper | 1,250.00</code>, or a line copied from your software). Dates are optional but let the tool spot stale and misdated items. You get the reconciliation statement, the difference if there is one with the likely causes, and a download for Excel or Google Sheets. Nothing you type leaves your browser. <button type="button" id="br-example" class="ghost" style="margin:6px 0 0">Fill in the worked example</button></p>
+  <div class="row2">
+    <div><label for="br-country">Country</label>
+    <select id="br-country"><option value="uk" selected>UK</option><option value="us">US</option></select></div>
+    <div><label for="br-date">Reconciliation date <span>(statement end date)</span></label>
+    <input id="br-date" type="date" value="2026-10-31"></div>
+  </div>
+  <label for="br-account">Account <span>(optional, for the download)</span></label>
+  <input id="br-account" placeholder="e.g. HALE01 current account" style="max-width:340px">
+  <div class="row2">
+    <div><label for="br-bank">Closing balance on the bank statement <span>(<span class="br-sym">£</span>; overdrawn: -250 or 250 DR)</span></label>
+    <input id="br-bank" inputmode="decimal" placeholder="4,812.40"></div>
+    <div><label for="br-books" id="br-books-l">Balance in your cash book or software on the same date <span>(before the items below)</span></label>
+    <input id="br-books" inputmode="decimal" placeholder="3,704.15"></div>
+  </div>
+  <label for="br-dit" id="br-dit-l">Uncleared lodgements (paid in, not yet on the statement)</label>
+  <textarea id="br-dit" placeholder="30/10/2026 | Paid in: Harper invoice 1187 | 1,250.00"></textarea>
+  <label for="br-out" id="br-out-l">Unpresented cheques and payments (paid out, not yet on the statement)</label>
+  <textarea id="br-out" placeholder="27/10/2026 | Cheque 000412 Ashdown Supplies | 486.00"></textarea>
+  <label for="br-bankonly" id="br-bankonly-l">On the statement but not yet in your cash book <span>(money in positive, money out negative: -8.50)</span></label>
+  <textarea id="br-bankonly" placeholder="31/10/2026 | Monthly account fee | -8.50&#10;31/10/2026 | Interest | 2.75"></textarea>
+  <br><button id="br-go" type="button">Reconcile</button>
+  <div id="br-out-res" aria-live="polite"></div>
+  <p class="small" style="color:var(--muted);margin-bottom:0">UK dates are read day first (14/10/2026), US dates month first (10/14/2026). The suggested causes are clues, not answers: check each one against the statement.</p>
+</div>
+</section>
+
+<section id="steps">
+<h2>How to do a bank reconciliation: the six steps</h2>
+<ol>
+  <li><strong>Get the statement, not just the feed.</strong> Download the bank statement for the period (PDF or the bank's export) and write down the closing balance on the last day. The statement is the evidence; a bank feed is a copy that can miss or double lines.</li>
+  <li><strong>Note the balance in the books on the same date.</strong> In your software, that's the account balance at the statement date (not today's balance, which includes later transactions).</li>
+  <li><strong>Tick off what appears in both.</strong> Go down the statement and match each line to an entry in the books: same amount, same direction, a date within a few days. In software this is the matching screen.</li>
+  <li><strong>List what's in the books but not on the statement.</strong> These are timing differences: money paid in that the bank hasn't shown yet (<em>uncleared lodgements</em>, or <em>deposits in transit</em> in the US) and cheques or payments you've sent that haven't cleared (<em>unpresented cheques</em>, or <em>outstanding checks</em>). They adjust the <strong>bank</strong> side, because the bank will catch up.</li>
+  <li><strong>List what's on the statement but not in the books, and post it.</strong> Bank charges, interest, direct debits, standing orders, card refunds and customer payments nobody recorded. These adjust the <strong>book</strong> side, because the books are the ones that are behind. Post them now, so next month starts from the right balance.</li>
+  <li><strong>Compare the adjusted balances.</strong> Adjusted bank balance = statement balance + uncleared lodgements − unpresented payments. Adjusted book balance = book balance + unrecorded money in − unrecorded money out. If they agree, sign and date the reconciliation and keep it with the month's records. If they don't, <a href="#difference">find the difference</a> before you go on with the close.</li>
+</ol>
+<p>Reconcile <strong>every</strong> account the business uses, not just the main current account: savings, credit cards, loans, and payment processors. The account nobody reconciles is where the errors pile up. (Bank reconciliation is stage one of our <a href="month-end-close-checklist">month-end close checklist</a>.)</p>
+</section>
+
+<section id="example">
+<h2>A worked example</h2>
+<p>A small company's business current account at 31 October 2026. The statement says <strong>£4,812.40</strong>; the software says <strong>£3,704.15</strong>. They look £1,108.25 apart, but most of that is timing.</p>
+<table class="t">
+<tr><th>Item</th><th>Where it is</th><th>Effect</th></tr>
+<tr><td>£1,250.00 customer payment, paid in on 30 October</td><td>Books, not the statement yet</td><td>Add to the bank side</td></tr>
+<tr><td>Cheque 000412 for £486.00, sent 27 October</td><td>Books, not the statement yet</td><td>Take off the bank side</td></tr>
+<tr><td>£1,920.00 payment to a subcontractor, still pending on 31 October</td><td>Books, not the statement yet</td><td>Take off the bank side</td></tr>
+<tr><td>£8.50 monthly account fee</td><td>Statement, not the books</td><td>Take off the book side, and post it</td></tr>
+<tr><td>£2.75 interest</td><td>Statement, not the books</td><td>Add to the book side, and post it</td></tr>
+<tr><td>£42.00 phone direct debit</td><td>Statement, not the books</td><td>Take off the book side, and post it</td></tr>
+</table>
+<table class="t br-st">
+<tr><th colspan="2">Bank side</th></tr>
+<tr><td>Balance per bank statement, 31 October</td><td class="num">£4,812.40</td></tr>
+<tr><td>Add: uncleared lodgements</td><td class="num">£1,250.00</td></tr>
+<tr><td>Less: unpresented cheques and payments (£486.00 + £1,920.00)</td><td class="num">−£2,406.00</td></tr>
+<tr class="br-tot"><td>Adjusted bank balance</td><td class="num">£3,656.40</td></tr>
+<tr><th colspan="2">Book side</th></tr>
+<tr><td>Balance per cash book, 31 October</td><td class="num">£3,704.15</td></tr>
+<tr><td>Add: interest not yet recorded</td><td class="num">£2.75</td></tr>
+<tr><td>Less: fee and direct debit not yet recorded (£8.50 + £42.00)</td><td class="num">−£50.50</td></tr>
+<tr class="br-tot"><td>Adjusted book balance</td><td class="num">£3,656.40</td></tr>
+</table>
+<p>Both sides come to <strong>£3,656.40</strong>, so the account is reconciled. Three things to do next: post the fee, the interest and the direct debit; check the £1,250.00 and both payments appear on November's statement in the first few days; and keep this page (signed and dated) with October's records. Press "Fill in the worked example" in the <a href="#builder">tool</a> to see it built.</p>
+</section>
+
+<section id="format">
+<h2>The bank reconciliation statement format, in UK and US wording</h2>
+<p>The two-sided format above (adjust both balances to the same true figure) is the one most bookkeeping courses teach, and it's the clearest for reviewers because each adjustment sits on the side that's behind. The words differ either side of the Atlantic:</p>
+<table class="t">
+<tr><th>What it is</th><th>UK wording</th><th>US wording</th><th>Adjusts</th></tr>
+<tr><td>Money paid in, recorded in the books, not yet on the statement</td><td>Uncleared lodgements, outstanding lodgements</td><td>Deposits in transit</td><td>Bank side (add)</td></tr>
+<tr><td>Payments sent, recorded, not yet cleared</td><td>Unpresented cheques (and payments)</td><td>Outstanding checks</td><td>Bank side (take off)</td></tr>
+<tr><td>Bank charges, fees, direct debits not yet recorded</td><td>Bank charges, direct debits, standing orders</td><td>Service charges, autopays, NSF fees</td><td>Book side (take off)</td></tr>
+<tr><td>Interest or receipts not yet recorded</td><td>Interest received, BACS receipts</td><td>Interest earned, ACH credits</td><td>Book side (add)</td></tr>
+<tr><td>The books' bank account</td><td>Cash book</td><td>Books, checkbook register, general ledger</td><td></td></tr>
+</table>
+<p>Some UK textbooks show a one-sided version instead: update the cash book first for the bank-only items, then start from the statement balance and reconcile to the updated cash book balance. It's the same arithmetic. What matters is that every adjustment is explained and the final difference is zero.</p>
+<p><strong>Sign it off.</strong> A reconciliation is evidence, so it should show who prepared it, when, and who reviewed it (the tool's download and printout include those lines). Keep it with the month's records: HMRC expects sole traders to keep records for at least 5 years after the 31 January filing deadline (<a href="https://www.gov.uk/self-employed-records/how-long-to-keep-your-records">gov.uk</a>) and limited companies for 6 years from the end of the financial year they relate to (<a href="https://www.gov.uk/running-a-limited-company/company-and-accounting-records">gov.uk</a>). The IRS's general rule is 3 years from filing, longer in some cases (<a href="https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records">irs.gov</a>).</p>
+</section>
+
+<section id="difference">
+<h2>When the bank reconciliation won't balance: finding the difference</h2>
+<p>Write down the unexplained difference and look at its <em>shape</em> before you start scrolling through transactions. The size usually tells you what kind of mistake it is:</p>
+<table class="t">
+<tr><th>The difference…</th><th>Usually means</th><th>Where to look</th></tr>
+<tr><td>Equals one item exactly</td><td>That item is missing from the books, entered twice, or on the wrong list</td><td>Search the books and the statement for that amount</td></tr>
+<tr><td>Is twice an item (half the difference matches something)</td><td>That item was entered the wrong way round: a receipt as a payment, a refund as a charge</td><td>Search for half the difference; check its direction</td></tr>
+<tr><td>Divides exactly by 9</td><td>Two digits swapped (£54.00 keyed as £45.00 is a £9.00 difference) or a slipped decimal point (£1,000.00 as £100.00 is £900.00)</td><td>Compare amounts digit by digit, especially hand-keyed ones</td></tr>
+<tr><td>Is a round number</td><td>A slip in the pounds or dollars, or the opening balance changed</td><td>Check last month's reconciled closing balance hasn't moved. If it has, someone edited a closed period</td></tr>
+<tr><td>Is the same as last month's difference</td><td>An old error carried forward</td><td>Go back to the first month it appeared and fix it there</td></tr>
+<tr><td>Keeps growing each month</td><td>Something recurring isn't recorded: a fee, a standing order, a processor payout</td><td>Look for regular amounts on the statement with no match in the books</td></tr>
+</table>
+<p><strong>Other usual suspects:</strong> the wrong date range (a statement that runs 6th to 5th against a month in the books), a transaction dated in the wrong month, a duplicated bank-feed line, a transfer between the client's own accounts recorded on one side only, and a cleared item still sitting on last month's outstanding list.</p>
+<p><strong>Don't post the difference to suspense, or to a "reconciliation adjustment" expense, to make it balance.</strong> A difference you can't explain is a mistake you haven't found, and next month it will be bigger. If you truly can't find a small one after checking all of the above, note it on the reconciliation, tell the client or accountant, and carry it as an open item rather than burying it.</p>
+<h3>Old items on the outstanding lists</h3>
+<ul>
+  <li><strong>Lodgements more than a few working days old</strong> should have cleared. If one hasn't, check it was actually banked, and that it isn't a customer payment recorded on the wrong date.</li>
+  <li><strong>Cheques outstanding for months</strong> may never be cashed. Many UK banks won't pay a cheque more than 6 months old, and in the US a bank isn't obliged to pay a check more than six months old (<a href="https://www.law.cornell.edu/ucc/4/4-404">UCC § 4-404</a>). Ask the client whether the payee still needs paying. Reissuing or cancelling it is a decision for the client and the accountant, and in the US there may be unclaimed-property rules to follow.</li>
+</ul>
+</section>
+
+<section id="software">
+<h2>Xero, QuickBooks and bank feeds: matching isn't reconciling</h2>
+<p>Accounting software calls matching bank-feed lines "reconciling", and clearing the feed is a big part of the job. It isn't the whole job. Feeds can drop a day, duplicate lines after a reconnection, or start from the wrong opening balance, and the software will happily let you match all of them. The test is still the one on this page: <strong>does the statement's closing balance agree with the balance in the software on the same date?</strong> Most packages have a reconciliation report that shows the two side by side. Compare it with the balance printed on the actual statement, not the feed.</p>
+<p>Also check the <strong>unreconciled items</strong> list in the software. Anything old there is either a duplicate to delete or a real transaction the bank never processed. Either way it belongs on your outstanding lists, with an explanation.</p>
+</section>
+
+<section id="other">
+<h2>Credit cards, PayPal, Stripe, Square and loans</h2>
+<p>Reconcile them all the same way: statement balance against book balance on the same date. Points that trip people up:</p>
+<ul>
+  <li><strong>Credit cards</strong> are a liability, so the balance owed usually shows as a credit (a negative) in the books. Use the statement's closing date, not the payment due date.</li>
+  <li><strong>Payment processors</strong> (Stripe, PayPal, Square, Shopify Payments) are bank accounts for bookkeeping: record gross sales, fees and refunds in the processor account, and payouts as transfers to the bank. Reconcile the processor balance to its own monthly statement or balance report. Posting only the net payouts hides the fees and makes VAT and sales figures wrong.</li>
+  <li><strong>Loans and hire purchase</strong>: reconcile the balance to the lender's statement at least at year end. Interest and capital need splitting, and the lender's figure is the evidence.</li>
+  <li><strong>Transfers between the client's own accounts</strong> must appear on both sides. A transfer recorded only once makes one account look short and the other look rich.</li>
+</ul>
+</section>
+
+<section id="ai">
+<h2>Using ChatGPT, Gemini or Claude for bank reconciliations, safely</h2>
+<ul>
+  <li><strong>Good jobs for AI:</strong> comparing a pasted list of statement lines with a list of book entries to suggest matches, spotting likely duplicates, explaining a difference from its shape, and turning unmatched lines into a client query list.</li>
+  <li><strong>Strip identifiers first:</strong> use a client code, drop account numbers and sort codes (or keep the last 4 digits), and never paste passwords, online banking screenshots, NI or Social Security numbers. Check your practice's data-protection policy and the AI app's data settings.</li>
+  <li><strong>Check the arithmetic yourself.</strong> AI tools can misread columns, drop a line or add up wrong. The reconciliation's figures should come from the statement and your software, and the sum should be checked (the tool on this page does the sums in your browser).</li>
+  <li><strong>Keep the decisions.</strong> Writing off a difference, cancelling an old cheque or reclassifying a transaction is for you and the accountant, not the tool.</li>
+</ul>
+</section>
+
+<div class="cta">
+  <p style="margin-top:0"><strong>Turn the leftover lines into questions clients actually answer.</strong> The free <strong>transaction-queries</strong> skill takes the statement lines you couldn't match and writes a short, grouped query list for the client, with the likely options for each line. Set-up takes about 3 minutes, no coding.</p>
+  <p><a href="../#pro">Bookkeeper Skills Pro</a> adds <strong>month-end-close</strong>: paste the reconciliation status, a trial balance (this month and last) and aged reports, and get a prioritised findings table with likely causes and fixes, grouped client questions, notes for the accountant and a plain-English month summary.</p>
+  <p style="margin-bottom:0"><a class="btn" href="../#setup">Get the free skills</a> <a class="btn ghost" href="../#pro">See Bookkeeper Skills Pro</a></p>
+</div>
+
+<section id="faq">
+<h2>FAQ</h2>
+<details><summary>What is a bank reconciliation?</summary><p>A check that the bank balance in your books agrees with the bank statement on the same date. You start from the statement balance, add money you&#x27;ve recorded as paid in that the bank hasn&#x27;t shown yet, take off payments you&#x27;ve recorded that haven&#x27;t cleared, and compare the result with the balance in your books after adding the items the bank shows that you haven&#x27;t recorded yet (fees, interest, direct debits). If the two adjusted balances agree, the account is reconciled.</p></details>
+<details><summary>How do you do a bank reconciliation step by step?</summary><p>1. Get the statement for the period and note its closing balance. 2. Note the balance in your books on the same date. 3. Tick off every item that appears in both. 4. List what&#x27;s in the books but not on the statement: uncleared lodgements (deposits in transit) and unpresented cheques or payments (outstanding checks). 5. List what&#x27;s on the statement but not in the books, such as bank charges, interest and direct debits, and post them. 6. Compare the adjusted bank balance with the adjusted book balance. If they don&#x27;t agree, find the difference before you close the month.</p></details>
+<details><summary>What if my bank reconciliation doesn&#x27;t balance?</summary><p>Look at the size of the difference. If it matches one item exactly, that item is missing or entered twice. If half the difference matches an item, it was entered the wrong way round. If the difference divides exactly by 9, two digits were probably swapped or a decimal point slipped. If it&#x27;s round, check that last month&#x27;s reconciled balance hasn&#x27;t changed because someone edited a closed period. Don&#x27;t post the difference to suspense to make it balance.</p></details>
+<details><summary>Is there a free bank reconciliation template for Excel?</summary><p>Yes. The <a href="#builder">free tool</a> on this page builds the reconciliation statement from your balances and the items you paste, checks whether it balances, suggests where the difference is, and downloads it as a CSV that opens in Excel or Google Sheets. Nothing you type leaves your browser.</p></details>
+<details><summary>Is reconciling in Xero or QuickBooks the same as a bank reconciliation?</summary><p>Not quite. Matching bank-feed lines to transactions is part of it, but the check that matters is the statement&#x27;s closing balance against the balance in the software on the same date. Feeds can duplicate or miss lines, so compare the balances from the PDF statement, not just the feed.</p></details>
+<details><summary>How often should you reconcile a bank account?</summary><p>At least monthly, at every month end before you review or report. Busy accounts are easier to reconcile weekly. Reconcile every account the business uses: current and savings accounts, credit cards, loans, and payment processors like Stripe, PayPal and Square.</p></details>
+</section>
+<p class="small">This page is general information written by an AI agent and checked on 27 October 2026 against gov.uk (how long to keep self-employed records; company and accounting records), irs.gov (how long should I keep records) and the Uniform Commercial Code § 4-404 (Cornell LII). It isn't accounting or tax advice: follow your professional body's guidance and check each client's own position.</p>
+</main>
+<aside class="wrap small pagenote">Source on <a href="https://github.com/polytheseus/bookkeeper-skills">GitHub</a>. Not affiliated with HMRC, the IRS, any bank or any software company.</aside>
+<script src="bank-rec.js"></script>
+<!-- pt:foot -->
+<footer class="pt-foot">
+  <div class="pt-foot-in">
+    <div>
+      <a class="pt-brand" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"><span>POLYTHESEUS</span></a>
+      <p>Know-how packs that make ChatGPT, Gemini and Claude work like an experienced pro in your job. Free to start.</p>
+      <p><a href="mailto:support@polytheseus.com">support@polytheseus.com</a></p>
+    </div>
+    <div>
+      <h4>Packs</h4>
+      <ul><li><a href="/teacher-skills/">Teachers</a></li><li><a href="/trades-skills/">Trades</a></li><li><a href="/bookkeeper-skills/">Bookkeepers</a></li><li><a href="/real-estate-skills/">Real estate agents</a></li><li><a href="/seller-skills/">Online sellers</a></li><li><a href="/sre-skills/">SRE &amp; DevOps</a></li></ul>
+    </div>
+    <div>
+      <h4>Polytheseus</h4>
+      <ul>
+        <li><a href="/tools">Free tools</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="https://github.com/polytheseus">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pt-foot-base">Polytheseus is run by Robin Hale. The packs and this site are written and tested by Claude, an AI agent. <a href="/#about">How that works</a>.</div>
+</footer>
+<!-- /pt:foot -->
+</body>
+</html>

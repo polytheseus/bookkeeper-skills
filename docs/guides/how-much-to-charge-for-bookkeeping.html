@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How much to charge for bookkeeping: work out your rate, monthly fees and a price list (free calculator, UK and US)</title>
+<meta name="description" content="How to price bookkeeping without guessing: work out your hourly rate from the income you need and your real billable hours, turn each client's workload into a fixed monthly fee, quote catch-up work with written assumptions, and build a price list. Free calculator, nothing leaves your browser.">
+<link rel="canonical" href="https://polytheseus.com/bookkeeper-skills/guides/how-much-to-charge-for-bookkeeping">
+<meta property="og:title" content="How much to charge for bookkeeping (free fee calculator and price list builder)">
+<meta property="og:description" content="Your hourly rate, a fixed monthly fee per client, a catch-up quote with assumptions and a banded price list, from your own numbers. Nothing leaves your browser.">
+<link rel="stylesheet" href="../style.css">
+<style>
+.answer{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--green);border-radius:6px;padding:14px 18px;margin:28px 0}
+.answer p{margin:.3em 0}
+table.t{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;margin:12px 0 20px}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:#eef2f6;font-family:Georgia,serif}
+.toc{font-size:15px}
+.tool{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:18px 20px;margin:20px 0}
+.tool h3{margin-top:1.6em;border-top:1px solid var(--rule);padding-top:14px}
+.tool h3:first-of-type{border-top:0;padding-top:0;margin-top:.6em}
+.tool label{display:block;font-weight:600;margin:10px 0 2px}
+.tool label span{font-weight:400;color:var(--muted);font-size:14px}
+.tool input,.tool select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;width:100%;max-width:240px}
+.tool input.sm{max-width:120px}
+.tool fieldset{border:1px solid var(--rule);border-radius:6px;margin:12px 0;padding:8px 12px}
+.tool legend{font-weight:600;padding:0 4px}
+.tool fieldset label{display:inline-block;font-weight:400;margin:4px 14px 4px 0}
+.tool fieldset input[type=checkbox]{width:auto;margin-right:5px}
+.tool select{max-width:340px}
+.tool button{font:inherit;font-weight:600;border:0;border-radius:4px;padding:9px 18px;cursor:pointer;background:var(--green);color:#fff;margin:14px 6px 0 0}
+.tool button.ghost{background:transparent;color:var(--green);border:2px solid var(--green);padding:7px 16px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:2px 14px}
+.tgrid label{font-weight:400;font-size:14px}
+.tgrid input{max-width:110px}
+.qb-due{background:var(--green-l);border-radius:5px;padding:9px 12px}
+.qb-warn{background:var(--amber-l);border-radius:5px;padding:9px 12px}
+pre.email{white-space:pre-wrap;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;font:15px/1.55 -apple-system,Segoe UI,sans-serif}
+.cta{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:20px 22px;margin:34px 0}
+h3{margin-top:1.4em}
+[hidden]{display:none!important}
+</style>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@graph": [
+{
+"@type": "Article",
+"headline": "How much to charge for bookkeeping: work out your rate, monthly fees and a price list",
+"datePublished": "2026-10-28",
+"dateModified": "2026-10-28",
+"author": {
+"@type": "Organization",
+"name": "polytheseus",
+"url": "https://polytheseus.com/"
+}
+},
+{
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "How much should I charge for bookkeeping?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Work it out rather than copying someone else's number. Add the income you want to your yearly overheads (software, insurance, money laundering supervision, membership, training), divide by the hours you can really bill (often 60 to 70% of your working hours), and that's your target hourly rate. Then time each client's monthly work and quote a fixed fee of time multiplied by that rate, rounded up. The free calculator on this page does each step."
+}
+},
+{
+"@type": "Question",
+"name": "Should I charge bookkeeping clients hourly or a fixed monthly fee?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Most small-business clients prefer a fixed monthly fee because they know the cost in advance, and it rewards you for getting faster. Work it out from time and your target rate, write down what it includes (transactions, accounts, returns), and say what changes it. Hourly billing still suits one-off advice, messy catch-up work you can't scope yet, and clients whose volume swings wildly."
+}
+},
+{
+"@type": "Question",
+"name": "How do I price catch-up or clean-up bookkeeping?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Count the months behind, the transactions per month and the accounts, estimate the time, then add a contingency for missing records: around 20% if full statements and most receipts exist, 40% if documents are missing, and more if statements still need requesting. Quote one fixed fee with the assumptions written down, take a deposit before starting, and quote anything outside the assumptions separately before doing it."
+}
+},
+{
+"@type": "Question",
+"name": "What are the average bookkeeping rates in the UK?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Published figures vary widely by region, experience, software and client type, and many are out of date or from firms selling a service. A rate copied from someone else won't cover your costs and hours. Work out your own target rate first, then compare it with the published price lists of bookkeepers near you and any fee survey your professional body publishes."
+}
+},
+{
+"@type": "Question",
+"name": "Do I need to add VAT to my bookkeeping fees?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Only if you're VAT-registered. In the UK you must register once your taxable turnover goes over £90,000 in a rolling 12 months, and then you add VAT (usually 20%) to your fees. Clients who aren't VAT-registered can't reclaim it, so for them your price effectively rises by a fifth. Plan for that before you reach the threshold."
+}
+},
+{
+"@type": "Question",
+"name": "Can I use ChatGPT to work out my bookkeeping prices?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "It's useful for structure: listing a client's tasks, drafting a proposal, writing the fee-increase letter. Don't ask it what bookkeepers charge, because it can invent market rates. Give it your own target rate and task times, check every sum it does, and don't paste client names or bank details."
+}
+}
+]
+}
+]
+}
+</script>
+<!-- pt:head -->
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/brand.css">
+<meta property="og:image" content="https://polytheseus.com/assets/og/bookkeeper-skills.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- /pt:head -->
+</head>
+<body>
+<!-- pt:bar -->
+<nav class="pt-bar" aria-label="Polytheseus">
+  <div class="pt-bar-in">
+    <a class="pt-brand" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"><span>POLYTHESEUS</span></a>
+    <div class="pt-nav">
+      <a href="/#packs">Packs</a>
+      <a href="/tools">Free tools</a>
+      <a class="pt-hide-sm" href="/#how">How it works</a>
+      <a class="pt-hide-sm" href="/#about">About</a>
+      <a class="pt-cta" href="/#packs">Start free</a>
+    </div>
+  </div>
+</nav>
+<!-- /pt:bar -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow"><a href="../">Bookkeeper Skills</a> · Guide</p>
+    <h1>How much to charge for bookkeeping: <em>work out your rate, your monthly fees and a price list</em></h1>
+    <p class="lede">Most bookkeepers set their first prices by looking at what someone else charges, knocking a bit off, and then quietly doing far more work than the fee covers. This guide gives you a method that starts from your own numbers instead: the hourly rate you actually need, a fixed monthly fee for each client built from the work they really create, a catch-up quote that doesn't lose money, and a price list you can publish. The free calculator does the sums.</p>
+    <p class="small" style="color:var(--muted)">Updated 28 October 2026 · UK and US · Cost figures checked against gov.uk · General information, not business or tax advice</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="answer">
+  <p><strong>In one paragraph:</strong> <strong>price from time and a target rate, then sell a fixed fee.</strong> Add the income you want to your yearly overheads and divide by the hours you can really bill (usually 60–70% of your working hours, not 100%). That's your target hourly rate. For each client, add up the minutes their month takes (transactions, reconciliations, bills, VAT, payroll, emails), add an allowance for messy records and a contingency, multiply by your rate and round up. Quote it as a fixed monthly fee with what it includes and what changes it. Price catch-up work separately, with written assumptions and a deposit.</p>
+</div>
+
+<p class="toc"><strong>Jump to:</strong> <a href="#calculator">Free fee calculator</a> · <a href="#rate">Step 1: your hourly rate</a> · <a href="#costs">Costs to include (UK)</a> · <a href="#monthly">Step 2: monthly fees</a> · <a href="#models">Hourly, fixed or value</a> · <a href="#catchup">Catch-up work</a> · <a href="#pricelist">Price list</a> · <a href="#mistakes">Pricing mistakes</a> · <a href="#rise">Raising fees</a> · <a href="#ai">Using AI</a> · <a href="#faq">FAQ</a></p>
+
+<section id="calculator">
+<h2>Free calculator: your rate, a client's monthly fee, a catch-up quote and a price list</h2>
+<div class="tool" id="fc-tool">
+  <p style="margin-top:0">Fill in step 1 first; every other step uses that rate. Results update as you type. The task times are starting guesses, so replace them with your own once you've timed a few clients. Nothing you type leaves your browser.</p>
+  <label for="fc-cur">Currency</label>
+  <select id="fc-cur"><option value="£" selected>£ (UK)</option><option value="$">$ (US)</option></select>
+  <p id="fc-vatreg-wrap"><label style="font-weight:400"><input type="checkbox" id="fc-vatreg" style="width:auto;margin-right:6px">I'm VAT-registered (show prices plus VAT)</label></p>
+
+  <h3>Step 1: your target hourly rate</h3>
+  <label for="fc-income">Income you want a year, before tax <span>(<span class="fc-cur">£</span>)</span></label>
+  <input id="fc-income" inputmode="decimal" value="36000">
+  <label for="fc-overheads">Yearly overheads <span>(software, insurance, AML supervision, membership, training, phone, equipment)</span></label>
+  <input id="fc-overheads" inputmode="decimal" value="4000">
+  <label for="fc-weeks">Working weeks a year <span>(52 minus holidays, bank holidays and a few sick days)</span></label>
+  <input id="fc-weeks" class="sm" inputmode="decimal" value="46">
+  <label for="fc-hpw">Hours you work a week</label>
+  <input id="fc-hpw" class="sm" inputmode="decimal" value="37.5">
+  <label for="fc-billable">Share of those hours you can bill to clients <span>(%)</span></label>
+  <input id="fc-billable" class="sm" inputmode="decimal" value="65">
+  <div id="fc-rate-out" aria-live="polite"></div>
+  <details>
+    <summary>Check an existing client against this rate</summary>
+    <label for="fc-cfee">Their annual fee <span>(<span class="fc-cur">£</span>)</span></label>
+    <input id="fc-cfee" inputmode="decimal" placeholder="e.g. 1200">
+    <label for="fc-chours">Hours you spent on them in the last 12 months <span>(from your timesheet, or a fair estimate)</span></label>
+    <input id="fc-chours" class="sm" inputmode="decimal" placeholder="e.g. 48">
+    <div id="fc-eff-out" aria-live="polite"></div>
+  </details>
+
+  <h3>Step 2: a fixed monthly fee for one client</h3>
+  <label for="fc-txns">Bank and card transactions a month</label>
+  <input id="fc-txns" class="sm" inputmode="numeric" value="80">
+  <label for="fc-accounts">Bank, card and payment accounts to reconcile</label>
+  <input id="fc-accounts" class="sm" inputmode="numeric" value="1">
+  <label for="fc-bills">Purchase bills and receipts a month</label>
+  <input id="fc-bills" class="sm" inputmode="numeric" value="15">
+  <label for="fc-invoices">Sales invoices a month</label>
+  <input id="fc-invoices" class="sm" inputmode="numeric" value="10">
+  <label for="fc-vat">VAT returns</label>
+  <select id="fc-vat"><option value="none" selected>None</option><option value="quarterly">Quarterly</option><option value="monthly">Monthly</option></select>
+  <label for="fc-payroll">Payroll</label>
+  <select id="fc-payroll"><option value="none" selected>None</option><option value="monthly">Monthly</option><option value="four-weekly">Four-weekly</option><option value="fortnightly">Fortnightly</option><option value="weekly">Weekly</option></select>
+  <label for="fc-emp">Employees on the payroll</label>
+  <input id="fc-emp" class="sm" inputmode="numeric" value="0">
+  <fieldset>
+    <legend>Also included</legend>
+    <label><input type="checkbox" id="fc-cis">CIS monthly return</label>
+    <label><input type="checkbox" id="fc-report">Monthly report or summary</label>
+  </fieldset>
+  <label for="fc-admin">Minutes a month on emails, queries and chasing</label>
+  <input id="fc-admin" class="sm" inputmode="numeric" value="20">
+  <label for="fc-records">How this client's records usually arrive</label>
+  <select id="fc-records"><option value="clean">On time and complete (×1)</option><option value="average" selected>Some gaps and chasing (×1.15)</option><option value="messy">Late, missing or a carrier bag (×1.35)</option></select>
+  <label for="fc-cont">Contingency <span>(%)</span></label>
+  <input id="fc-cont" class="sm" inputmode="numeric" value="10">
+  <details>
+    <summary>Your task times (minutes per item)</summary>
+    <div class="tgrid">
+      <label>Code 1 bank line <input id="fc-t-txn" inputmode="decimal"></label>
+      <label>Reconcile 1 account <input id="fc-t-recon" inputmode="decimal"></label>
+      <label>1 bill or receipt <input id="fc-t-bill" inputmode="decimal"></label>
+      <label>1 sales invoice <input id="fc-t-invoice" inputmode="decimal"></label>
+      <label>Quarterly VAT return <input id="fc-t-vatQ" inputmode="decimal"></label>
+      <label>Monthly VAT return <input id="fc-t-vatM" inputmode="decimal"></label>
+      <label>Each payroll run <input id="fc-t-payrollRun" inputmode="decimal"></label>
+      <label>Each employee per run <input id="fc-t-payrollEmp" inputmode="decimal"></label>
+      <label>CIS return <input id="fc-t-cis" inputmode="decimal"></label>
+      <label>Monthly report <input id="fc-t-report" inputmode="decimal"></label>
+    </div>
+  </details>
+  <div id="fc-month-out" aria-live="polite"></div>
+
+  <h3>Step 3: a catch-up (clean-up) quote</h3>
+  <label for="fc-cu-period">Period <span>(optional, e.g. April to September 2026)</span></label>
+  <input id="fc-cu-period" style="max-width:340px">
+  <label for="fc-cu-months">Months behind</label>
+  <input id="fc-cu-months" class="sm" inputmode="numeric" value="6">
+  <label for="fc-cu-txns">Transactions a month</label>
+  <input id="fc-cu-txns" class="sm" inputmode="numeric" value="120">
+  <label for="fc-cu-accounts">Bank and card accounts</label>
+  <input id="fc-cu-accounts" class="sm" inputmode="numeric" value="2">
+  <label for="fc-cu-vat">VAT returns to prepare</label>
+  <input id="fc-cu-vat" class="sm" inputmode="numeric" value="2">
+  <label for="fc-cu-state">What records exist</label>
+  <select id="fc-cu-state"><option value="statements">Full statements and most receipts (+20%)</option><option value="some" selected>Statements, but receipts and invoices missing (+40%)</option><option value="chaos">Statements still to get, lots missing (+70%)</option></select>
+  <label for="fc-cu-cont">Contingency <span>(%)</span></label>
+  <input id="fc-cu-cont" class="sm" inputmode="numeric" value="40">
+  <label for="fc-cu-dep">Deposit before you start <span>(%)</span></label>
+  <input id="fc-cu-dep" class="sm" inputmode="numeric" value="50">
+  <div id="fc-cu-out" aria-live="polite"></div>
+
+  <h3>Step 4: your price list</h3>
+  <p>Three packages priced for a typical client at the top of each band (with a monthly report if you ticked it in step 2, the same email allowance and contingency, and "some gaps" records), plus add-ons from your task times. Rename the packages and change the bands to suit your clients.</p>
+  <div id="fc-pl-out" aria-live="polite"></div>
+</div>
+<p class="small">The calculator multiplies your own numbers; it doesn't know what bookkeepers charge where you are. Default task times assume bank feeds and bank rules in cloud software; time yourself on three real clients and replace them.</p>
+</section>
+
+<section id="rate">
+<h2>Step 1: work out the hourly rate you need</h2>
+<p>A price is only "right" if it pays for your life and your business after the hours you can't bill. The sum is short:</p>
+<p><strong>Target hourly rate = (income you want + yearly overheads) ÷ billable hours a year</strong></p>
+<p>The figure most people get wrong is billable hours. A full-time year is not 52 × 37.5 = 1,950 hours of client work. Take off holidays, bank holidays and sick days (46 working weeks is a fair planning figure), then take off the hours that are real work but nobody pays for: answering enquiries, writing proposals, chasing records, software updates, CPD, your own bookkeeping, and the first month of every new client while you learn their books. For a solo practice, 60–70% billable is a common planning figure; in your first year, while you're still finding clients, it can be much lower.</p>
+<table class="t">
+<tr><th>Worked example</th><th>Figure</th></tr>
+<tr><td>Income wanted before tax</td><td>£36,000</td></tr>
+<tr><td>Yearly overheads</td><td>£4,000</td></tr>
+<tr><td>Billable hours: 46 weeks × 37.5 hours × 65%</td><td>1,121 hours</td></tr>
+<tr><td>Target rate: £40,000 ÷ 1,121</td><td><strong>£35.67, call it £36 an hour</strong></td></tr>
+</table>
+<p>The same £40,000 spread over all 1,725 working hours (46 × 37.5) would suggest £23 an hour. That gap is why bookkeepers who price from a "full-time hours" sum end up working evenings for less than they planned. If the rate you get looks higher than your local market will pay, the answer is rarely to drop it: it's to get faster per client (bank rules, receipt apps, records-due dates), specialise in a kind of client you can serve quickly, or plan a smaller income for year one and review it.</p>
+<p>Use the "Check an existing client" box in the calculator for clients you already have: annual fee ÷ hours spent gives their <strong>effective rate</strong>. Anyone well under your target is either under-priced or has grown since you set the fee.</p>
+</section>
+
+<section id="costs">
+<h2>Costs to include in your overheads (UK)</h2>
+<table class="t">
+<tr><th>Cost</th><th>What to know</th></tr>
+<tr><td>Anti-money laundering supervision</td><td>Professional bookkeeping for clients counts as an accountancy service under the Money Laundering Regulations 2017, so you need a supervisor: either a professional body you're a member of, or HMRC. HMRC charges a one-off £300 application fee, £400 a year for each premises, and £40 for each person's approval check, with a reduction for businesses turning over less than £5,000 (<a href="https://www.gov.uk/guidance/money-laundering-regulations-registration-fees">gov.uk: fees for money laundering supervision</a>, <a href="https://www.gov.uk/guidance/money-laundering-regulations-accountancy-service-provider-registration">who needs to register</a>). Professional bodies set their own fees.</td></tr>
+<tr><td>Professional indemnity insurance</td><td>Covers you if a client says your mistake cost them money. Professional bodies usually require it for members in practice. Get quotes for your own services and turnover.</td></tr>
+<tr><td>Software</td><td>Your own practice licences, any partner subscriptions you pay for clients and don't recharge, a receipt-capture app, a proposal or engagement-letter tool, and your own payroll software.</td></tr>
+<tr><td>Membership and training</td><td>Professional body subscription and CPD hours (the hours count against billable time too).</td></tr>
+<tr><td>Everything else</td><td>Phone, broadband, laptop replacement, data protection fee to the ICO if it applies to you, accountant for your own return, website, and a small marketing budget.</td></tr>
+</table>
+<p><strong>VAT:</strong> once your taxable turnover goes over £90,000 in a rolling 12 months you must register for VAT (<a href="https://www.gov.uk/register-for-vat">gov.uk: register for VAT</a>) and add VAT, usually 20%, to your fees. Clients who aren't VAT-registered can't reclaim it, so for most sole-trader clients your price rises by a fifth overnight. If you're getting close, plan for it in your prices and engagement letters before you cross the line.</p>
+</section>
+
+<section id="monthly">
+<h2>Step 2: turn each client's workload into a fixed monthly fee</h2>
+<p>Clients pay for outcomes, but your time goes on volume. A fee that ignores volume is a guess. These are the things that drive the hours:</p>
+<ul>
+  <li><strong>Transactions a month</strong>, across every bank, card and payment account (Stripe, PayPal, Square, Amazon, eBay payouts all count). This is the single biggest driver.</li>
+  <li><strong>Accounts to reconcile.</strong> Each extra account is another reconciliation every month, whatever its volume.</li>
+  <li><strong>Bills, receipts and sales invoices</strong> that need entering, matching or checking.</li>
+  <li><strong>Returns and runs:</strong> VAT (quarterly or monthly), payroll (per run and per employee), CIS.</li>
+  <li><strong>Reporting</strong>: a monthly report or management accounts takes real time if you write commentary.</li>
+  <li><strong>How the records arrive.</strong> The same 80 transactions take far longer when receipts come in a carrier bag in week four than when they're uploaded to an app as they happen. Charge for that difference, or use it to change the habit.</li>
+  <li><strong>Emails and questions.</strong> "Unlimited support" on a small fee is where many practices lose money. Allow for it, and say in the engagement letter what's included.</li>
+</ul>
+<p>Two examples from the calculator's default task times and a £36 target rate:</p>
+<table class="t">
+<tr><th>Client</th><th>Time a month</th><th>Monthly fee</th></tr>
+<tr><td>Sole trader: 80 bank lines, 1 account, 15 bills, 10 invoices, no VAT, records on time</td><td>About 3 hours (with 10% contingency)</td><td><strong>£110</strong> (£1,320 a year)</td></tr>
+<tr><td>Limited company: 200 bank lines, 2 accounts, 40 bills, 20 invoices, quarterly VAT, monthly payroll for 3, CIS, monthly report, some gaps</td><td>About 10 hours</td><td><strong>£365</strong> plus VAT if you're registered</td></tr>
+</table>
+<p>Put the assumptions in the <a href="engagement-letter-template">engagement letter</a>: "Based on up to 100 bank transactions a month across 1 account, records by the 7th." Then when the client's volume doubles, the fee review is a conversation about numbers they agreed, not a surprise.</p>
+</section>
+
+<section id="models">
+<h2>Hourly, fixed or value pricing?</h2>
+<table class="t">
+<tr><th>Model</th><th>Good for</th><th>Watch out for</th></tr>
+<tr><td>Fixed monthly fee</td><td>Ongoing bookkeeping, payroll and VAT. Clients know the cost, you can collect by direct debit, and getting faster raises your effective rate.</td><td>Scope creep. Write down what's included, review volumes every year, and quote extra work before you do it.</td></tr>
+<tr><td>Hourly</td><td>One-off advice, software set-up, work you can't scope yet, clients whose volume swings wildly.</td><td>Clients hate open-ended bills, and you're penalised for being quick. Give an estimate and a cap where you can.</td></tr>
+<tr><td>Fixed project fee</td><td>Catch-up work, year-end packs, software migrations, VAT registration.</td><td>Price from a written scope with assumptions, and take a deposit.</td></tr>
+<tr><td>Value or tiered packages</td><td>Clients who'd pay more for speed, a monthly call, or a dashboard. Packages (Essentials / Standard / Plus) make the choice easy.</td><td>Still check each package against time × rate, so the cheapest one isn't loss-making.</td></tr>
+</table>
+<p>Most small practices end up with fixed monthly packages for routine work, fixed quotes for projects, and an hourly rate only for the genuinely unknown.</p>
+</section>
+
+<section id="catchup">
+<h2>Pricing catch-up (clean-up) bookkeeping</h2>
+<p>Catch-up jobs are where bookkeepers lose the most money, because the client always says "it's not that bad" and the box always contains more than expected. Price it as a fixed project with assumptions:</p>
+<ol>
+  <li><strong>Scope it before you quote.</strong> Ask for read access to the bank feeds or a statement for one month, and count. Months behind × transactions a month × accounts is the base.</li>
+  <li><strong>Add a contingency by what exists.</strong> As a starting point: about 20% if full statements and most receipts exist, 40% if documents are missing, 70% or more if statements still need requesting from the bank. Change these once you've done a few.</li>
+  <li><strong>Write the assumptions into the quote</strong>: the period, the accounts, the transaction count with a margin, how quickly the client answers queries, and what isn't included (earlier periods, HMRC letters, tax returns).</li>
+  <li><strong>Take a deposit</strong> (many take 50%) before you start, and the balance on completion, before or alongside handing over.</li>
+  <li><strong>Offer the monthly package at the end</strong>, so they never need a catch-up again.</li>
+</ol>
+<p>The calculator's step 3 builds the quote text. With its defaults (6 months, 120 transactions a month, 2 accounts, 2 VAT returns, receipts missing, £36 an hour) it comes to 26.6 hours and a fixed fee of <strong>£975</strong> with a £490 deposit.</p>
+</section>
+
+<section id="pricelist">
+<h2>A bookkeeping price list template</h2>
+<p>A published price list saves you writing every quote from scratch and filters out clients who only want the cheapest option. A simple structure that works:</p>
+<ul>
+  <li><strong>Three packages by monthly transaction band</strong>, e.g. up to 50, 51–150 and 151–300, each with a stated number of bank accounts.</li>
+  <li><strong>Add-ons</strong> priced separately: VAT returns, payroll (a base price plus per employee), CIS, extra accounts, every 50 transactions over the band, catch-up months.</li>
+  <li><strong>"From" prices or exact prices.</strong> "From" is honest when records vary; say what moves the price.</li>
+  <li><strong>What isn't included</strong>: year-end accounts and tax returns (unless you do them), HMRC enquiries, software subscriptions.</li>
+  <li><strong>VAT</strong>: say "plus VAT" if you're registered.</li>
+</ul>
+<p>Step 4 of the calculator builds the bands and add-ons from your rate and times and downloads them as a CSV for Excel or Google Sheets. Sense-check the result against what bookkeepers near you publish: if yours is far higher, look at your times; if it's far lower, look at your billable percentage.</p>
+</section>
+
+<section id="mistakes">
+<h2>Seven pricing mistakes that cost bookkeepers the most</h2>
+<ol>
+  <li><strong>Pricing from 100% billable hours.</strong> It sets your rate about a third too low before you've started.</li>
+  <li><strong>No volume in the scope.</strong> "Monthly bookkeeping" with no transaction or account limit means the fee never moves while the work doubles.</li>
+  <li><strong>Unlimited emails and calls.</strong> Include a fair amount and say so; offer a package with a monthly call for clients who want more.</li>
+  <li><strong>Free catch-up "to win the client".</strong> The first months are the hardest. Charge for them, or the client learns the work is worth nothing.</li>
+  <li><strong>A first-year discount with no end date.</strong> If you discount, write the date the normal fee starts.</li>
+  <li><strong>Never reviewing fees.</strong> Review every client once a year against hours and volume, and give at least 30 days' notice (or what your engagement letter says) of any change.</li>
+  <li><strong>Doing the "quick extra job" before quoting it.</strong> Reply with the price first: "Happy to help. That's outside your package, so it would be £60, or I can add it to your monthly fee. Shall I go ahead?"</li>
+</ol>
+</section>
+
+<section id="rise">
+<h2>Raising fees for existing clients</h2>
+<p>Use the effective-rate check to sort clients from lowest to highest, then treat them in groups: a short notice letter for clients who are roughly right, a letter with the numbers ("we now reconcile about 400 transactions a month, up from 150 when we agreed your fee") for those who've grown, package options for those asking for more than they pay for, and a polite handover for the few who are unprofitable and won't change. Give the new fee, the date, what's included and who to call. No apologies, no fake deadlines.</p>
+</section>
+
+<div class="cta">
+  <p style="margin-top:0"><strong>Have ChatGPT, Gemini or Claude do the fee review with you.</strong> <a href="../#pro">Bookkeeper Skills Pro</a> includes <strong>fee-review</strong>: paste your client list with fees and hours and get effective rates against your target, a priced quote for extra or catch-up work with its assumptions, fee-increase letters for each group of clients, and calm replies to "that's a big jump". It works only from your own numbers and never invents market rates.</p>
+  <p>The free skills (records-chaser, transaction-queries, client-explainer) cut the hours that clients don't see, which is the other way to raise your effective rate. Set-up takes about 3 minutes, no coding.</p>
+  <p style="margin-bottom:0"><a class="btn" href="../#pro">See Bookkeeper Skills Pro</a> <a class="btn ghost" href="../#setup">Get the free skills</a></p>
+</div>
+
+<section id="ai">
+<h2>Using AI to help price</h2>
+<p>AI chat tools are good at structure and wording, and unreliable on market data. A prompt that works:</p>
+<pre class="email">I'm a self-employed bookkeeper. My target rate is £36 an hour. My task times are: 1 minute per bank line, 15 minutes per account reconciliation, 2 minutes per bill, 60 minutes per quarterly VAT return.
+
+A new client (client code C14) has about 120 bank lines a month across 2 accounts, 25 bills, quarterly VAT and no payroll. Records usually arrive late.
+
+1. List every monthly task with the minutes, and total them. Show the sums.
+2. Add 15% for late records and 10% contingency, and give a fixed monthly fee rounded up to the next £5.
+3. Write the "what's included" lines and the assumptions for the engagement letter.
+4. Write a short, friendly proposal email. Don't mention other firms' prices or claim anything about the market.</pre>
+<ul>
+  <li><strong>Don't ask it what bookkeepers charge.</strong> It may produce confident, made-up "average rates".</li>
+  <li><strong>Check every sum.</strong> Chat tools can multiply wrongly; the calculator above is a quick cross-check.</li>
+  <li><strong>Use a client code</strong>, not the client's name, and leave out bank details.</li>
+</ul>
+</section>
+
+<section id="faq">
+<h2>FAQ</h2>
+<details><summary>How much should I charge for bookkeeping?</summary><p>Work it out rather than copying someone else's number. Add the income you want to your yearly overheads (software, insurance, money laundering supervision, membership, training), divide by the hours you can really bill (often 60 to 70% of your working hours), and that's your target hourly rate. Then time each client's monthly work and quote a fixed fee of time multiplied by that rate, rounded up. The <a href="#calculator">free calculator</a> does each step.</p></details>
+<details><summary>Should I charge bookkeeping clients hourly or a fixed monthly fee?</summary><p>Most small-business clients prefer a fixed monthly fee because they know the cost in advance, and it rewards you for getting faster. Work it out from time and your target rate, write down what it includes (transactions, accounts, returns), and say what changes it. Hourly billing still suits one-off advice, messy catch-up work you can't scope yet, and clients whose volume swings wildly.</p></details>
+<details><summary>How do I price catch-up or clean-up bookkeeping?</summary><p>Count the months behind, the transactions per month and the accounts, estimate the time, then add a contingency for missing records: around 20% if full statements and most receipts exist, 40% if documents are missing, and more if statements still need requesting. Quote one fixed fee with the assumptions written down, take a deposit before starting, and quote anything outside the assumptions separately before doing it.</p></details>
+<details><summary>What are the average bookkeeping rates in the UK?</summary><p>Published figures vary widely by region, experience, software and client type, and many are out of date or from firms selling a service. A rate copied from someone else won't cover your costs and hours. Work out your own target rate first, then compare it with the published price lists of bookkeepers near you and any fee survey your professional body publishes.</p></details>
+<details><summary>Do I need to add VAT to my bookkeeping fees?</summary><p>Only if you're VAT-registered. In the UK you must register once your taxable turnover goes over £90,000 in a rolling 12 months, and then you add VAT (usually 20%) to your fees. Clients who aren't VAT-registered can't reclaim it, so for them your price effectively rises by a fifth. Plan for that before you reach the threshold.</p></details>
+<details><summary>Can I use ChatGPT to work out my bookkeeping prices?</summary><p>It's useful for structure: listing a client's tasks, drafting a proposal, writing the fee-increase letter. Don't ask it what bookkeepers charge, because it can invent market rates. Give it your own target rate and task times, check every sum it does, and don't paste client names or bank details.</p></details>
+</section>
+
+<p class="small">This page is general information written by an AI agent and checked on 28 October 2026 against gov.uk (fees for money laundering supervision, updated 22 December 2025; accountancy service provider registration; VAT registration threshold). Task times and contingencies are planning assumptions, not measurements: replace them with your own. It isn't business, legal or tax advice: follow your professional body's guidance.</p>
+
+</main>
+<aside class="wrap small pagenote">Source on <a href="https://github.com/polytheseus/bookkeeper-skills">GitHub</a>. Not affiliated with HMRC, the IRS or any professional body.</aside>
+<script src="fee-calculator.js"></script>
+<!-- pt:foot -->
+<footer class="pt-foot">
+  <div class="pt-foot-in">
+    <div>
+      <a class="pt-brand" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"><span>POLYTHESEUS</span></a>
+      <p>Know-how packs that make ChatGPT, Gemini and Claude work like an experienced pro in your job. Free to start.</p>
+      <p><a href="mailto:support@polytheseus.com">support@polytheseus.com</a></p>
+    </div>
+    <div>
+      <h4>Packs</h4>
+      <ul><li><a href="/teacher-skills/">Teachers</a></li><li><a href="/trades-skills/">Trades</a></li><li><a href="/bookkeeper-skills/">Bookkeepers</a></li><li><a href="/real-estate-skills/">Real estate agents</a></li><li><a href="/seller-skills/">Online sellers</a></li><li><a href="/sre-skills/">SRE &amp; DevOps</a></li></ul>
+    </div>
+    <div>
+      <h4>Polytheseus</h4>
+      <ul>
+        <li><a href="/tools">Free tools</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="https://github.com/polytheseus">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pt-foot-base">Polytheseus is run by Robin Hale. The packs and this site are written and tested by Claude, an AI agent. <a href="/#about">How that works</a>.</div>
+</footer>
+<!-- /pt:foot -->
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engagement letter schedule builder (free tool) | Polytheseus</title>
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="/assets/brand.css">
+<link rel="stylesheet" href="../style.css">
+<style>
+.answer{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--green);border-radius:6px;padding:14px 18px;margin:28px 0}
+.answer p{margin:.3em 0}
+table.t{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;margin:12px 0 20px}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:#eef2f6;font-family:Georgia,serif}
+.toc{font-size:15px}
+.tool{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:18px 20px;margin:20px 0}
+.tool label{display:block;font-weight:600;margin:10px 0 2px}
+.tool label span{font-weight:400;color:var(--muted);font-size:14px}
+.tool input,.tool select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;width:100%;max-width:240px}
+.tool fieldset{border:1px solid var(--rule);border-radius:6px;margin:12px 0;padding:8px 12px}
+.tool legend{font-weight:600;padding:0 4px}
+.tool fieldset label{display:inline-block;font-weight:400;margin:4px 14px 4px 0}
+.tool fieldset input{width:auto;margin-right:5px}
+.tool button{font:inherit;font-weight:600;border:0;border-radius:4px;padding:9px 18px;cursor:pointer;background:var(--green);color:#fff;margin:14px 6px 0 0}
+.tool button.ghost{background:transparent;color:var(--green);border:2px solid var(--green);padding:7px 16px}
+.qb-due{background:var(--green-l);border-radius:5px;padding:9px 12px}
+.qb-warn{background:var(--amber-l);border-radius:5px;padding:9px 12px}
+ol.qb-q li{margin:6px 0}
+ol.qb-q li span{color:var(--muted);font-size:15px}
+pre.email{white-space:pre-wrap;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;font:15px/1.55 -apple-system,Segoe UI,sans-serif}
+.cta{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:20px 22px;margin:34px 0}
+h3{margin-top:1.4em}
+</style>
+<style>
+body{background:var(--bg)}
+.pt-embed-main{max-width:900px;margin:0 auto;padding:4px 14px 10px}
+.pt-embed-main h2{margin-top:12px}
+.pt-embed-by{font:14px/1.5 "Inter","Segoe UI",system-ui,sans-serif;color:#5d6268;margin:10px 0 0;padding-top:8px;border-top:1px solid #dedad2}
+@media print{.pt-embed-by{display:none}}
+</style>
+</head>
+<body>
+<main class="pt-embed-main">
+<h2>Free builder: service schedules, fees and a cover email</h2>
+<div class="tool">
+  <p style="margin-top:0">Tick the services you've agreed, add the volumes and fees, and get a schedule for each service, a fee table with totals, the scope-creep clauses, a checklist of the standard terms to take from your template, and a cover email. Copy it into your own letter. Nothing you type leaves your browser.</p>
+  <label for="eb-country">Country</label>
+  <select id="eb-country">
+    <option value="uk" selected>UK</option>
+    <option value="us">US</option>
+  </select>
+  <fieldset>
+    <legend>Services agreed (tick all that apply)</legend>
+    <label><input type="checkbox" name="eb-svc" value="books" checked>Monthly bookkeeping</label>
+    <span data-eb-country="uk"><label><input type="checkbox" name="eb-svc" value="vat">VAT returns (MTD)</label></span>
+    <span data-eb-country="us" hidden><label><input type="checkbox" name="eb-svc" value="salestax">Sales tax returns</label></span>
+    <label><input type="checkbox" name="eb-svc" value="payroll">Payroll</label>
+    <label><input type="checkbox" name="eb-svc" value="mgmt">Monthly management reports</label>
+    <label><input type="checkbox" name="eb-svc" value="yearend">Year-end file for the accountant</label>
+  </fieldset>
+  <fieldset>
+    <legend>Fees (before VAT or sales tax)</legend>
+    <label id="eb-fee-books">Bookkeeping, per month <input id="eb-fee-in-books" inputmode="decimal" value="150" style="max-width:110px"></label>
+    <label id="eb-fee-vat" hidden>VAT return, per quarter <input id="eb-fee-in-vat" inputmode="decimal" value="90" style="max-width:110px"></label>
+    <label id="eb-fee-salestax" hidden>Sales tax, per month (all filings) <input id="eb-fee-in-salestax" inputmode="decimal" value="75" style="max-width:110px"></label>
+    <label id="eb-fee-payroll" hidden>Payroll, per month <input id="eb-fee-in-payroll" inputmode="decimal" value="40" style="max-width:110px"></label>
+    <label id="eb-fee-mgmt" hidden>Management reports, per month <input id="eb-fee-in-mgmt" inputmode="decimal" value="60" style="max-width:110px"></label>
+    <label id="eb-fee-yearend" hidden>Year-end file, per year <input id="eb-fee-in-yearend" inputmode="decimal" value="250" style="max-width:110px"></label>
+  </fieldset>
+  <label for="eb-start">Start date</label>
+  <input id="eb-start" type="date" value="2026-11-01">
+  <label for="eb-tx">Transactions a month the fee is based on</label>
+  <input id="eb-tx" inputmode="numeric" placeholder="e.g. 150">
+  <label for="eb-accts">Bank and card accounts</label>
+  <input id="eb-accts" inputmode="numeric" placeholder="e.g. 2">
+  <label for="eb-due">Records due by this day of each month <span>(1 to 28)</span></label>
+  <input id="eb-due" inputmode="numeric" value="7">
+  <label for="eb-emp">Employees on payroll <span>(if payroll)</span></label>
+  <input id="eb-emp" inputmode="numeric" placeholder="e.g. 3">
+  <label for="eb-payfreq">Pay frequency <span>(if payroll)</span></label>
+  <select id="eb-payfreq"><option>monthly</option><option>weekly</option><option>every two weeks</option><option>twice a month</option></select>
+  <label for="eb-software">Software <span>(optional)</span></label>
+  <input id="eb-software" placeholder="Xero, QuickBooks, FreeAgent, Sage...">
+  <label for="eb-mins">Minutes a month of emails and calls included</label>
+  <input id="eb-mins" inputmode="numeric" value="30">
+  <label for="eb-review">Annual fee review month</label>
+  <select id="eb-review"><option>April</option><option>January</option><option>May</option><option>September</option><option>October</option></select>
+  <fieldset data-eb-country="uk"><legend>VAT</legend><label><input type="checkbox" id="eb-vat">My practice is VAT-registered (add 20%)</label></fieldset>
+  <label for="eb-client">Client first name <span>(optional)</span></label>
+  <input id="eb-client" placeholder="e.g. Sam">
+  <label for="eb-practice">Your name or practice <span>(optional)</span></label>
+  <input id="eb-practice" placeholder="e.g. Priya, Ledger Lane Bookkeeping">
+  <br><button id="eb-go" type="button">Build the schedules</button>
+  <div id="eb-out" aria-live="polite"></div>
+  <p class="small" style="color:var(--muted);margin-bottom:0">This writes the service-specific parts only. Put them inside your professional body's engagement letter template, edit every line to match what you actually agreed, and have the standard terms checked against your template and your insurer's requirements. Deadlines shown are the usual ones; check them for each client.</p>
+</div>
+<p class="pt-embed-by">Free tool by <a href="https://polytheseus.com/" target="_blank" rel="noopener">Polytheseus</a> · <a href="https://polytheseus.com/bookkeeper-skills/guides/engagement-letter-template#builder" target="_blank" rel="noopener">Full guide and how to use it</a> · Nothing you type leaves your browser.</p>
+</main>
+<script src="../guides/engagement-builder.js"></script>
+<script>
+(function () {
+  var last = 0;
+  function send() {
+    var h = Math.ceil(document.documentElement.scrollHeight);
+    if (h !== last && window.parent !== window) { last = h; window.parent.postMessage({ptHeight: h}, "*"); }
+  }
+  addEventListener("load", send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.body);
+  else setInterval(send, 700);
+})();
+</script>
+</body>
+</html>

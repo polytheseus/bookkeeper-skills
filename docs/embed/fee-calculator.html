@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bookkeeping fee calculator (free tool) | Polytheseus</title>
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="/assets/brand.css">
+<link rel="stylesheet" href="../style.css">
+<style>
+.answer{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--green);border-radius:6px;padding:14px 18px;margin:28px 0}
+.answer p{margin:.3em 0}
+table.t{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;margin:12px 0 20px}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:#eef2f6;font-family:Georgia,serif}
+.toc{font-size:15px}
+.tool{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:18px 20px;margin:20px 0}
+.tool h3{margin-top:1.6em;border-top:1px solid var(--rule);padding-top:14px}
+.tool h3:first-of-type{border-top:0;padding-top:0;margin-top:.6em}
+.tool label{display:block;font-weight:600;margin:10px 0 2px}
+.tool label span{font-weight:400;color:var(--muted);font-size:14px}
+.tool input,.tool select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;width:100%;max-width:240px}
+.tool input.sm{max-width:120px}
+.tool fieldset{border:1px solid var(--rule);border-radius:6px;margin:12px 0;padding:8px 12px}
+.tool legend{font-weight:600;padding:0 4px}
+.tool fieldset label{display:inline-block;font-weight:400;margin:4px 14px 4px 0}
+.tool fieldset input[type=checkbox]{width:auto;margin-right:5px}
+.tool select{max-width:340px}
+.tool button{font:inherit;font-weight:600;border:0;border-radius:4px;padding:9px 18px;cursor:pointer;background:var(--green);color:#fff;margin:14px 6px 0 0}
+.tool button.ghost{background:transparent;color:var(--green);border:2px solid var(--green);padding:7px 16px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:2px 14px}
+.tgrid label{font-weight:400;font-size:14px}
+.tgrid input{max-width:110px}
+.qb-due{background:var(--green-l);border-radius:5px;padding:9px 12px}
+.qb-warn{background:var(--amber-l);border-radius:5px;padding:9px 12px}
+pre.email{white-space:pre-wrap;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;font:15px/1.55 -apple-system,Segoe UI,sans-serif}
+.cta{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:20px 22px;margin:34px 0}
+h3{margin-top:1.4em}
+[hidden]{display:none!important}
+</style>
+<style>
+body{background:var(--bg)}
+.pt-embed-main{max-width:900px;margin:0 auto;padding:4px 14px 10px}
+.pt-embed-main h2{margin-top:12px}
+.pt-embed-by{font:14px/1.5 "Inter","Segoe UI",system-ui,sans-serif;color:#5d6268;margin:10px 0 0;padding-top:8px;border-top:1px solid #dedad2}
+@media print{.pt-embed-by{display:none}}
+</style>
+</head>
+<body>
+<main class="pt-embed-main">
+<h2>Free calculator: your rate, a client's monthly fee, a catch-up quote and a price list</h2>
+<div class="tool" id="fc-tool">
+  <p style="margin-top:0">Fill in step 1 first; every other step uses that rate. Results update as you type. The task times are starting guesses, so replace them with your own once you've timed a few clients. Nothing you type leaves your browser.</p>
+  <label for="fc-cur">Currency</label>
+  <select id="fc-cur"><option value="£" selected>£ (UK)</option><option value="$">$ (US)</option></select>
+  <p id="fc-vatreg-wrap"><label style="font-weight:400"><input type="checkbox" id="fc-vatreg" style="width:auto;margin-right:6px">I'm VAT-registered (show prices plus VAT)</label></p>
+
+  <h3>Step 1: your target hourly rate</h3>
+  <label for="fc-income">Income you want a year, before tax <span>(<span class="fc-cur">£</span>)</span></label>
+  <input id="fc-income" inputmode="decimal" value="36000">
+  <label for="fc-overheads">Yearly overheads <span>(software, insurance, AML supervision, membership, training, phone, equipment)</span></label>
+  <input id="fc-overheads" inputmode="decimal" value="4000">
+  <label for="fc-weeks">Working weeks a year <span>(52 minus holidays, bank holidays and a few sick days)</span></label>
+  <input id="fc-weeks" class="sm" inputmode="decimal" value="46">
+  <label for="fc-hpw">Hours you work a week</label>
+  <input id="fc-hpw" class="sm" inputmode="decimal" value="37.5">
+  <label for="fc-billable">Share of those hours you can bill to clients <span>(%)</span></label>
+  <input id="fc-billable" class="sm" inputmode="decimal" value="65">
+  <div id="fc-rate-out" aria-live="polite"></div>
+  <details>
+    <summary>Check an existing client against this rate</summary>
+    <label for="fc-cfee">Their annual fee <span>(<span class="fc-cur">£</span>)</span></label>
+    <input id="fc-cfee" inputmode="decimal" placeholder="e.g. 1200">
+    <label for="fc-chours">Hours you spent on them in the last 12 months <span>(from your timesheet, or a fair estimate)</span></label>
+    <input id="fc-chours" class="sm" inputmode="decimal" placeholder="e.g. 48">
+    <div id="fc-eff-out" aria-live="polite"></div>
+  </details>
+
+  <h3>Step 2: a fixed monthly fee for one client</h3>
+  <label for="fc-txns">Bank and card transactions a month</label>
+  <input id="fc-txns" class="sm" inputmode="numeric" value="80">
+  <label for="fc-accounts">Bank, card and payment accounts to reconcile</label>
+  <input id="fc-accounts" class="sm" inputmode="numeric" value="1">
+  <label for="fc-bills">Purchase bills and receipts a month</label>
+  <input id="fc-bills" class="sm" inputmode="numeric" value="15">
+  <label for="fc-invoices">Sales invoices a month</label>
+  <input id="fc-invoices" class="sm" inputmode="numeric" value="10">
+  <label for="fc-vat">VAT returns</label>
+  <select id="fc-vat"><option value="none" selected>None</option><option value="quarterly">Quarterly</option><option value="monthly">Monthly</option></select>
+  <label for="fc-payroll">Payroll</label>
+  <select id="fc-payroll"><option value="none" selected>None</option><option value="monthly">Monthly</option><option value="four-weekly">Four-weekly</option><option value="fortnightly">Fortnightly</option><option value="weekly">Weekly</option></select>
+  <label for="fc-emp">Employees on the payroll</label>
+  <input id="fc-emp" class="sm" inputmode="numeric" value="0">
+  <fieldset>
+    <legend>Also included</legend>
+    <label><input type="checkbox" id="fc-cis">CIS monthly return</label>
+    <label><input type="checkbox" id="fc-report">Monthly report or summary</label>
+  </fieldset>
+  <label for="fc-admin">Minutes a month on emails, queries and chasing</label>
+  <input id="fc-admin" class="sm" inputmode="numeric" value="20">
+  <label for="fc-records">How this client's records usually arrive</label>
+  <select id="fc-records"><option value="clean">On time and complete (×1)</option><option value="average" selected>Some gaps and chasing (×1.15)</option><option value="messy">Late, missing or a carrier bag (×1.35)</option></select>
+  <label for="fc-cont">Contingency <span>(%)</span></label>
+  <input id="fc-cont" class="sm" inputmode="numeric" value="10">
+  <details>
+    <summary>Your task times (minutes per item)</summary>
+    <div class="tgrid">
+      <label>Code 1 bank line <input id="fc-t-txn" inputmode="decimal"></label>
+      <label>Reconcile 1 account <input id="fc-t-recon" inputmode="decimal"></label>
+      <label>1 bill or receipt <input id="fc-t-bill" inputmode="decimal"></label>
+      <label>1 sales invoice <input id="fc-t-invoice" inputmode="decimal"></label>
+      <label>Quarterly VAT return <input id="fc-t-vatQ" inputmode="decimal"></label>
+      <label>Monthly VAT return <input id="fc-t-vatM" inputmode="decimal"></label>
+      <label>Each payroll run <input id="fc-t-payrollRun" inputmode="decimal"></label>
+      <label>Each employee per run <input id="fc-t-payrollEmp" inputmode="decimal"></label>
+      <label>CIS return <input id="fc-t-cis" inputmode="decimal"></label>
+      <label>Monthly report <input id="fc-t-report" inputmode="decimal"></label>
+    </div>
+  </details>
+  <div id="fc-month-out" aria-live="polite"></div>
+
+  <h3>Step 3: a catch-up (clean-up) quote</h3>
+  <label for="fc-cu-period">Period <span>(optional, e.g. April to September 2026)</span></label>
+  <input id="fc-cu-period" style="max-width:340px">
+  <label for="fc-cu-months">Months behind</label>
+  <input id="fc-cu-months" class="sm" inputmode="numeric" value="6">
+  <label for="fc-cu-txns">Transactions a month</label>
+  <input id="fc-cu-txns" class="sm" inputmode="numeric" value="120">
+  <label for="fc-cu-accounts">Bank and card accounts</label>
+  <input id="fc-cu-accounts" class="sm" inputmode="numeric" value="2">
+  <label for="fc-cu-vat">VAT returns to prepare</label>
+  <input id="fc-cu-vat" class="sm" inputmode="numeric" value="2">
+  <label for="fc-cu-state">What records exist</label>
+  <select id="fc-cu-state"><option value="statements">Full statements and most receipts (+20%)</option><option value="some" selected>Statements, but receipts and invoices missing (+40%)</option><option value="chaos">Statements still to get, lots missing (+70%)</option></select>
+  <label for="fc-cu-cont">Contingency <span>(%)</span></label>
+  <input id="fc-cu-cont" class="sm" inputmode="numeric" value="40">
+  <label for="fc-cu-dep">Deposit before you start <span>(%)</span></label>
+  <input id="fc-cu-dep" class="sm" inputmode="numeric" value="50">
+  <div id="fc-cu-out" aria-live="polite"></div>
+
+  <h3>Step 4: your price list</h3>
+  <p>Three packages priced for a typical client at the top of each band (with a monthly report if you ticked it in step 2, the same email allowance and contingency, and "some gaps" records), plus add-ons from your task times. Rename the packages and change the bands to suit your clients.</p>
+  <div id="fc-pl-out" aria-live="polite"></div>
+</div>
+<p class="small">The calculator multiplies your own numbers; it doesn't know what bookkeepers charge where you are. Default task times assume bank feeds and bank rules in cloud software; time yourself on three real clients and replace them.</p>
+<p class="pt-embed-by">Free tool by <a href="https://polytheseus.com/" target="_blank" rel="noopener">Polytheseus</a> · <a href="https://polytheseus.com/bookkeeper-skills/guides/how-much-to-charge-for-bookkeeping#calculator" target="_blank" rel="noopener">Full guide and how to use it</a> · Nothing you type leaves your browser.</p>
+</main>
+<script src="../guides/fee-calculator.js"></script>
+<script>
+(function () {
+  var last = 0;
+  function send() {
+    var h = Math.ceil(document.documentElement.scrollHeight);
+    if (h !== last && window.parent !== window) { last = h; window.parent.postMessage({ptHeight: h}, "*"); }
+  }
+  addEventListener("load", send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.body);
+  else setInterval(send, 700);
+})();
+</script>
+</body>
+</html>

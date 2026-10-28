@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Records chase planner (free tool) | Polytheseus</title>
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="/assets/brand.css">
+<link rel="stylesheet" href="../style.css">
+<style>
+.answer{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--green);border-radius:6px;padding:14px 18px;margin:28px 0}
+.answer p{margin:.3em 0}
+table.t{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;margin:12px 0 20px}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:#eef2f6;font-family:Georgia,serif}
+.toc{font-size:15px}
+.tool{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:18px 20px;margin:20px 0}
+.tool label{display:block;font-weight:600;margin:10px 0 2px}
+.tool label span{font-weight:400;color:var(--muted);font-size:14px}
+.tool input,.tool select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;width:100%;max-width:220px}
+.tool button{font:inherit;font-weight:600;border:0;border-radius:4px;padding:9px 18px;cursor:pointer;background:var(--green);color:#fff;margin:14px 0 0}
+#cp-out{margin-top:12px}
+#cp-out p{background:var(--green-l);border-radius:5px;padding:9px 12px;margin:8px 0}
+pre.email{white-space:pre-wrap;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;font:15px/1.55 -apple-system,Segoe UI,sans-serif}
+.cta{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:20px 22px;margin:34px 0}
+</style>
+<style>
+body{background:var(--bg)}
+.pt-embed-main{max-width:900px;margin:0 auto;padding:4px 14px 10px}
+.pt-embed-main h2{margin-top:12px}
+.pt-embed-by{font:14px/1.5 "Inter","Segoe UI",system-ui,sans-serif;color:#5d6268;margin:10px 0 0;padding-top:8px;border-top:1px solid #dedad2}
+@media print{.pt-embed-by{display:none}}
+</style>
+</head>
+<body>
+<main class="pt-embed-main">
+<h2>Free chase planner: work the dates back from the deadline</h2>
+<div class="tool">
+  <p style="margin-top:0">Pick the deadline, say how long you need to prepare once records arrive, and get the date for each chaser, moved off weekends and the Christmas and New Year bank holidays. Then download them as calendar reminders. Nothing you type leaves your browser.</p>
+  <label for="cp-preset">Deadline <span>(or type a date below)</span></label>
+  <select id="cp-preset">
+    <option value="">Choose a common deadline…</option>
+    <option value="2026-12-30">UK: 30 Dec 2026, SA online return if the client wants to pay through their tax code</option>
+    <option value="2027-01-31" selected>UK: 31 Jan 2027, Self Assessment online return and payment (2025/26)</option>
+    <option value="2027-02-07">UK: 7 Feb 2027, MTD for Income Tax quarterly update 3</option>
+    <option value="2027-01-15">US: Jan 15, 2027, 4th quarter estimated tax (1040-ES)</option>
+    <option value="2027-02-01">US: Feb 1, 2027, 1099-NEC (Jan 31 is a Sunday)</option>
+    <option value="2027-03-15">US: Mar 15, 2027, partnership (1065) and S-corp (1120-S) returns</option>
+    <option value="2027-04-15">US: Apr 15, 2027, Form 1040</option>
+  </select>
+  <label for="cp-deadline">Deadline date</label>
+  <input id="cp-deadline" type="date" value="2027-01-31">
+  <label for="cp-prep">Days you need to prepare <span>(time to do the work and get the client's approval; 28 is typical)</span></label>
+  <input id="cp-prep" inputmode="numeric" value="28">
+  <label for="cp-start">First request goes out on</label>
+  <input id="cp-start" type="date">
+  <label for="cp-client">Client name or code for the reminders <span>(optional; a code is better than a name)</span></label>
+  <input id="cp-client" placeholder="e.g. JS-PLUMB">
+  <br><button id="cp-go" type="button">Plan the chasers</button>
+  <div id="cp-out" aria-live="polite"></div>
+  <p class="small" style="color:var(--muted);margin-bottom:0">The schedule is the one in the templates below: nudge at day 7, progress at day 14, firm reminder on the records-due date, last chance halfway between that and the deadline. If records are due in under 3 weeks, it squeezes the steps. US dates are federal; state deadlines vary. Check the current deadline on gov.uk or irs.gov.</p>
+</div>
+<p class="pt-embed-by">Free tool by <a href="https://polytheseus.com/" target="_blank" rel="noopener">Polytheseus</a> · <a href="https://polytheseus.com/bookkeeper-skills/guides/client-wont-send-records#planner" target="_blank" rel="noopener">Full guide and how to use it</a> · Nothing you type leaves your browser.</p>
+</main>
+<script src="../guides/chase-planner.js"></script>
+<script>
+(function () {
+  var last = 0;
+  function send() {
+    var h = Math.ceil(document.documentElement.scrollHeight);
+    if (h !== last && window.parent !== window) { last = h; window.parent.postMessage({ptHeight: h}, "*"); }
+  }
+  addEventListener("load", send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.body);
+  else setInterval(send, 700);
+})();
+</script>
+</body>
+</html>

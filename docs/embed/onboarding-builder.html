@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client onboarding plan builder (free tool) | Polytheseus</title>
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="/assets/brand.css">
+<link rel="stylesheet" href="../style.css">
+<style>
+.answer{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--green);border-radius:6px;padding:14px 18px;margin:28px 0}
+.answer p{margin:.3em 0}
+table.t{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;margin:12px 0 20px}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:#eef2f6;font-family:Georgia,serif}
+.toc{font-size:15px}
+.tool{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:18px 20px;margin:20px 0}
+.tool label{display:block;font-weight:600;margin:10px 0 2px}
+.tool label span{font-weight:400;color:var(--muted);font-size:14px}
+.tool input,.tool select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;width:100%;max-width:240px}
+.tool fieldset{border:1px solid var(--rule);border-radius:6px;margin:12px 0;padding:8px 12px}
+.tool legend{font-weight:600;padding:0 4px}
+.tool fieldset label{display:inline-block;font-weight:400;margin:4px 14px 4px 0}
+.tool fieldset input{width:auto;margin-right:5px}
+.tool button{font:inherit;font-weight:600;border:0;border-radius:4px;padding:9px 18px;cursor:pointer;background:var(--green);color:#fff;margin:14px 6px 0 0}
+.tool button.ghost{background:transparent;color:var(--green);border:2px solid var(--green);padding:7px 16px}
+.ob-warn{background:var(--amber-l);border-radius:5px;padding:9px 12px}
+.ob-risk{border-radius:5px;padding:9px 12px;background:var(--green-l)}
+.ob-risk.ob-medium,.ob-risk.ob-high{background:var(--amber-l)}
+ol.ob-steps li{margin:10px 0}
+ol.ob-steps ul{margin:4px 0 0;padding-left:20px;font-size:15px}
+ol.ob-steps ul li{margin:2px 0}
+.ob-date{color:var(--muted);font-size:14px}
+.tool .ob-row label{display:inline-block;font-weight:400;margin:4px 14px 4px 0}
+.tool .ob-row input{width:auto;margin-right:5px}
+pre.email{white-space:pre-wrap;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;font:15px/1.55 -apple-system,Segoe UI,sans-serif}
+.cta{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:20px 22px;margin:34px 0}
+</style>
+<style>
+body{background:var(--bg)}
+.pt-embed-main{max-width:900px;margin:0 auto;padding:4px 14px 10px}
+.pt-embed-main h2{margin-top:12px}
+.pt-embed-by{font:14px/1.5 "Inter","Segoe UI",system-ui,sans-serif;color:#5d6268;margin:10px 0 0;padding-top:8px;border-top:1px solid #dedad2}
+@media print{.pt-embed-by{display:none}}
+</style>
+</head>
+<body>
+<main class="pt-embed-main">
+<h2>Free builder: a dated onboarding plan in a minute</h2>
+<div class="tool">
+  <p style="margin-top:0">Tell it about the new client and get every step dated on working days from today, a suggested starting risk rating (UK), the authorisation route for each tax, the documents to ask for, a welcome email and a clearance letter. Copy it or download it for Excel or Google Sheets. Nothing you type leaves your browser.</p>
+  <label for="ob-country">Country</label>
+  <select id="ob-country">
+    <option value="uk" selected>UK</option>
+    <option value="us">US</option>
+  </select>
+  <div data-ob-country="uk">
+    <label for="ob-ent-uk">Business type</label>
+    <select id="ob-ent-uk">
+      <option value="sole">Sole trader</option>
+      <option value="ltd" selected>Limited company</option>
+      <option value="partnership">Partnership</option>
+      <option value="llp">LLP</option>
+      <option value="landlord">Landlord</option>
+    </select>
+  </div>
+  <div data-ob-country="us" hidden>
+    <label for="ob-ent-us">Business type</label>
+    <select id="ob-ent-us">
+      <option value="sole">Sole proprietor</option>
+      <option value="llc" selected>LLC</option>
+      <option value="scorp">S corporation</option>
+      <option value="partnership">Partnership</option>
+      <option value="individual">Individual</option>
+    </select>
+  </div>
+  <fieldset data-ob-country="uk">
+    <legend>Services agreed</legend>
+    <label><input type="checkbox" name="ob-svc" value="books" checked>Bookkeeping</label>
+    <label><input type="checkbox" name="ob-svc" value="vat" checked>VAT returns</label>
+    <label><input type="checkbox" name="ob-svc" value="mtd">MTD for Income Tax</label>
+    <label><input type="checkbox" name="ob-svc" value="sa">Self Assessment</label>
+    <label><input type="checkbox" name="ob-svc" value="payroll">Payroll</label>
+    <label><input type="checkbox" name="ob-svc" value="cis">CIS</label>
+    <label><input type="checkbox" name="ob-svc" value="accounts">Year-end accounts</label>
+    <label><input type="checkbox" name="ob-svc" value="ct">Corporation Tax</label>
+  </fieldset>
+  <fieldset data-ob-country="us" hidden>
+    <legend>Services agreed</legend>
+    <label><input type="checkbox" name="ob-svc" value="books" checked>Bookkeeping</label>
+    <label><input type="checkbox" name="ob-svc" value="payroll">Payroll</label>
+    <label><input type="checkbox" name="ob-svc" value="sales">Sales tax</label>
+    <label><input type="checkbox" name="ob-svc" value="1099">1099s</label>
+    <label><input type="checkbox" name="ob-svc" value="return">Tax return</label>
+  </fieldset>
+  <fieldset data-ob-country="uk">
+    <legend>Risk factors (tick any that apply)</legend>
+    <label><input type="checkbox" name="ob-risk" value="cash">Cash-heavy business</label>
+    <label><input type="checkbox" name="ob-risk" value="complex">Complex or overseas ownership</label>
+    <label><input type="checkbox" name="ob-risk" value="crypto">Crypto or high-value goods</label>
+    <label><input type="checkbox" name="ob-risk" value="unusual">Unusually large or complex transactions</label>
+    <label><input type="checkbox" name="ob-risk" value="pep">Politically exposed person involved</label>
+    <label><input type="checkbox" name="ob-risk" value="overseas">Link to a FATF call-for-action country</label>
+    <label><input type="checkbox" name="ob-risk" value="reluctant">Reluctant to give ID or ownership details</label>
+  </fieldset>
+  <div class="ob-row">
+    <label data-ob-country="uk"><input type="checkbox" id="ob-met" checked>I'll check the client's ID in person</label>
+    <label><input type="checkbox" id="ob-prev" checked>They had a previous accountant or bookkeeper</label>
+  </div>
+  <label for="ob-prev-name">Previous accountant <span>(optional)</span></label>
+  <input id="ob-prev-name" placeholder="e.g. Smith &amp; Co">
+  <label for="ob-deadline">First deadline you'll be responsible for <span>(optional)</span></label>
+  <input id="ob-deadline" type="date">
+  <label for="ob-client">Client or business name <span>(optional)</span></label>
+  <input id="ob-client" placeholder="e.g. Bright Bakes Ltd">
+  <label for="ob-contact">Contact's name <span>(optional, for the email)</span></label>
+  <input id="ob-contact" placeholder="e.g. Jo">
+  <label for="ob-practice">Your name or practice <span>(optional, for the sign-off)</span></label>
+  <input id="ob-practice" placeholder="e.g. Priya, Ledger Lane Bookkeeping">
+  <br><button id="ob-go" type="button">Build the onboarding plan</button>
+  <div id="ob-out" aria-live="polite"></div>
+  <p class="small" style="color:var(--muted);margin-bottom:0">The risk rating is a suggested starting point, not a decision: your practice-wide risk assessment, your policies and your supervisor's guidance come first, and your nominated officer makes the risk calls. Check the current rules on gov.uk or irs.gov.</p>
+</div>
+<p class="pt-embed-by">Free tool by <a href="https://polytheseus.com/" target="_blank" rel="noopener">Polytheseus</a> · <a href="https://polytheseus.com/bookkeeper-skills/guides/client-onboarding-checklist#builder" target="_blank" rel="noopener">Full guide and how to use it</a> · Nothing you type leaves your browser.</p>
+</main>
+<script src="../guides/onboarding-builder.js"></script>
+<script>
+(function () {
+  var last = 0;
+  function send() {
+    var h = Math.ceil(document.documentElement.scrollHeight);
+    if (h !== last && window.parent !== window) { last = h; window.parent.postMessage({ptHeight: h}, "*"); }
+  }
+  addEventListener("load", send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.body);
+  else setInterval(send, 700);
+})();
+</script>
+</body>
+</html>

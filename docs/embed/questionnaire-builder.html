@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Year-end questionnaire builder (free tool) | Polytheseus</title>
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="/assets/brand.css">
+<link rel="stylesheet" href="../style.css">
+<style>
+.answer{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--green);border-radius:6px;padding:14px 18px;margin:28px 0}
+.answer p{margin:.3em 0}
+table.t{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;margin:12px 0 20px}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:#eef2f6;font-family:Georgia,serif}
+.toc{font-size:15px}
+.tool{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:18px 20px;margin:20px 0}
+.tool label{display:block;font-weight:600;margin:10px 0 2px}
+.tool label span{font-weight:400;color:var(--muted);font-size:14px}
+.tool input,.tool select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;width:100%;max-width:240px}
+.tool fieldset{border:1px solid var(--rule);border-radius:6px;margin:12px 0;padding:8px 12px}
+.tool legend{font-weight:600;padding:0 4px}
+.tool fieldset label{display:inline-block;font-weight:400;margin:4px 14px 4px 0}
+.tool fieldset input{width:auto;margin-right:5px}
+.tool button{font:inherit;font-weight:600;border:0;border-radius:4px;padding:9px 18px;cursor:pointer;background:var(--green);color:#fff;margin:14px 6px 0 0}
+.tool button.ghost{background:transparent;color:var(--green);border:2px solid var(--green);padding:7px 16px}
+.qb-due{background:var(--green-l);border-radius:5px;padding:9px 12px}
+.qb-warn{background:var(--amber-l);border-radius:5px;padding:9px 12px}
+ol.qb-q li{margin:6px 0}
+ol.qb-q li span{color:var(--muted);font-size:15px}
+pre.email{white-space:pre-wrap;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;font:15px/1.55 -apple-system,Segoe UI,sans-serif}
+.cta{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:20px 22px;margin:34px 0}
+</style>
+<style>
+body{background:var(--bg)}
+.pt-embed-main{max-width:900px;margin:0 auto;padding:4px 14px 10px}
+.pt-embed-main h2{margin-top:12px}
+.pt-embed-by{font:14px/1.5 "Inter","Segoe UI",system-ui,sans-serif;color:#5d6268;margin:10px 0 0;padding-top:8px;border-top:1px solid #dedad2}
+@media print{.pt-embed-by{display:none}}
+</style>
+</head>
+<body>
+<main class="pt-embed-main">
+<h2>Free builder: a tailored questionnaire in a minute</h2>
+<div class="tool">
+  <p style="margin-top:0">Tick what applies to the client, set the deadline and your prep time, and get the numbered questionnaire, the document checklist and a cover email to copy or download. Nothing you type leaves your browser.</p>
+  <label for="qb-country">Return</label>
+  <select id="qb-country">
+    <option value="uk" selected>UK Self Assessment</option>
+    <option value="us">US Form 1040</option>
+  </select>
+  <fieldset data-qb-country="uk">
+    <legend>Client type (tick all that apply)</legend>
+    <label><input type="checkbox" name="qb-type" value="uk-sole-trader" checked>Sole trader</label>
+    <label><input type="checkbox" name="qb-type" value="uk-landlord">Landlord</label>
+    <label><input type="checkbox" name="qb-type" value="uk-director">Company director</label>
+    <label><input type="checkbox" name="qb-type" value="uk-individual">Individual only (no business)</label>
+  </fieldset>
+  <fieldset data-qb-country="us" hidden>
+    <legend>Client type (tick all that apply)</legend>
+    <label><input type="checkbox" name="qb-type" value="us-schedule-c" checked>Self-employed (Schedule C)</label>
+    <label><input type="checkbox" name="qb-type" value="us-rental">Rental (Schedule E)</label>
+    <label><input type="checkbox" name="qb-type" value="us-k1">Partner or S-corp owner (K-1)</label>
+    <label><input type="checkbox" name="qb-type" value="us-individual">Individual only</label>
+  </fieldset>
+  <fieldset>
+    <legend>Anything new this year?</legend>
+    <label><input type="checkbox" name="qb-ev" value="ev-baby">New baby or adoption</label>
+    <label><input type="checkbox" name="qb-ev" value="ev-started">Started a business</label>
+    <label><input type="checkbox" name="qb-ev" value="ev-stopped">Stopped a business</label>
+    <label><input type="checkbox" name="qb-ev" value="ev-home">Bought or sold a home</label>
+    <label><input type="checkbox" name="qb-ev" value="ev-abroad">Abroad or foreign income</label>
+    <span data-qb-country="us" hidden>
+      <label><input type="checkbox" name="qb-ev" value="tips">Gets tips</label>
+      <label><input type="checkbox" name="qb-ev" value="overtime">Paid overtime</label>
+      <label><input type="checkbox" name="qb-ev" value="car-loan">New car on a loan</label>
+      <label><input type="checkbox" name="qb-ev" value="senior">65 or over</label>
+    </span>
+  </fieldset>
+  <label for="qb-deadline">Filing deadline</label>
+  <input id="qb-deadline" type="date" value="2027-01-31">
+  <label for="qb-prep">Weeks you need to prepare and get approval <span>(6 to 8 is typical in January)</span></label>
+  <input id="qb-prep" inputmode="numeric" value="8">
+  <label for="qb-threshold">Ask about purchases over <span>(UK sole trader or landlord; your practice's figure)</span></label>
+  <input id="qb-threshold" inputmode="numeric" value="500">
+  <label for="qb-client">Client first name <span>(optional)</span></label>
+  <input id="qb-client" placeholder="e.g. Sam">
+  <label for="qb-practice">Your name or practice <span>(optional, for the email sign-off)</span></label>
+  <input id="qb-practice" placeholder="e.g. Priya, Ledger Lane Bookkeeping">
+  <br><button id="qb-go" type="button">Build the questionnaire</button>
+  <div id="qb-out" aria-live="polite"></div>
+  <p class="small" style="color:var(--muted);margin-bottom:0">The questions are prompts, not tax conclusions: you decide what's claimable. Delete anything that doesn't fit the client, and check thresholds and dates against gov.uk or irs.gov before you send it. US dates are federal; state returns vary.</p>
+</div>
+<p class="pt-embed-by">Free tool by <a href="https://polytheseus.com/" target="_blank" rel="noopener">Polytheseus</a> · <a href="https://polytheseus.com/bookkeeper-skills/guides/year-end-client-questionnaire#builder" target="_blank" rel="noopener">Full guide and how to use it</a> · Nothing you type leaves your browser.</p>
+</main>
+<script src="../guides/questionnaire-builder.js"></script>
+<script>
+(function () {
+  var last = 0;
+  function send() {
+    var h = Math.ceil(document.documentElement.scrollHeight);
+    if (h !== last && window.parent !== window) { last = h; window.parent.postMessage({ptHeight: h}, "*"); }
+  }
+  addEventListener("load", send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.body);
+  else setInterval(send, 700);
+})();
+</script>
+</body>
+</html>

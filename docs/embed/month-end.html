@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Month-end close checklist builder (free tool) | Polytheseus</title>
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="/assets/brand.css">
+<link rel="stylesheet" href="../style.css">
+<style>
+.answer{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--green);border-radius:6px;padding:14px 18px;margin:28px 0}
+.answer p{margin:.3em 0}
+table.t{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;margin:12px 0 20px}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:#eef2f6;font-family:Georgia,serif}
+.toc{font-size:15px}
+.tool{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:18px 20px;margin:20px 0}
+.tool label{display:block;font-weight:600;margin:10px 0 2px}
+.tool label span{font-weight:400;color:var(--muted);font-size:14px}
+.tool input,.tool select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;width:100%;max-width:240px}
+.tool fieldset{border:1px solid var(--rule);border-radius:6px;margin:12px 0;padding:8px 12px}
+.tool legend{font-weight:600;padding:0 4px}
+.tool fieldset label{display:inline-block;font-weight:400;margin:4px 14px 4px 0}
+.tool fieldset input{width:auto;margin-right:5px}
+.tool select{max-width:340px}
+.tool button{font:inherit;font-weight:600;border:0;border-radius:4px;padding:9px 18px;cursor:pointer;background:var(--green);color:#fff;margin:14px 6px 0 0}
+.tool button.ghost{background:transparent;color:var(--green);border:2px solid var(--green);padding:7px 16px}
+.qb-due{background:var(--green-l);border-radius:5px;padding:9px 12px}
+.qb-warn{background:var(--amber-l);border-radius:5px;padding:9px 12px}
+ul.me-list{list-style:none;padding-left:0}
+ul.me-list li{margin:6px 0}
+ul.me-list label{display:block;font-weight:400;margin:0}
+ul.me-list input{width:auto;margin-right:6px}
+.me-g{font-weight:600}
+.me-date{font-family:-apple-system,Segoe UI,sans-serif;font-size:15px;font-weight:400;color:var(--muted)}
+pre.email{white-space:pre-wrap;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;font:15px/1.55 -apple-system,Segoe UI,sans-serif}
+.cta{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:20px 22px;margin:34px 0}
+h3{margin-top:1.4em}
+@media print{
+  .pt-bar,.pt-foot,header.hero,.answer,.toc,main>section:not(#builder),.cta,aside,.pagenote,main>p.small,.tool>*:not(#me-out),#me-out button,#me-msg{display:none!important}
+  .tool{border:0;padding:0;margin:0}
+}
+</style>
+<style>
+body{background:var(--bg)}
+.pt-embed-main{max-width:900px;margin:0 auto;padding:4px 14px 10px}
+.pt-embed-main h2{margin-top:12px}
+.pt-embed-by{font:14px/1.5 "Inter","Segoe UI",system-ui,sans-serif;color:#5d6268;margin:10px 0 0;padding-top:8px;border-top:1px solid #dedad2}
+@media print{.pt-embed-by{display:none}}
+</style>
+</head>
+<body>
+<main class="pt-embed-main">
+<h2>Free builder: a dated month-end checklist for one client</h2>
+<div class="tool">
+  <p style="margin-top:0">Pick the month you're closing and tick what applies to this client. You get every task in close order, dated on working days (weekends and bank holidays skipped), the tax and payroll deadlines that follow, tick boxes, and a download for Excel or Google Sheets. Nothing you type leaves your browser.</p>
+  <label for="me-country">Country</label>
+  <select id="me-country">
+    <option value="uk" selected>UK</option>
+    <option value="us">US</option>
+  </select>
+  <label for="me-month">Month you're closing</label>
+  <input id="me-month" type="month" value="2026-10">
+  <label for="me-target">Books closed by working day <span>(2 to 15 after month end)</span></label>
+  <input id="me-target" inputmode="numeric" value="5" style="max-width:110px">
+  <label for="me-region">Bank holidays to skip</label>
+  <select id="me-region">
+    <option value="ew" selected>England and Wales</option>
+    <option value="sc">Scotland</option>
+    <option value="ni">Northern Ireland</option>
+    <option value="us">US federal holidays</option>
+    <option value="none">Weekends only</option>
+  </select>
+  <label for="me-entity">Client is a</label>
+  <select id="me-entity">
+    <option value="company">Company (Ltd, LLC, S corp)</option>
+    <option value="sole">Sole trader / sole proprietor</option>
+  </select>
+  <label for="me-basis">Books are on the</label>
+  <select id="me-basis">
+    <option value="accruals">Accruals basis</option>
+    <option value="cash">Cash basis</option>
+  </select>
+  <div data-me-country="uk">
+    <label for="me-vat">VAT</label>
+    <select id="me-vat">
+      <option value="none">Not VAT-registered</option>
+      <option value="mar">Quarters end Mar, Jun, Sep, Dec</option>
+      <option value="jan" selected>Quarters end Jan, Apr, Jul, Oct</option>
+      <option value="feb">Quarters end Feb, May, Aug, Nov</option>
+      <option value="monthly">Monthly returns</option>
+    </select>
+  </div>
+  <fieldset>
+    <legend>This client has (tick all that apply)</legend>
+    <label><input type="checkbox" id="me-payroll" checked>Payroll</label>
+    <span data-me-country="uk"><label><input type="checkbox" id="me-cis">CIS (construction)</label></span>
+    <span data-me-country="us" hidden><label><input type="checkbox" id="me-salestax">Sales tax</label></span>
+    <label><input type="checkbox" id="me-processors">Stripe, PayPal, Square or similar</label>
+    <label><input type="checkbox" id="me-stock">Stock or work in progress</label>
+    <label><input type="checkbox" id="me-fx">Foreign currency accounts</label>
+    <label><input type="checkbox" id="me-loans">Loans, finance or HP</label>
+  </fieldset>
+  <label for="me-client">Client name or code <span>(optional, for the download)</span></label>
+  <input id="me-client" placeholder="e.g. HALE01">
+  <br><button id="me-go" type="button">Build the checklist</button>
+  <div id="me-out" aria-live="polite"></div>
+  <p class="small" style="color:var(--muted);margin-bottom:0">Bank holidays are loaded for 2026 and 2027 (gov.uk and opm.gov). Deadlines are the usual ones: check each client's own dates, and your professional body's guidance for anything unusual.</p>
+</div>
+<p class="pt-embed-by">Free tool by <a href="https://polytheseus.com/" target="_blank" rel="noopener">Polytheseus</a> · <a href="https://polytheseus.com/bookkeeper-skills/guides/month-end-close-checklist#builder" target="_blank" rel="noopener">Full guide and how to use it</a> · Nothing you type leaves your browser.</p>
+</main>
+<script src="../guides/month-end.js"></script>
+<script>
+(function () {
+  var last = 0;
+  function send() {
+    var h = Math.ceil(document.documentElement.scrollHeight);
+    if (h !== last && window.parent !== window) { last = h; window.parent.postMessage({ptHeight: h}, "*"); }
+  }
+  addEventListener("load", send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.body);
+  else setInterval(send, 700);
+})();
+</script>
+</body>
+</html>

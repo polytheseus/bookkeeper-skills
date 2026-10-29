@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bookkeeping cleanup plan builder (free tool) | Polytheseus</title>
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="/assets/brand.css">
+<link rel="stylesheet" href="../style.css">
+<style>
+.answer{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--green);border-radius:6px;padding:14px 18px;margin:28px 0}
+.answer p{margin:.3em 0}
+table.t{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;margin:12px 0 20px}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:#eef2f6;font-family:Georgia,serif}
+.toc{font-size:15px}
+.tool{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:18px 20px;margin:20px 0}
+.tool label{display:block;font-weight:600;margin:10px 0 2px}
+.tool label span{font-weight:400;color:var(--muted);font-size:14px}
+.tool input,.tool select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;width:100%;max-width:240px}
+.tool fieldset{border:1px solid var(--rule);border-radius:6px;margin:12px 0;padding:8px 12px}
+.tool legend{font-weight:600;padding:0 4px}
+.tool fieldset label{display:inline-block;font-weight:400;margin:4px 14px 4px 0}
+.tool fieldset input{width:auto;margin-right:5px}
+.tool select{max-width:340px}
+.tool button{font:inherit;font-weight:600;border:0;border-radius:4px;padding:9px 18px;cursor:pointer;background:var(--green);color:#fff;margin:14px 6px 0 0}
+.tool button.ghost{background:transparent;color:var(--green);border:2px solid var(--green);padding:7px 16px}
+.qb-due{background:var(--green-l);border-radius:5px;padding:9px 12px}
+.qb-warn{background:var(--amber-l);border-radius:5px;padding:9px 12px}
+ul.me-list{list-style:none;padding-left:0}
+ul.me-list li{margin:6px 0}
+ul.me-list label{display:block;font-weight:400;margin:0}
+ul.me-list input{width:auto;margin-right:6px}
+.me-g{font-weight:600}
+.me-date{font-family:-apple-system,Segoe UI,sans-serif;font-size:15px;font-weight:400;color:var(--muted)}
+pre.email{white-space:pre-wrap;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;font:15px/1.55 -apple-system,Segoe UI,sans-serif}
+.cta{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:20px 22px;margin:34px 0}
+h3{margin-top:1.4em}
+table.br-st td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+table.br-st tr.br-item td:first-child{padding-left:26px;color:var(--muted)}
+table.br-st tr.br-tot td{font-weight:700;border-top:2px solid var(--ink,#222)}
+.tool textarea{font:15px/1.45 ui-monospace,Menlo,Consolas,monospace;width:100%;min-height:84px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;box-sizing:border-box}
+.tool .row2{display:flex;gap:16px;flex-wrap:wrap}
+.tool .row2>div{flex:1 1 200px}
+@media print{
+  .pt-bar,.pt-foot,header.hero,.answer,.toc,main>section:not(#builder),.cta,aside,.pagenote,main>p.small,.pt-embed-box,.tool>*:not(#cu-out),#cu-out button,#cu-msg{display:none!important}
+  .tool{border:0;padding:0;margin:0}
+}
+</style>
+<style>
+body{background:var(--bg)}
+.pt-embed-main{max-width:900px;margin:0 auto;padding:4px 14px 10px}
+.pt-embed-main h2{margin-top:12px}
+.pt-embed-by{font:14px/1.5 "Inter","Segoe UI",system-ui,sans-serif;color:#5d6268;margin:10px 0 0;padding-top:8px;border-top:1px solid #dedad2}
+@media print{.pt-embed-by{display:none}}
+</style>
+</head>
+<body>
+<main class="pt-embed-main">
+<h2>Free tool: build a cleanup plan</h2>
+<div class="tool">
+  <p style="margin-top:0">Describe the job and get the statements to request (every account, every month), the filing deadlines those months feed with any that have already passed, the order to work in, a checklist tailored to the business, and an email to the client asking for everything. Downloads for Excel or Google Sheets. Nothing you type leaves your browser. <button type="button" id="cu-example" class="ghost" style="margin:6px 0 0">Fill in an example</button></p>
+  <div class="row2">
+    <div><label for="cu-country">Country</label>
+    <select id="cu-country"><option value="uk" selected>UK</option><option value="us">US</option></select></div>
+    <div><label for="cu-entity">Business type</label>
+    <select id="cu-entity"></select></div>
+  </div>
+  <div id="cu-ye-wrap" hidden><label for="cu-ye">Accounting year ends in <span>(last day of the month)</span></label>
+  <select id="cu-ye"><option value="0">January</option><option value="1">February</option><option value="2" selected>March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option></select></div>
+  <div class="row2">
+    <div><label for="cu-start">First month to clean up <span>(the month after the last good figures)</span></label>
+    <input id="cu-start" type="month" value="2025-04" placeholder="2025-04"></div>
+    <div><label for="cu-end">Last month to clean up</label>
+    <input id="cu-end" type="month" value="2026-09" placeholder="2026-09"></div>
+  </div>
+  <div class="row2">
+    <div><label for="cu-banks">Bank accounts</label><input id="cu-banks" type="number" min="0" max="20" value="1" style="max-width:90px"></div>
+    <div><label for="cu-cards">Credit cards</label><input id="cu-cards" type="number" min="0" max="20" value="0" style="max-width:90px"></div>
+    <div><label for="cu-proc">Payment processors <span>(Stripe, PayPal, Square, Shopify…)</span></label><input id="cu-proc" type="number" min="0" max="20" value="0" style="max-width:90px"></div>
+  </div>
+  <fieldset><legend>The business has</legend>
+    <label data-cu-country="uk"><input type="checkbox" id="cu-vat">VAT registration</label>
+    <label data-cu-country="us" hidden><input type="checkbox" id="cu-salestax">Sales tax registrations</label>
+    <label><input type="checkbox" id="cu-payroll">Payroll</label>
+    <label><input type="checkbox" id="cu-loans">Loans or finance</label>
+    <label><input type="checkbox" id="cu-stock">Stock</label>
+  </fieldset>
+  <div class="row2">
+    <div><label for="cu-records">Statements and receipts</label>
+    <select id="cu-records"><option value="full">All statements, most receipts</option><option value="some" selected>Some statements or receipts missing</option><option value="none">No statements yet (need requesting)</option></select></div>
+    <div><label for="cu-software">Books are in</label>
+    <select id="cu-software"><option value="messy" selected>Software, but wrong or behind</option><option value="spreadsheet">A spreadsheet</option><option value="none">Nothing yet (a box of paper)</option></select></div>
+  </div>
+  <label for="cu-client">Client code <span>(optional; use a code, not a name)</span></label>
+  <input id="cu-client" placeholder="e.g. HALE01">
+  <br><button id="cu-go" type="button">Build the plan</button>
+  <div id="cu-out" aria-live="polite"></div>
+  <p class="small" style="color:var(--muted);margin-bottom:0">Deadlines are the usual ones for that business type (UK: Self Assessment, or Companies House accounts, Corporation Tax and the CT600; US: the federal income tax return for a calendar year, or the company's fiscal year for a C corporation). They aren't moved for weekends or holidays, and they don't cover extensions, first-year accounts, VAT, payroll or state returns. Check each one for the client.</p>
+</div>
+<p class="pt-embed-by">Free tool by <a href="https://polytheseus.com/" target="_blank" rel="noopener">Polytheseus</a> · <a href="https://polytheseus.com/bookkeeper-skills/guides/bookkeeping-cleanup-checklist#builder" target="_blank" rel="noopener">Full guide and how to use it</a> · Nothing you type leaves your browser.</p>
+</main>
+<script src="../guides/cleanup.js"></script>
+<script>
+(function () {
+  var last = 0;
+  function send() {
+    var h = Math.ceil(document.documentElement.scrollHeight);
+    if (h !== last && window.parent !== window) { last = h; window.parent.postMessage({ptHeight: h}, "*"); }
+  }
+  addEventListener("load", send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.body);
+  else setInterval(send, 700);
+})();
+</script>
+</body>
+</html>

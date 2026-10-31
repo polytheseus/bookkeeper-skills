@@ -17,7 +17,9 @@ u=m.nextUpdate(D('2026-11-07'),2026); eq([u.q,u.days],[2,0],'deadline day itself
 u=m.nextUpdate(D('2026-11-08'),2026); eq([u.q,m.fmt(u.deadline),u.std],[3,'7 February 2027','6 April 2026 to 5 January 2027'],'Q3');
 u=m.nextUpdate(D('2027-04-20'),2026); eq([u.q,u.taxYear,m.fmt(u.deadline),u.points],[4,2026,'7 May 2027',false],'Q4 after new year starts');
 u=m.nextUpdate(D('2027-05-08'),2026); eq([u.q,u.taxYear,m.fmt(u.deadline),u.points],[1,2027,'7 August 2027',true],'27/28 Q1 points');
-u=m.nextUpdate(D('2026-10-25'),2027); eq([u.q,u.taxYear,m.fmt(u.deadline),u.notStarted,u.points],[1,2027,'7 August 2027',true,true],'2027 starter');
+u=m.nextUpdate(D('2026-10-25'),2027); eq([u.q,u.taxYear,m.fmt(u.deadline),u.notStarted,u.points],[1,2027,'7 August 2027',true,false],'2027 starter (Budget 2026 easement)');
+u=m.nextUpdate(D('2028-05-08'),2027); eq([u.taxYear,u.points],[2028,true],'2027 starter points from 28/29');
+u=m.nextUpdate(D('2028-05-08'),2028); eq([u.taxYear,u.points],[2028,true],'2028 starter points at once');
 u=m.nextUpdate(D('2026-10-25'),2028); eq([u.taxYear,m.fmt(u.deadline)],[2028,'7 August 2028'],'2028 starter');
 // Returns
 let r=m.nextReturn(D('2026-10-25'),2026); eq([r.label,m.fmt(r.due),r.viaMtd],['2025 to 2026','31 January 2027',false],'25/26 return old way');

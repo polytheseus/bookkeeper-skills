@@ -61,8 +61,9 @@
     var u = list[0];
     u.days = Math.round((u.deadline - t) / 86400000);
     u.taxYearLabel = u.taxYear + " to " + (u.taxYear + 1);
-    // No penalty points for late quarterly updates in 2026 to 2027 only.
-    u.points = u.taxYear >= 2027;
+    // No penalty points for late quarterly updates in the first MTD year for
+    // those joining in April 2026 (HMRC) or April 2027 (Budget 2026, OOTLAR 2.36).
+    u.points = !(u.taxYear === startYear && startYear <= 2027);
     u.notStarted = t < first;
     return u;
   }
@@ -102,7 +103,7 @@
         (r.start === 2026 ? "That means now: HMRC should have written, but it's your responsibility to sign up even without a letter." : "HMRC will write after checking that year's return, but sign up yourself if no letter comes.") + "</p>";
       html += "<p><strong>" + (u.notStarted ? "First" : "Next") + " quarterly update: " + fmt(u.deadline) + "</strong> (" + u.days + " day" + (u.days === 1 ? "" : "s") + " away). " +
         "It's update " + u.q + " for " + u.taxYearLabel + " and covers the tax year so far: <em>" + esc(u.std) + "</em> (standard periods) or <em>" + esc(u.cal) + "</em> (calendar periods). " +
-        (u.points ? "A late update earns a penalty point; 4 points means a £200 penalty." : "No penalty points for late quarterly updates in 2026 to 2027, but you can't file the year's return through the software until all four are sent.") + "</p>";
+        (u.points ? "A late update earns a penalty point; 4 points means a £200 penalty." : "No penalty points for late quarterly updates in " + u.taxYearLabel + " (the first MTD year" + (r.start === 2027 ? ", announced in Budget 2026" : "") + "), but you can't file the year's return through the software until all four are sent.") + "</p>";
       html += "<p><strong>Next tax return: " + ret.label + ", due " + fmt(ret.due) + "</strong>, " +
         (ret.viaMtd ? "submitted through your MTD software." : "filed the usual way, not through MTD software" + (ret.taxYear <= 2025 ? ", under the current penalty rules." : ".")) + "</p>";
       out.innerHTML = html;

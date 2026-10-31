@@ -97,14 +97,38 @@ counts when it's received.) Ask the accountant which basis applies.
   (income and expenses totals, not a tax return) by **7 August, 7 November,
   7 February and 7 May**. Each update covers the tax year so far, so a
   fix goes in the next one. Then the tax return is submitted through the
-  software by **31 January**. No penalty points for late quarterly updates
-  in 2026/27; from 2027/28, 4 points = £200. The 2025/26 return (due
-  31 Jan 2027) is still filed the usual way.
+  software by **31 January**. Late quarterly updates earn no penalty points
+  in the first MTD year for April 2026 joiners (2026/27) and April 2027
+  joiners (2027/28, announced at Budget 2026, 28 Oct 2026). After that,
+  and from the start for April 2028 joiners, each late update earns a
+  point and 4 points = £200. All four updates are still needed before the
+  return can be filed. The 2025/26 return (due 31 Jan 2027) is still filed
+  the usual way.
 - What doesn't change: when the tax is paid.
 - What we need from you: [the practice's process, e.g. "upload receipts to
   the app each week" or "send bank statements by the 20th after each
   quarter"].
 - Check the current thresholds and exemptions on gov.uk before sending.
+
+### UK: Budget 2026 changes from 6 April 2027 (announced 28 Oct 2026)
+
+Announced, not yet law: say "the government has announced" until the
+Finance Bill passes or HMRC's guidance changes. None of these affect the
+2025/26 or 2026/27 returns.
+- **Trading allowance £1,000 → £3,000** from 2027/28, and the Self
+  Assessment reporting point for trading income rises to £3,000 too. A
+  client with small side income (gross, before expenses) of £3,000 or less
+  may not need to report it from that year. Use it or real expenses,
+  never both; real expenses still win when costs are high.
+- **Mileage:** the simplified rate above 10,000 business miles rises from
+  25p to **35p** a mile (the first 10,000 stay at 45p). A mileage log
+  matters more for high-mileage clients.
+- **MTD:** clients joining in April 2027 get no penalty points for late
+  quarterly updates in 2027/28 (see above).
+- **Property income** (landlords) is taxed at its own rates from 2027/28:
+  24% basic, 44% higher, 49% additional (England, Wales and Northern
+  Ireland; Scotland and Wales may set their own).
+- Check the current position on gov.uk before quoting any of these.
 
 ### UK: VAT in two lines
 

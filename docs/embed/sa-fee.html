@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Self Assessment fee calculator (free tool) | Polytheseus</title>
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="/assets/brand.css">
+<link rel="stylesheet" href="../style.css">
+<style>
+.answer{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--green);border-radius:6px;padding:14px 18px;margin:28px 0}
+.answer p{margin:.3em 0}
+table.t{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;margin:12px 0 20px}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:#eef2f6;font-family:Georgia,serif}
+.toc{font-size:15px}
+.tool{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:18px 20px;margin:20px 0}
+.tool h3{margin-top:1.6em;border-top:1px solid var(--rule);padding-top:14px}
+.tool h3:first-of-type{border-top:0;padding-top:0;margin-top:.6em}
+.tool label{display:block;font-weight:600;margin:10px 0 2px}
+.tool label span{font-weight:400;color:var(--muted);font-size:14px}
+.tool input,.tool select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;width:100%;max-width:240px}
+.tool input.sm{max-width:120px}
+.tool fieldset{border:1px solid var(--rule);border-radius:6px;margin:12px 0;padding:8px 12px}
+.tool legend{font-weight:600;padding:0 4px}
+.tool fieldset label{display:inline-block;font-weight:400;margin:4px 14px 4px 0}
+.tool fieldset input[type=checkbox]{width:auto;margin-right:5px}
+.tool select{max-width:340px}
+.tool button{font:inherit;font-weight:600;border:0;border-radius:4px;padding:9px 18px;cursor:pointer;background:var(--green);color:#fff;margin:14px 6px 0 0}
+.tool button.ghost{background:transparent;color:var(--green);border:2px solid var(--green);padding:7px 16px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:2px 14px}
+.tgrid label{font-weight:400;font-size:14px}
+.tgrid input{max-width:110px}
+.qb-due{background:var(--green-l);border-radius:5px;padding:9px 12px}
+.qb-warn{background:var(--amber-l);border-radius:5px;padding:9px 12px}
+pre.email{white-space:pre-wrap;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;font:15px/1.55 -apple-system,Segoe UI,sans-serif}
+.cta{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:20px 22px;margin:34px 0}
+h3{margin-top:1.4em}
+[hidden]{display:none!important}
+</style>
+<style>
+body{background:var(--bg)}
+.pt-embed-main{max-width:900px;margin:0 auto;padding:4px 14px 10px}
+.pt-embed-main h2{margin-top:12px}
+.pt-embed-by{font:14px/1.5 "Inter","Segoe UI",system-ui,sans-serif;color:#5d6268;margin:10px 0 0;padding-top:8px;border-top:1px solid #dedad2}
+@media print{.pt-embed-by{display:none}}
+</style>
+</head>
+<body>
+<main class="pt-embed-main">
+<h2>Free calculator: a fixed fee for one client's Self Assessment return</h2>
+<div class="tool" id="sa-tool">
+  <p style="margin-top:0">Tick what the return contains and how the records will arrive. Results update as you type. The minutes are starting guesses, so open "Your own minutes" and replace them once you've timed a few returns. Nothing you type leaves your browser.</p>
+  <label for="sa-year">Tax year</label>
+  <select id="sa-year"><option value="2025/26" selected>2025/26 (online deadline 31 January 2027)</option><option value="2026/27">2026/27 (online deadline 31 January 2028)</option></select>
+  <label for="sa-rate">Your hourly rate <span>(£; <a href="https://polytheseus.com/bookkeeper-skills/guides/how-much-to-charge-for-bookkeeping#calculator" target="_blank" rel="noopener">work it out here</a> if you don't know it)</span></label>
+  <input id="sa-rate" class="sm" inputmode="decimal" value="40">
+  <label for="sa-cont">Contingency <span>(% added to every return for the unexpected)</span></label>
+  <input id="sa-cont" class="sm" inputmode="decimal" value="10">
+  <p><label style="font-weight:400"><input type="checkbox" id="sa-vatreg" style="width:auto;margin-right:6px">I'm VAT-registered (show prices plus VAT)</label></p>
+
+  <h3>What's on the return</h3>
+  <div class="tgrid">
+    <label>Employments or pensions with a P60 (SA102) <input id="sa-emp" inputmode="numeric" value="0"></label>
+    <label>Self-employments, short pages (SA103S) <input id="sa-ses" inputmode="numeric" value="1"></label>
+    <label>Self-employments, full pages (SA103F) <input id="sa-sef" inputmode="numeric" value="0"></label>
+    <label>Partnership shares (SA104) <input id="sa-part" inputmode="numeric" value="0"></label>
+    <label>Rental properties (SA105) <input id="sa-prop" inputmode="numeric" value="0"></label>
+    <label>Capital gains disposals (SA108) <input id="sa-cgt" inputmode="numeric" value="0"></label>
+  </div>
+  <fieldset>
+    <legend>Also on the return</legend>
+    <label><input type="checkbox" id="sa-sav">Interest or dividends</label>
+    <label><input type="checkbox" id="sa-pen">Pension contributions or Gift Aid</label>
+    <label><input type="checkbox" id="sa-hicbc">High Income Child Benefit Charge</label>
+    <label><input type="checkbox" id="sa-sl">Student or postgraduate loan</label>
+    <label><input type="checkbox" id="sa-for">Foreign income (SA106)</label>
+    <label><input type="checkbox" id="sa-res">Residence pages (SA109)</label>
+    <label><input type="checkbox" id="sa-poa">Claim to reduce payments on account</label>
+    <label><input type="checkbox" id="sa-new">New client (first year)</label>
+    <label><input type="checkbox" id="sa-over">Turnover is over the £90,000 VAT threshold</label>
+    <label><input type="checkbox" id="sa-resi">A disposal is a UK home or flat</label>
+  </fieldset>
+
+  <h3>The records</h3>
+  <label for="sa-records">Self-employment and property records will come as</label>
+  <select id="sa-records"><option value="summary" selected>Categorised totals or a spreadsheet (×1)</option><option value="statements">Bank statements and receipts to categorise (×1.6)</option><option value="bag">A bag or box of loose paperwork (×2.2)</option></select>
+  <label for="sa-when">Complete records will arrive</label>
+  <select id="sa-when"><option value="nov" selected>By 30 November</option><option value="dec">In December</option><option value="jan1">1 to 15 January</option><option value="jan2">After 15 January</option></select>
+  <details>
+    <summary>Late-records surcharges</summary>
+    <div class="tgrid">
+      <label>December (%) <input id="sa-l-dec" inputmode="decimal" value="15"></label>
+      <label>1 to 15 January (%) <input id="sa-l-jan1" inputmode="decimal" value="30"></label>
+      <label>After 15 January (%) <input id="sa-l-jan2" inputmode="decimal" value="50"></label>
+    </div>
+  </details>
+  <p><label style="font-weight:400"><input type="checkbox" id="sa-mtd" style="width:auto;margin-right:6px">Client is in Making Tax Digital for Income Tax (price the quarterly updates)</label></p>
+  <details>
+    <summary>Your own minutes</summary>
+    <div class="tgrid" id="sa-times"></div>
+  </details>
+
+  <h3>The fee</h3>
+  <div id="sa-out" aria-live="polite"></div>
+
+  <h3>Quote email</h3>
+  <div class="tgrid">
+    <label>Client's first name <input id="sa-client" placeholder="e.g. Priya"></label>
+    <label>Your name <input id="sa-me" placeholder="e.g. Jo"></label>
+  </div>
+  <textarea id="sa-email" rows="22" readonly style="width:100%;box-sizing:border-box;font:15px/1.5 -apple-system,Segoe UI,sans-serif;padding:10px;border:1px solid var(--rule);border-radius:5px;margin-top:8px"></textarea>
+  <button type="button" id="sa-copy-email">Copy</button>
+
+  <h3>Late-records clause for your engagement letter</h3>
+  <textarea id="sa-clause" rows="6" readonly style="width:100%;box-sizing:border-box;font:15px/1.5 -apple-system,Segoe UI,sans-serif;padding:10px;border:1px solid var(--rule);border-radius:5px"></textarea>
+  <button type="button" id="sa-copy-clause">Copy</button>
+
+  <h3>Your price list</h3>
+  <p class="small" style="margin:0">Each item at your rate and contingency, from categorised records, rounded up to the next £5.</p>
+  <div id="sa-pl"></div>
+  <button type="button" class="ghost" id="sa-csv">Download price list (CSV for Excel or Google Sheets)</button>
+</div>
+<p class="pt-embed-by">Free tool by <a href="https://polytheseus.com/" target="_blank" rel="noopener">Polytheseus</a> · <a href="https://polytheseus.com/bookkeeper-skills/guides/how-much-to-charge-for-self-assessment-tax-return#calculator" target="_blank" rel="noopener">Full guide and how to use it</a> · Nothing you type leaves your browser.</p>
+</main>
+<script src="../guides/sa-fee.js"></script>
+<script>
+(function () {
+  var last = 0;
+  function send() {
+    var h = Math.ceil(document.documentElement.scrollHeight);
+    if (h !== last && window.parent !== window) { last = h; window.parent.postMessage({ptHeight: h}, "*"); }
+  }
+  addEventListener("load", send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.body);
+  else setInterval(send, 700);
+})();
+</script>
+</body>
+</html>

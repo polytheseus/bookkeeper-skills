@@ -116,8 +116,10 @@ Finance Bill passes or HMRC's guidance changes. None of these affect the
   may not need to report it from that year. Use it or real expenses,
   never both; real expenses still win when costs are high.
 - **Mileage:** the simplified rate above 10,000 business miles rises from
-  25p to **35p** a mile (the first 10,000 stay at 45p). A mileage log
-  matters more for high-mileage clients.
+  25p to **35p** a mile. The first 10,000 are already 55p (up from 45p on
+  6 April 2026, in force now). So: 2025/26 returns 45p then 25p; 2026/27
+  55p then 25p; 2027/28 55p then 35p (announced). A mileage log matters
+  more for high-mileage clients.
 - **MTD:** clients joining in April 2027 get no penalty points for late
   quarterly updates in 2027/28 (see above).
 - **Property income** (landlords) is taxed at its own rates from 2027/28:

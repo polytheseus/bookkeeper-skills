@@ -125,7 +125,7 @@ ok("us sole drawings", has(r5, "drawings"));
 var r6 = me.build({ country: "uk", month: "2026-10", target: "3", basis: "accruals", entity: "company", region: "ew", cis: true });
 ok("tight warning", r6.warnings.some(function (w) { return w.indexOf("3-day close") >= 0; }));
 ok("cis without payroll warning", r6.warnings.some(function (w) { return w.indexOf("tick payroll") >= 0; }));
-var r7 = me.build({ country: "uk", month: "2027-12", target: "5", region: "ew" });
+var r7 = me.build({ country: "uk", month: "2028-12", target: "5", region: "ew" });
 ok("holiday years warning", r7.warnings.some(function (w) { return w.indexOf("only loaded") >= 0; }));
 var r8 = me.build({ country: "uk", month: "2027-12", target: "5", region: "none" });
 ok("no holiday warning when none", !r8.warnings.some(function (w) { return w.indexOf("only loaded") >= 0; }));
@@ -140,5 +140,10 @@ ok("csv injection safe text", me.build({ month: "2026-10", target: "5", client: 
 
 ok("csv formula guard", me.build({ month: "2026-10", target: "5", client: "=HYPERLINK(1)" }).csv.indexOf(",'=HYPERLINK") < 0 && me.build({ month: "2026-10", target: "5", client: "=HYPERLINK(1)" }).csv.split("\r\n")[1].indexOf("'=HYPERLINK(1)") === 0);
 
+// 2028 holidays; US New Year 2028 is observed on Fri 31 Dec 2027 (OPM)
+ok("us 31 dec 2027 observed", us.indexOf("2027-12-31") >= 0);
+eq("wd1 dec 2027 us", me.iso(me.workingDay(2027, 11, 1, us)), "2028-01-03");
+eq("wd1 dec 2027 ew", me.iso(me.workingDay(2027, 11, 1, ew)), "2028-01-04");
+eq("wd1 dec 2027 sc", me.iso(me.workingDay(2027, 11, 1, sc)), "2028-01-05");
 console.log(pass + " passed, " + fail + " failed");
 process.exit(fail ? 1 : 0);

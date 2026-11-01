@@ -41,12 +41,46 @@
     <p class="eyebrow">For bookkeepers and small practices</p>
     <h1>Fewer chasers. Fewer "why do I owe <em>this</em>?" emails.</h1>
     <p class="lede">Bookkeeper Skills turn ChatGPT, Gemini or Claude into an assistant that works like an experienced practice manager. Paste your notes or an export and get back a <strong>specific, dated records request</strong>, a <strong>suspense-account query list clients actually answer</strong>, or a <strong>plain-English explanation of a tax bill</strong> using the client's own numbers. You review it and send it.</p>
-    <p><a class="btn" href="#setup">Set it up free (5 minutes)</a> <a class="btn ghost" href="#pro">See the Pro pack</a></p>
+    <p><a class="btn" href="#try">Try it now (one tap)</a> <a class="btn ghost" href="#setup">Set it up free (5 minutes)</a> <a class="btn ghost" href="#pro">See the Pro pack</a></p>
     <p class="tools">For sole practitioners · small practices · in-house and freelance bookkeepers · UK and US<br>Works with: ChatGPT · Gemini · Claude · Microsoft Copilot (prompt pack) · Codex · Cursor · Gemini CLI · Claude Code</p>
   </div>
 </header>
 
 <main class="wrap">
+
+<!-- pt:try -->
+<section id="try" class="pt-try" style="--pt-accent:#1f7a52;--pt-accent-fg:#fff">
+  <h2>Try it now: one tap, nothing to set up</h2>
+  <p>Pick a job. Your AI app opens with the instructions and a sample job already typed in, so you can see what it writes before you set anything up.</p>
+  <div class="pt-try-chips" role="tablist"><button type="button" role="tab" data-s="double-bill" aria-selected="true">Explain the January “double bill”</button><button type="button" role="tab" data-s="records" aria-selected="false">Chase missing records</button><button type="button" role="tab" data-s="bank-lines" aria-selected="false">Turn bank lines into client questions</button></div>
+  <div class="pt-try-panel" data-s="double-bill" data-brief="You are a bookkeeping assistant who works like an experienced practice manager. Use only the figures and facts I give you; never invent amounts, dates or details. Recalculate every total. Tax rules are prompts to check against gov.uk or irs.gov, not advice; flag judgement calls for the accountant. Task: write a plain-English email to my client about their Self Assessment bill. Put the answer in the first sentence. Lay out their own numbers in a short table that adds up (balancing payment and payments on account, with due dates). Say why payments on account apply (each is half of last year&#x27;s bill, unless that bill was under £1,000 or 80% or more of it was taxed at source) and what they can do (budget for July; apply to reduce payments on account only if this year&#x27;s profit will really be lower, with interest to pay if they reduce too far). Under 200 words, friendly, no jargon. Then a two-line text-message version and a short &quot;Check before you send&quot; list.">
+    <label for="try-double-bill">The sample job (change it to your own if you like)</label>
+    <textarea id="try-double-bill" rows="6">Client: Sam, self-employed decorator, first full year of trading. 2025/26 return filed: income tax and Class 4 NI £4,800. No payments on account were made last year. Sam has seen £7,200 due on 31 January 2027 and thinks HMRC has made a mistake. Expects similar profit this year.</textarea>
+    <p class="pt-try-go"><a class="pt-btn" data-app="chatgpt" target="_blank" rel="noopener" href="https://chatgpt.com/">Open in ChatGPT</a><a class="pt-btn" data-app="claude" target="_blank" rel="noopener" href="https://claude.ai/new">Open in Claude</a><button type="button" class="pt-btn ghost" data-app="copy">Copy for Gemini or another app</button></p>
+    <p class="pt-small">Uses the free <strong>client-explainer</strong> skill, shortened to fit in one message.</p>
+  </div>
+  <div class="pt-try-panel" data-s="records" data-brief="You are a bookkeeping assistant who works like an experienced practice manager. Use only the figures and facts I give you; never invent amounts, dates or details. Recalculate every total. Tax rules are prompts to check against gov.uk or irs.gov, not advice; flag judgement calls for the accountant. Task: write a records request to my client. A numbered list of exactly what&#x27;s still missing (the account, the months, and an acceptable format such as PDF statements or a photo of each receipt). A records-due date worked back from the 31 January deadline so I have time to do the work. One line on why it matters, stated as fact with no threats (the £100 late-filing penalty from 1 February, more later). How to send it. Under 180 words. Then dates for the next two chasers, and a WhatsApp version." hidden>
+    <label for="try-records">The sample job (change it to your own if you like)</label>
+    <textarea id="try-records" rows="6">Client: Priya, sole trader dog groomer, 2025/26 return (6 April 2025 to 5 April 2026). Today is 3 November 2026. Still missing: Starling business statements October 2025 to April 2026, the finance agreement for the van bought in February 2026, and a mileage log. Asked once by email on 2 October, no reply. I need everything three weeks before the deadline.</textarea>
+    <p class="pt-try-go"><a class="pt-btn" data-app="chatgpt" target="_blank" rel="noopener" href="https://chatgpt.com/">Open in ChatGPT</a><a class="pt-btn" data-app="claude" target="_blank" rel="noopener" href="https://claude.ai/new">Open in Claude</a><button type="button" class="pt-btn ghost" data-app="copy">Copy for Gemini or another app</button></p>
+    <p class="pt-small">Uses the free <strong>records-chaser</strong> skill, shortened to fit in one message.</p>
+  </div>
+  <div class="pt-try-panel" data-s="bank-lines" data-brief="You are a bookkeeping assistant who works like an experienced practice manager. Use only the figures and facts I give you; never invent amounts, dates or details. Recalculate every total. Tax rules are prompts to check against gov.uk or irs.gov, not advice; flag judgement calls for the accountant. Task: sort these bank lines from a client&#x27;s account (sole trader, not VAT registered) into confident, likely, unknown, or &quot;for the accountant&quot;. Never assume money in is sales. Then write the client a numbered query list with answer options to pick from (biggest amounts first, 25 at most) and a reply-by date, plus a separate list of notes for me. Finish by checking the line count and the totals in and out against what I pasted." hidden>
+    <label for="try-bank-lines">The sample job (change it to your own if you like)</label>
+    <textarea id="try-bank-lines" rows="6">Client: Sam. Reply by Friday 30th.
+03/09 FPS J SMITH -1,200.00
+05/09 AMZN MKTP UK*2K4 -86.40
+05/09 TESCO STORES 3301 -42.17
+08/09 TFR FROM M JONES +2,000.00
+12/09 ADOBE *CREATIVE CLD -56.98</textarea>
+    <p class="pt-try-go"><a class="pt-btn" data-app="chatgpt" target="_blank" rel="noopener" href="https://chatgpt.com/">Open in ChatGPT</a><a class="pt-btn" data-app="claude" target="_blank" rel="noopener" href="https://claude.ai/new">Open in Claude</a><button type="button" class="pt-btn ghost" data-app="copy">Copy for Gemini or another app</button></p>
+    <p class="pt-small">Uses the free <strong>transaction-queries</strong> skill, shortened to fit in one message.</p>
+  </div>
+  <p class="pt-try-msg" aria-live="polite"></p>
+  <p class="pt-small">The button only opens your AI app with this text: nothing is sent to us. ChatGPT works without an account; Claude needs a free sign-in. If your phone opens the app without the text, use Copy and paste it in. Use first names only, as in the sample.</p>
+  <p><strong>Like what it wrote?</strong> <a href="#setup">Set it up free</a> and it works this way every time, from your own rough notes, with the full skills.</p>
+</section>
+<!-- /pt:try -->
 
 <section>
   <h2>What it does with a messy suspense account</h2>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HMRC agent authorisation date checker (free tool) | Polytheseus</title>
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="/assets/brand.css">
+<link rel="stylesheet" href="../style.css">
+<style>
+.answer{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--green);border-radius:6px;padding:14px 18px;margin:28px 0}
+.answer p{margin:.3em 0}
+table.t{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;margin:12px 0 20px}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:#eef2f6;font-family:Georgia,serif}
+.toc{font-size:15px}
+.tool{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:18px 20px;margin:20px 0}
+.tool h3{margin-top:1.6em;border-top:1px solid var(--rule);padding-top:14px}
+.tool h3:first-of-type{border-top:0;padding-top:0;margin-top:.6em}
+.tool label{display:block;font-weight:600;margin:10px 0 2px}
+.tool label span{font-weight:400;color:var(--muted);font-size:14px}
+.tool input,.tool select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;width:100%;max-width:240px}
+.tool input.sm{max-width:120px}
+.tool fieldset{border:1px solid var(--rule);border-radius:6px;margin:12px 0;padding:8px 12px}
+.tool legend{font-weight:600;padding:0 4px}
+.tool fieldset label{display:inline-block;font-weight:400;margin:4px 14px 4px 0}
+.tool fieldset input[type=checkbox]{width:auto;margin-right:5px}
+.tool select{max-width:340px}
+.tool button{font:inherit;font-weight:600;border:0;border-radius:4px;padding:9px 18px;cursor:pointer;background:var(--green);color:#fff;margin:14px 6px 0 0}
+.tool button.ghost{background:transparent;color:var(--green);border:2px solid var(--green);padding:7px 16px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:2px 14px}
+.tgrid label{font-weight:400;font-size:14px}
+.tgrid input{max-width:110px}
+.qb-due{background:var(--green-l);border-radius:5px;padding:9px 12px}
+.qb-warn{background:var(--amber-l);border-radius:5px;padding:9px 12px}
+pre.email{white-space:pre-wrap;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;font:15px/1.55 -apple-system,Segoe UI,sans-serif}
+.cta{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:20px 22px;margin:34px 0}
+h3{margin-top:1.4em}
+[hidden]{display:none!important}
+</style>
+<style>
+body{background:var(--bg)}
+.pt-embed-main{max-width:900px;margin:0 auto;padding:4px 14px 10px}
+.pt-embed-main h2{margin-top:12px}
+.pt-embed-by{font:14px/1.5 "Inter","Segoe UI",system-ui,sans-serif;color:#5d6268;margin:10px 0 0;padding-top:8px;border-top:1px solid #dedad2}
+@media print{.pt-embed-by{display:none}}
+</style>
+</head>
+<body>
+<main class="pt-embed-main">
+<h2>Free checker: when will you have access, and how late can you start?</h2>
+<div class="tool" id="aa-tool">
+  <p style="margin-top:0">It dates both routes, then gives the last safe day to start each. HMRC only publishes the 7 working days and the 30-day code life. The other figures are assumptions, so change them to suit. Results update as you type, and nothing you type leaves your browser.</p>
+  <label for="aa-start">Start date <span>(the day you request or post)</span></label>
+  <input id="aa-start" type="date">
+  <label for="aa-deadline">Filing deadline <span>(2025/26 online return: 31 January 2027)</span></label>
+  <input id="aa-deadline" type="date" value="2027-01-31">
+  <div class="tgrid">
+    <label for="aa-post">Post, working days <input id="aa-post" class="sm" type="number" min="0" max="30" value="2"></label>
+    <label for="aa-reply">Client passes on the code, working days <input id="aa-reply" class="sm" type="number" min="0" max="60" value="3"></label>
+    <label for="aa-prep">You need to prepare and file, working days <input id="aa-prep" class="sm" type="number" min="0" max="60" value="5"></label>
+    <label for="aa-paper">64-8 processing, weeks <input id="aa-paper" class="sm" type="number" min="0" max="52" value="6"></label>
+  </div>
+  <p class="small" style="color:var(--muted)">The 6 weeks is our planning guess, not HMRC's figure. Look up the current time in HMRC's <a href="https://www.gov.uk/guidance/check-when-you-can-expect-a-reply-from-hmrc" target="_blank" rel="noopener">"Check when you can expect a reply"</a> tool and replace it. Working days skip weekends and England and Wales bank holidays.</p>
+  <fieldset><legend>Anything that could get in the way?</legend>
+    <label><input id="aa-noutr" type="checkbox">Client has no UTR yet</label>
+    <label><input id="aa-moved" type="checkbox">Client moved recently</label>
+  </fieldset>
+  <div class="tgrid">
+    <label for="aa-client">Client's first name <span>(optional)</span> <input id="aa-client" type="text" autocomplete="off"></label>
+    <label for="aa-agent">Your name <span>(optional)</span> <input id="aa-agent" type="text" autocomplete="off"></label>
+  </div>
+  <div id="aa-out" aria-live="polite"></div>
+  <div id="aa-msg-wrap" hidden>
+    <h3>Send this to your client the day you request the code</h3>
+    <pre class="email" id="aa-msg"></pre>
+    <button type="button" id="aa-copy">Copy the message</button>
+  </div>
+</div>
+<p class="pt-embed-by">Free tool by <a href="https://polytheseus.com/" target="_blank" rel="noopener">Polytheseus</a> · <a href="https://polytheseus.com/bookkeeper-skills/guides/agent-authorisation-self-assessment#checker" target="_blank" rel="noopener">Full guide and how to use it</a> · Nothing you type leaves your browser.</p>
+</main>
+<script src="../guides/agent-auth.js"></script>
+<script>
+(function () {
+  var last = 0;
+  function send() {
+    var h = Math.ceil(document.documentElement.scrollHeight);
+    if (h !== last && window.parent !== window) { last = h; window.parent.postMessage({ptHeight: h}, "*"); }
+  }
+  addEventListener("load", send);
+  if (window.ResizeObserver) new ResizeObserver(send).observe(document.body);
+  else setInterval(send, 700);
+})();
+</script>
+</body>
+</html>

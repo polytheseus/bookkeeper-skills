@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HMRC agent authorisation for Self Assessment: how long it takes and the last safe date before 31 January</title>
+<meta name="description" content="How long HMRC agent authorisation takes for Self Assessment, what to do if the code doesn't arrive, code or 64-8, and a free checker for the last safe date before 31 January, with a message for your client.">
+<link rel="canonical" href="https://polytheseus.com/bookkeeper-skills/guides/agent-authorisation-self-assessment">
+<meta property="og:title" content="HMRC agent authorisation: the last safe date before 31 January">
+<meta property="og:description" content="Code or 64-8, how long each takes, what to do when the letter doesn't come, and a free date checker. Nothing leaves your browser.">
+<link rel="stylesheet" href="../style.css">
+<style>
+.answer{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--green);border-radius:6px;padding:14px 18px;margin:28px 0}
+.answer p{margin:.3em 0}
+table.t{width:100%;border-collapse:collapse;background:var(--card);font-size:15px;margin:12px 0 20px}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:#eef2f6;font-family:Georgia,serif}
+.toc{font-size:15px}
+.tool{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:18px 20px;margin:20px 0}
+.tool h3{margin-top:1.6em;border-top:1px solid var(--rule);padding-top:14px}
+.tool h3:first-of-type{border-top:0;padding-top:0;margin-top:.6em}
+.tool label{display:block;font-weight:600;margin:10px 0 2px}
+.tool label span{font-weight:400;color:var(--muted);font-size:14px}
+.tool input,.tool select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:5px;width:100%;max-width:240px}
+.tool input.sm{max-width:120px}
+.tool fieldset{border:1px solid var(--rule);border-radius:6px;margin:12px 0;padding:8px 12px}
+.tool legend{font-weight:600;padding:0 4px}
+.tool fieldset label{display:inline-block;font-weight:400;margin:4px 14px 4px 0}
+.tool fieldset input[type=checkbox]{width:auto;margin-right:5px}
+.tool select{max-width:340px}
+.tool button{font:inherit;font-weight:600;border:0;border-radius:4px;padding:9px 18px;cursor:pointer;background:var(--green);color:#fff;margin:14px 6px 0 0}
+.tool button.ghost{background:transparent;color:var(--green);border:2px solid var(--green);padding:7px 16px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:2px 14px}
+.tgrid label{font-weight:400;font-size:14px}
+.tgrid input{max-width:110px}
+.qb-due{background:var(--green-l);border-radius:5px;padding:9px 12px}
+.qb-warn{background:var(--amber-l);border-radius:5px;padding:9px 12px}
+pre.email{white-space:pre-wrap;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;font:15px/1.55 -apple-system,Segoe UI,sans-serif}
+.cta{background:var(--card);border:2px solid var(--green);border-radius:8px;padding:20px 22px;margin:34px 0}
+h3{margin-top:1.4em}
+[hidden]{display:none!important}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "headline": "HMRC agent authorisation for Self Assessment: how long it takes and the last safe date before 31 January",
+   "datePublished": "2026-11-02",
+   "dateModified": "2026-11-02",
+   "author": {
+    "@type": "Organization",
+    "name": "polytheseus",
+    "url": "https://polytheseus.com/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How long does HMRC agent authorisation take for Self Assessment?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "With Online Agent Authorisation, HMRC says it posts the code letter to your client within 7 working days. Add the post and the time your client takes to tell you the code. Allow two to three weeks from your request to be safe, and more over Christmas. HMRC doesn't give a fixed time for a paper 64-8 on its guidance pages: its 'Check when you can expect a reply' tool shows the current time for agents, updated weekly."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How long does an agent authorisation code last?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usually 30 days from when the letter is issued. The exact date is in the letter. After that the code stops working and you request a new one. Three wrong entries also mean starting again."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "The authorisation code hasn't arrived. What do I do?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Allow the 7 working days plus post, then check with your client that the address HMRC holds is current and that nothing went to an old address or got opened and filed. If it still hasn't come, request a new code, and keep the date you did. If a 64-8 is an option and there's time, send one as well."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should I use a 64-8 or Online Agent Authorisation for Self Assessment?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Both work for Self Assessment. The online code is usually the better first choice, because HMRC publishes a time for the letter and you can see when it's done. Use the 64-8 when your client can't get or pass on a letter, when you also need individual PAYE or National Insurance access (paper only), or as a second attempt. A new authority replaces the existing one."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I file a client's return before I'm authorised?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "We couldn't confirm this from gov.uk. A 2009 note from one software firm and accountants' forum posts say commercial software could file without an authority in place, but HMRC's own software couldn't, and HMRC won't discuss the client with you until you're authorised. Those sources are old, so ask your software supplier. Don't plan around it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What if authorisation won't come through before 31 January?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The return and the bill are still the client's responsibility. The client can file from their own HMRC account with figures you've prepared, and pay using their UTR. You mustn't use their sign-in details. Keep requesting authorisation in the background so that you can deal with HMRC afterwards."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- pt:head -->
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/brand.css">
+<meta property="og:image" content="https://polytheseus.com/assets/og/bookkeeper-skills.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- /pt:head -->
+</head>
+<body>
+<!-- pt:bar -->
+<nav class="pt-bar" aria-label="Polytheseus">
+  <div class="pt-bar-in">
+    <a class="pt-brand" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"><span>POLYTHESEUS</span></a>
+    <div class="pt-nav">
+      <a href="/#packs">Packs</a>
+      <a href="/tools">Free tools</a>
+      <a class="pt-hide-sm" href="/#how">How it works</a>
+      <a class="pt-hide-sm" href="/#about">About</a>
+      <a class="pt-cta" href="/#packs">Start free</a>
+    </div>
+  </div>
+</nav>
+<!-- /pt:bar -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow"><a href="../">Bookkeeper Skills</a> · Guide</p>
+    <h1>HMRC agent authorisation for Self Assessment: <em>how long it takes, and the last safe date before 31 January</em></h1>
+    <p class="lede">A new client turns up in December with a return to file. Before you can see their record or talk to HMRC, a letter has to go to their house, and they have to find it and tell you what it says. This guide covers which route to use, what can go wrong, and how late you can leave it.</p>
+    <p class="small" style="color:var(--muted)">Updated 2 November 2026 · UK · Checked against gov.uk and form 64-8 (June 2025 version) · General information, not professional advice</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="answer">
+  <p><strong>In one paragraph:</strong> for Self Assessment, request a code through <strong>Online Agent Authorisation</strong> in your HMRC online services for agents account, or send a <strong>paper 64-8</strong>. HMRC posts the code to your client <strong>within 7 working days</strong>, and it usually lasts <strong>30 days</strong> from issue. Tell your client to expect the letter on the day you request it. With 2 days for post and 3 for your client to reply, a code requested on 2 November gives you access by about 18 November. For a 31 January filing, with a week to prepare, the last safe day to request one is about <strong>6 January</strong>. Don't use your client's sign-in details: gov.uk says you mustn't.</p>
+</div>
+
+<p class="toc"><strong>Jump to:</strong> <a href="#checker">Free date checker</a> · <a href="#routes">Code or 64-8</a> · <a href="#code">The code, step by step</a> · <a href="#paper">Filling in a 64-8</a> · <a href="#stuck">When the code doesn't come</a> · <a href="#too-late">When it's too late</a> · <a href="#mtd">Making Tax Digital</a> · <a href="#faq">FAQ</a></p>
+
+<section id="checker">
+<h2>Free checker: when will you have access, and how late can you start?</h2>
+<div class="tool" id="aa-tool">
+  <p style="margin-top:0">It dates both routes, then gives the last safe day to start each. HMRC only publishes the 7 working days and the 30-day code life. The other figures are assumptions, so change them to suit. Results update as you type, and nothing you type leaves your browser.</p>
+  <label for="aa-start">Start date <span>(the day you request or post)</span></label>
+  <input id="aa-start" type="date">
+  <label for="aa-deadline">Filing deadline <span>(2025/26 online return: 31 January 2027)</span></label>
+  <input id="aa-deadline" type="date" value="2027-01-31">
+  <div class="tgrid">
+    <label for="aa-post">Post, working days <input id="aa-post" class="sm" type="number" min="0" max="30" value="2"></label>
+    <label for="aa-reply">Client passes on the code, working days <input id="aa-reply" class="sm" type="number" min="0" max="60" value="3"></label>
+    <label for="aa-prep">You need to prepare and file, working days <input id="aa-prep" class="sm" type="number" min="0" max="60" value="5"></label>
+    <label for="aa-paper">64-8 processing, weeks <input id="aa-paper" class="sm" type="number" min="0" max="52" value="6"></label>
+  </div>
+  <p class="small" style="color:var(--muted)">The 6 weeks is our planning guess, not HMRC's figure. Look up the current time in HMRC's <a href="https://www.gov.uk/guidance/check-when-you-can-expect-a-reply-from-hmrc">"Check when you can expect a reply"</a> tool and replace it. Working days skip weekends and England and Wales bank holidays.</p>
+  <fieldset><legend>Anything that could get in the way?</legend>
+    <label><input id="aa-noutr" type="checkbox">Client has no UTR yet</label>
+    <label><input id="aa-moved" type="checkbox">Client moved recently</label>
+  </fieldset>
+  <div class="tgrid">
+    <label for="aa-client">Client's first name <span>(optional)</span> <input id="aa-client" type="text" autocomplete="off"></label>
+    <label for="aa-agent">Your name <span>(optional)</span> <input id="aa-agent" type="text" autocomplete="off"></label>
+  </div>
+  <div id="aa-out" aria-live="polite"></div>
+  <div id="aa-msg-wrap" hidden>
+    <h3>Send this to your client the day you request the code</h3>
+    <pre class="email" id="aa-msg"></pre>
+    <button type="button" id="aa-copy">Copy the message</button>
+  </div>
+</div>
+</section>
+<!-- pt:embed -->
+<details class="pt-embed-box">
+<summary>Put this tool on your own website (free)</summary>
+<p>Copy this code into any web page (WordPress: a "Custom HTML" block). The tool runs in your visitors' browsers; nothing they type is sent to you or to us.</p>
+<textarea readonly rows="6" onclick="this.select()" aria-label="Embed code">&lt;iframe src=&quot;https://polytheseus.com/bookkeeper-skills/embed/agent-auth&quot; title=&quot;HMRC agent authorisation date checker&quot; width=&quot;100%&quot; height=&quot;1200&quot; style=&quot;border:0;max-width:900px&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;
+&lt;p style=&quot;font-size:13px&quot;&gt;Free &lt;a href=&quot;https://polytheseus.com/bookkeeper-skills/guides/agent-authorisation-self-assessment&quot;&gt;hmrc agent authorisation date checker&lt;/a&gt; for bookkeepers by Polytheseus&lt;/p&gt;
+&lt;script&gt;addEventListener(&quot;message&quot;,function(e){if(e.origin===&quot;https://polytheseus.com&quot;&amp;&amp;e.data&amp;&amp;e.data.ptHeight){document.querySelectorAll(&#x27;iframe[src^=&quot;https://polytheseus.com/&quot;]&#x27;).forEach(function(f){if(f.contentWindow===e.source)f.style.height=e.data.ptHeight+&quot;px&quot;})}})&lt;/script&gt;</textarea>
+<button type="button" onclick="var t=this.previousElementSibling;t.select();navigator.clipboard&&navigator.clipboard.writeText(t.value);this.textContent='Copied'">Copy code</button>
+</details>
+<style>.pt-embed-box{margin:6px 0 24px;font-size:15.5px}.pt-embed-box summary{cursor:pointer;font-weight:700}.pt-embed-box textarea{width:100%;box-sizing:border-box;font:13px/1.4 ui-monospace,Consolas,monospace;padding:8px;border:1px solid #dedad2;border-radius:5px}.pt-embed-box button{font:inherit;font-weight:800;border:2px solid #24272b;border-radius:6px;padding:6px 14px;cursor:pointer;background:#ffd21f;margin-top:6px}</style>
+<!-- /pt:embed -->
+
+<section id="routes">
+<h2>Code or 64-8: which route for which tax</h2>
+<p>From gov.uk's <a href="https://www.gov.uk/guidance/how-to-get-authorised-to-act-as-a-tax-agent-on-behalf-of-your-clients">How to get authorised to act as a tax agent</a> (updated 7 October 2026), for the taxes most bookkeepers meet:</p>
+<table class="t">
+  <tr><th>Tax</th><th>Online</th><th>On paper</th></tr>
+  <tr><td>Self Assessment</td><td>Online Agent Authorisation</td><td>Form 64-8</td></tr>
+  <tr><td>Individual PAYE or National Insurance</td><td>Not available</td><td>Form 64-8</td></tr>
+  <tr><td>Corporation Tax</td><td>Online Agent Authorisation</td><td>Form 64-8</td></tr>
+  <tr><td>PAYE (employers)</td><td>Online Agent Authorisation or the client's business tax account</td><td>Form 64-8</td></tr>
+  <tr><td>CIS</td><td>Online Agent Authorisation or the client's business tax account</td><td>Not available</td></tr>
+  <tr><td>VAT</td><td>Digital handshake</td><td>Not available (64-8 for legacy VAT only)</td></tr>
+  <tr><td>Making Tax Digital for Income Tax</td><td>Digital handshake, or add your Self Assessment authorisations to your agent services account</td><td>Not available</td></tr>
+  <tr><td>High Income Child Benefit Charge</td><td>CH995 online form</td><td>CH995 paper form</td></tr>
+</table>
+<p><strong>Start with the code for Self Assessment.</strong> HMRC publishes a time for the letter, and you can see when it's done. Use the 64-8 when a posted code isn't practical, for example a client who's abroad or very slow with post, when you need individual PAYE too, or as a second attempt. Nothing we read on gov.uk stops you trying both, but a new authority replaces any existing one, so an existing agent loses out either way.</p>
+<p>To use any of this you need an agent code and the Self Assessment for Agents service on your HMRC online services account. If you don't have them yet, start with gov.uk's <a href="https://www.gov.uk/guidance/steps-you-need-to-take-before-registering-as-a-professional-tax-agent">steps before registering as a tax agent</a>, and do it well before January.</p>
+</section>
+
+<section id="code">
+<h2>The code, step by step</h2>
+<ol>
+  <li>Sign in to your <strong>HMRC online services for agents</strong> account. This is a different sign-in from your agent services account.</li>
+  <li>Select "Authorise client", then "Request an authorisation".</li>
+  <li>Pick the tax service and enter your client's details. The service tells you what it needs.</li>
+  <li><strong>Message your client the same day.</strong> The letter goes to them, not you, and it's easy to bin (the checker above writes the message).</li>
+  <li>When they tell you the code, go back to "Authorise client", select "Enter authorisation code", pick the client and enter it.</li>
+  <li>The client then appears on your client list.</li>
+</ol>
+<ul>
+  <li><strong>One code per tax.</strong> If you ask for Self Assessment and Corporation Tax, your client gets two codes. Make sure you know which is which.</li>
+  <li><strong>Three wrong entries</strong> and you start again, so ask for a photo of the letter rather than a code read out over the phone.</li>
+  <li><strong>Busy periods:</strong> gov.uk warns online services may be slow, and has a page for <a href="https://www.gov.uk/government/publications/online-agent-authorisation-service-availability-and-issues">service issues</a>.</li>
+</ul>
+<p class="small">Source: <a href="https://www.gov.uk/guidance/how-to-use-the-online-agent-authorisation-to-get-authorised-as-a-tax-agent">How to use the Online Agent Authorisation</a>.</p>
+</section>
+
+<section id="paper">
+<h2>Filling in a 64-8 so it doesn't bounce</h2>
+<p>Get <a href="https://www.gov.uk/guidance/authorising-an-agent-to-deal-with-your-tax-affairs">form 64-8 from gov.uk</a> (the version we read was updated June 2025). gov.uk's instructions are stricter than you might expect:</p>
+<ul>
+  <li><strong>Type it or write clearly,</strong> and write nothing outside the boxes.</li>
+  <li><strong>Agent code (SA):</strong> only the code, 6 characters in the format 1111XX. Don't add anything else in the field.</li>
+  <li><strong>Don't strike through</strong> unused boxes.</li>
+  <li><strong>No covering letter</strong> unless it has essential information needed to process the form.</li>
+  <li><strong>Self Assessment box:</strong> if ticked, give the client's National Insurance number and/or UTR. There's a box to tick if the UTR hasn't been issued yet.</li>
+  <li><strong>Statement of Account:</strong> by default it goes to your client. There's a box to tick if it should come to you. Your client stays responsible for paying.</li>
+  <li><strong>Send pages 1 and 2 only,</strong> and keep page 3. The form's address (check it on the form itself in case it has changed) is National Insurance Contributions and Employer Office, HM Revenue and Customs, BX9 1AN.</li>
+  <li><strong>Who signs:</strong> the individual for personal tax, and for a partnership, the partner responsible for its tax affairs. Each partner signs a separate authority for their own tax.</li>
+</ul>
+</section>
+
+<section id="stuck">
+<h2>When the code doesn't come</h2>
+<p>In order:</p>
+<ol>
+  <li><strong>Count the days.</strong> HMRC's 7 working days plus post. If you requested it on 21 December, the letter may not go out until 4 January, because of the bank holidays.</li>
+  <li><strong>Ask about the address.</strong> gov.uk says it's posted "to your client". We'd expect it to use the address HMRC holds, so a client who moved without telling HMRC is the first thing to check. Your client can update it themselves, then you request a new code.</li>
+  <li><strong>Ask them to look again.</strong> It's a plain HMRC letter, so it may be in the pile, or they may have put it aside without knowing what it was.</li>
+  <li><strong>Check whether it has lapsed.</strong> After about 30 days from issue you have to start again anyway.</li>
+  <li><strong>Request a new code, and consider a 64-8 as well</strong> if there's time for it. Make a note of the date you did each, in case a penalty is disputed later.</li>
+</ol>
+<p><strong>No UTR yet?</strong> gov.uk says the client must register for Self Assessment before authorising an agent. A <a href="https://www.accaglobal.com/an/en/technical-activities/technical-resources-search/2011/may/64-8-self-assessment.html">2011 ACCA note</a> (old, and we only read a summary of it) said a 64-8 sent before registration might not link to the client's record. Send them to our sister site's page on <a href="https://sellertaxcalculator.co.uk/waiting-for-utr">waiting for a UTR</a>. Registered agents can also use the helplines on gov.uk's <a href="https://www.gov.uk/guidance/dedicated-helplines-and-contacts-for-authorised-agents">dedicated contacts for tax agents</a> page.</p>
+</section>
+
+<section id="too-late">
+<h2>When it's too late for 31 January</h2>
+<p>Being unauthorised doesn't stop the deadline, or the bill. Client responsibility is clear on gov.uk: "You'll still be legally responsible for your own tax." So:</p>
+<ul>
+  <li><strong>The client can file it themselves</strong> from their own HMRC account, using figures you've prepared. They sign in and they submit. <strong>You can't do it for them with their login:</strong> gov.uk says an agent must not use a client's credentials to sign in to any account. Check this early, because a client who has never filed online may need time to set up, and <a href="https://www.gov.uk/log-in-file-self-assessment-tax-return">HMRC's online service can't take every return</a> (partnerships and non-residents, for example). Paper returns were due by 31 October.</li>
+  <li><strong>They can pay without you.</strong> The 5% late payment penalties and the interest run on the bill, whoever is handling the return. See <a href="https://sellertaxcalculator.co.uk/cant-pay-self-assessment-bill">what to do if they can't pay by 31 January</a>.</li>
+  <li><strong>The £100 late filing penalty</strong> applies even if there's no tax to pay. Don't tell a client that waiting for HMRC's letter will be accepted as a reasonable excuse: we haven't found anything from HMRC that says so. See <a href="https://sellertaxcalculator.co.uk/self-assessment-late-penalties">how the penalties add up</a>.</li>
+  <li><strong>Keep the authorisation going,</strong> so you can deal with statements and questions afterwards.</li>
+</ul>
+<p><strong>What about filing through your software before you're authorised?</strong> We couldn't confirm this from gov.uk. A <a href="https://www.iris.co.uk/support/knowledgebase/kb/ias-7808/">2009 note from IRIS</a> said registered agents didn't need a 64-8 in place to file through its software, though they did with HMRC's software, and did to discuss a client's position. Search summaries of accountants' forum threads say something similar (we couldn't open the threads themselves). That's old and thin, so ask your software supplier, and don't plan a client's filing around it. You'd also still need the client's approval of the return, and gov.uk says they must check it and tell you it's correct before you submit.</p>
+</section>
+
+<section id="mtd">
+<h2>Making Tax Digital clients</h2>
+<p>Self Assessment authorisation sits on your HMRC online services account. Making Tax Digital for Income Tax sits on your <strong>agent services account</strong>. To link them, sign in to your agent services account and select "Add existing Self Assessment authorisations to your agent services account". You enter the Self Assessment agent code, and it adds all the authorisations under that code as main agent. It doesn't sign any client up for Making Tax Digital.</p>
+<p>The other route is the digital handshake: you send your client a link, and they have <strong>21 days</strong> to respond. If your client doesn't respond in time, you start again. Once the agent code is linked, gov.uk says clients you add or update for Self Assessment in your online services account update your agent services account permissions too.</p>
+<p>One trap: a digital handshake for the <strong>Income Record Viewer</strong> only lets you see income data. gov.uk says you still need a 64-8 or Online Agent Authorisation to speak to HMRC for that client.</p>
+<p class="small">Sources: <a href="https://www.gov.uk/guidance/add-your-client-authorisations-for-making-tax-digital-for-income-tax">Add your client authorisations for MTD</a>, <a href="https://www.gov.uk/guidance/how-to-use-the-digital-handshake-to-get-authorised-as-a-tax-agent">How to use the digital handshake</a>. See also our <a href="making-tax-digital-income-tax">Making Tax Digital guide</a>.</p>
+</section>
+
+<section id="onboarding">
+<h2>Build it into every new client</h2>
+<p>Authorisation is step 5 of our <a href="client-onboarding-checklist">client onboarding checklist</a>, but ask for it on day one, straight after your money laundering checks. Set a rule for the season: any client taken on after your last safe date gets told in writing, before you accept the work, that filing on time may depend on them filing it themselves. Our <a href="engagement-letter-template">engagement letter template</a> and <a href="client-wont-send-records">records chasing schedule</a> cover the rest of that conversation.</p>
+</section>
+
+<div class="cta">
+  <p style="margin-top:0"><strong>Then get the records in.</strong> The free <strong>records-chaser</strong> skill writes polite, firm chasers for ChatGPT, Gemini or Claude, and <strong>client-explainer</strong> explains the bill and HMRC letters in plain English. Set-up takes about 3 minutes, no coding.</p>
+  <p><a href="../#pro">Bookkeeper Skills Pro</a> adds <strong>client-onboarding</strong> (the full new-client sequence, with authorisation in the right place) and <strong>engagement-letter</strong>.</p>
+  <p style="margin-bottom:0"><a class="btn" href="../#setup">Get the free skills</a> <a class="btn ghost" href="../#pro">See Bookkeeper Skills Pro</a></p>
+</div>
+
+<section id="faq">
+<h2>FAQ</h2>
+<details><summary>How long does HMRC agent authorisation take for Self Assessment?</summary><p>With Online Agent Authorisation, HMRC says it posts the code letter to your client within 7 working days. Add the post and the time your client takes to tell you the code. Allow two to three weeks from your request to be safe, and more over Christmas. HMRC doesn't give a fixed time for a paper 64-8 on its guidance pages: its 'Check when you can expect a reply' tool shows the current time for agents, updated weekly.</p></details>
+<details><summary>How long does an agent authorisation code last?</summary><p>Usually 30 days from when the letter is issued. The exact date is in the letter. After that the code stops working and you request a new one. Three wrong entries also mean starting again.</p></details>
+<details><summary>The authorisation code hasn't arrived. What do I do?</summary><p>Allow the 7 working days plus post, then check with your client that the address HMRC holds is current and that nothing went to an old address or got opened and filed. If it still hasn't come, request a new code, and keep the date you did. If a 64-8 is an option and there's time, send one as well.</p></details>
+<details><summary>Should I use a 64-8 or Online Agent Authorisation for Self Assessment?</summary><p>Both work for Self Assessment. The online code is usually the better first choice, because HMRC publishes a time for the letter and you can see when it's done. Use the 64-8 when your client can't get or pass on a letter, when you also need individual PAYE or National Insurance access (paper only), or as a second attempt. A new authority replaces the existing one.</p></details>
+<details><summary>Can I file a client's return before I'm authorised?</summary><p>We couldn't confirm this from gov.uk. A 2009 note from one software firm and accountants' forum posts say commercial software could file without an authority in place, but HMRC's own software couldn't, and HMRC won't discuss the client with you until you're authorised. Those sources are old, so ask your software supplier. Don't plan around it.</p></details>
+<details><summary>What if authorisation won't come through before 31 January?</summary><p>The return and the bill are still the client's responsibility. The client can file from their own HMRC account with figures you've prepared, and pay using their UTR. You mustn't use their sign-in details. Keep requesting authorisation in the background so that you can deal with HMRC afterwards.</p></details>
+</section>
+
+<p class="small">This page is general information written by an AI agent and checked on 2 November 2026 against gov.uk (How to get authorised as a tax agent, Online Agent Authorisation, digital handshake, Authorising an agent, Change or remove your tax agent's authorisation, Self Assessment for Agents, MTD client authorisations, bank holidays) and the June 2025 form 64-8. HMRC's reply-time tool wouldn't load for us, so we don't quote a current 64-8 time. Post, client reply and preparation times, and the 6 weeks, are planning assumptions. No accountant has reviewed this page. It isn't professional advice: check gov.uk, as HMRC's processes change.</p>
+</main>
+<aside class="wrap small pagenote">Source on <a href="https://github.com/polytheseus/bookkeeper-skills">GitHub</a>. Not affiliated with HMRC, the IRS or any professional body.</aside>
+<script src="agent-auth.js"></script>
+<!-- pt:foot -->
+<footer class="pt-foot">
+  <div class="pt-foot-in">
+    <div>
+      <a class="pt-brand" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"><span>POLYTHESEUS</span></a>
+      <p>Know-how packs that make ChatGPT, Gemini and Claude work like an experienced pro in your job. Free to start.</p>
+      <p><a href="mailto:support@polytheseus.com">support@polytheseus.com</a></p>
+    </div>
+    <div>
+      <h4>Packs</h4>
+      <ul><li><a href="/teacher-skills/">Teachers</a></li><li><a href="/trades-skills/">Trades</a></li><li><a href="/bookkeeper-skills/">Bookkeepers</a></li><li><a href="/real-estate-skills/">Real estate agents</a></li><li><a href="/seller-skills/">Online sellers</a></li><li><a href="/landlord-skills/">Landlords</a></li><li><a href="/sre-skills/">SRE &amp; DevOps</a></li></ul>
+    </div>
+    <div>
+      <h4>Polytheseus</h4>
+      <ul>
+        <li><a href="/tools">Free tools</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="https://github.com/polytheseus">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Watch</h4>
+      <ul><li><a href="https://www.youtube.com/@polytheseus" rel="me noopener">YouTube</a></li><li><a href="https://www.tiktok.com/@polytheseus" rel="me noopener">TikTok</a></li><li><a href="https://www.facebook.com/profile.php?id=1374246585776738" rel="me noopener">Facebook</a></li></ul>
+    </div>
+  </div>
+  <div class="pt-foot-base">Polytheseus is run by Robin Hale. The packs and this site are written and tested by Claude, an AI agent. <a href="/#about">How that works</a>.</div>
+</footer>
+<!-- /pt:foot -->
+</body>
+</html>

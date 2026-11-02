@@ -131,7 +131,7 @@
         start: $("aa-start").value, deadline: $("aa-deadline").value, postDays: $("aa-post").value,
         replyDays: $("aa-reply").value, paperWeeks: $("aa-paper").value, prepDays: $("aa-prep").value
       });
-      if (r.error) { out.innerHTML = "<p><strong>" + esc(r.error) + "</strong></p>"; lastMsg = ""; return; }
+      if (r.error) { out.innerHTML = "<p><strong>" + esc(r.error) + "</strong></p>"; lastMsg = ""; $("aa-msg-wrap").hidden = true; return; }
       var day = function (s) { return s ? fmt(parse(s)) : "None in range"; };
       var cls = function (s) { return s === "ok" ? "qb-due" : "qb-warn"; };
       var html = "<p class=\"" + cls(r.code.status) + "\"><strong>Code by post: access by about " + day(r.code.access) + ".</strong> " + LABEL[r.code.status] + ". Last safe day to request: <strong>" + day(r.code.latest) + "</strong>.</p>";
@@ -147,7 +147,7 @@
       if (r.code.codeLapses) html += "<p class=\"qb-warn\"><strong>On these figures the code runs out before you'd enter it.</strong> Chase the client sooner than that.</p>";
       if ($("aa-noutr").checked) html += "<p class=\"qb-warn\"><strong>No UTR yet:</strong> gov.uk says the client must register for Self Assessment first, so these dates start after that. Sort the registration before anything else.</p>";
       if ($("aa-moved").checked) html += "<p class=\"qb-warn\"><strong>Recently moved:</strong> the code comes by post, so get the address HMRC holds checked before you request it, or the letter may go to the old one.</p>";
-      if (r.code.status === "late" && r.paper.status === "late") html += "<p class=\"qb-warn\"><strong>Neither route looks likely to finish in time.</strong> Request the code today anyway, and see <a href=\"#too-late\">what to do when it's too late</a>.</p>";
+      if (r.code.status === "late" && r.paper.status === "late") html += "<p class=\"qb-warn\"><strong>Neither route looks likely to finish in time.</strong> Request the code today anyway, and see <a href=\"https://polytheseus.com/bookkeeper-skills/guides/agent-authorisation-self-assessment#too-late\" target=\"_blank\" rel=\"noopener\">what to do when it's too late</a>.</p>";
       out.innerHTML = html;
       lastMsg = clientMessage(r, $("aa-client").value, $("aa-agent").value);
       $("aa-msg").textContent = lastMsg;

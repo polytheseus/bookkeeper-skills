@@ -67,7 +67,7 @@
   </div>
   <div class="pt-try-panel" data-s="bank-lines" data-brief="You are a bookkeeping assistant who works like an experienced practice manager. Use only the figures and facts I give you; never invent amounts, dates or details. Recalculate every total. Tax rules are prompts to check against gov.uk or irs.gov, not advice; flag judgement calls for the accountant. Task: sort these bank lines from a client&#x27;s account (sole trader, not VAT registered) into confident, likely, unknown, or &quot;for the accountant&quot;. Never assume money in is sales. Then write the client a numbered query list with answer options to pick from (biggest amounts first, 25 at most) and a reply-by date, plus a separate list of notes for me. Finish by checking the line count and the totals in and out against what I pasted." hidden>
     <label for="try-bank-lines">The sample job (change it to your own if you like)</label>
-    <textarea id="try-bank-lines" rows="6">Client: Sam. Reply by Friday 30th.
+    <textarea id="try-bank-lines" rows="6">Client: Sam. Reply by Friday.
 03/09 FPS J SMITH -1,200.00
 05/09 AMZN MKTP UK*2K4 -86.40
 05/09 TESCO STORES 3301 -42.17
@@ -94,36 +94,41 @@
 
 <section>
   <h2>What it does with a messy suspense account</h2>
-  <p>You paste five unexplained lines from a mixed-use sole-trader account (not VAT registered):</p>
+  <p>Real output: the free transaction-queries skill, run by an AI model on 5 November 2026, copied word for word (extract). The eight lines and the client are made up for the test: a mobile dog groomer, sole trader, not VAT registered, mixed-use account. We ran it 3 times and this is the cleanest. The totals were right all 3 times, but yours will differ, so read it before it goes. In one other run the message told the client "We've booked this as sales", and another signed off "Thanks, Priya" to Priya.</p>
   <table class="ledger">
     <tr><th>Date</th><th>Description</th><th class="n">Amount</th><th>Proposed</th></tr>
-    <tr><td>03/09</td><td>FPS J SMITH</td><td class="n">−1,200.00</td><td><span class="tag ask">ask</span> wages, subcontractor, loan, personal? <span class="tag flag">accountant</span> payroll/CIS</td></tr>
-    <tr><td>05/09</td><td>AMZN MKTP UK*2K4</td><td class="n">−86.40</td><td><span class="tag ask">confirm</span> supplies (medium)</td></tr>
-    <tr><td>05/09</td><td>TESCO STORES 3301</td><td class="n">−42.17</td><td><span class="tag ask">confirm</span> personal (likely)</td></tr>
-    <tr><td>08/09</td><td>TFR FROM M JONES</td><td class="n">+2,000.00</td><td><span class="tag ask">ask</span> sale, loan or capital? (never assumed to be sales)</td></tr>
-    <tr><td>12/09</td><td>ADOBE *CREATIVE CLD</td><td class="n">−56.98</td><td><span class="tag ok">high</span> software</td></tr>
+    <tr><td>02/10</td><td>STRIPE PAYOUT</td><td class="n">+1,142.60</td><td><span class="tag ok">High (type); split pending</span> Sales (net payout; fees to split)</td></tr>
+    <tr><td>03/10</td><td>DD ADMIRAL INS</td><td class="n">−61.30</td><td><span class="tag ask">Medium</span> Insurance</td></tr>
+    <tr><td>06/10</td><td>PETS CORNER LEEDS</td><td class="n">−148.00</td><td><span class="tag ask">Medium</span> Grooming supplies</td></tr>
+    <tr><td>09/10</td><td>CASH ATM LEEDS</td><td class="n">−200.00</td><td><span class="tag ask">Low</span> Drawings (suspense until confirmed)</td></tr>
+    <tr><td>13/10</td><td>BP FUEL 4412</td><td class="n">−68.55</td><td><span class="tag ask">Low</span> Motor expenses (business share TBC)</td></tr>
+    <tr><td>15/10</td><td>TFR K PATEL</td><td class="n">+500.00</td><td><span class="tag ask">Low</span> Suspense: not sales until confirmed</td></tr>
+    <tr><td>21/10</td><td>FPS L WOOD</td><td class="n">−320.00</td><td><span class="tag ask">Low</span> Suspense: wages / subcontractor / loan / refund / personal</td></tr>
+    <tr><td>27/10</td><td>AMZN MKTP UK*7H2</td><td class="n">−214.99</td><td><span class="tag ask">Low</span> Supplies or equipment (capital check)</td></tr>
   </table>
-  <p class="arrow">↓ and drafts this for the client (plus a WhatsApp version)</p>
+  <p class="arrow">↓ and drafts this for the client</p>
   <div class="demo">
     <div class="panel">
       <h3>To the client</h3>
-      <p>Hi Sam, a few quick ones so your accounts are right and you don't pay more tax than you need to. Reply with the number and your answer, e.g. "1 subcontractor". By Friday 30th, please.</p>
+      <p>Hi Priya, we're tidying up your October bank lines so your accounts and tax are right and you don't pay more tax than you need to. Could you reply by <strong>Friday 20 November</strong>? Just send the numbers with your answer, e.g. "2 loan, 4 OK, 6 drawings".</p>
       <ol>
-        <li>3 Sept, £1,200 to J Smith. <span class="opts">Wages / subcontractor / loan repayment / personal / other?</span></li>
-        <li>8 Sept, £2,000 in from M Jones. <span class="opts">A sale / a loan / your own money / other?</span></li>
-        <li>5 Sept, Amazon £86.40. We think this is supplies. <span class="opts">OK, or what was it?</span></li>
-        <li>5 Sept, Tesco £42.17. We think this is personal. <span class="opts">OK, or business?</span></li>
+        <li>Please send your Stripe October statement or payout report, so we can split the £1,142.60 payout into sales and fees.</li>
+        <li>15/10 transfer from K Patel, £500.00. <span class="opts">Was this: (a) a customer payment, (b) a loan to the business, (c) your own money put in, (d) a refund, (e) other?</span></li>
+        <li>21/10 to L Wood, £320.00. <span class="opts">Was this: (a) wages for a helper, (b) a self-employed helper or subcontractor, (c) repaying a loan, (d) a refund to a customer, (e) personal, (f) other? If a refund, which customer?</span></li>
+        <li>27/10 Amazon, £214.99. <span class="opts">What was it? If it's equipment (dryer, clippers), let us know and send the receipt.</span></li>
+        <li>06/10 Pets Corner Leeds, £148.00. <span class="opts">We think this is grooming supplies. Reply OK, or tell us if it was personal or mixed.</span></li>
       </ol>
+      <p class="small">Extract: 5 of its 8 questions. The other 3 ask about the cash, the fuel and the Admiral payment.</p>
     </div>
     <div class="panel">
       <h3>For you</h3>
       <ol>
-        <li>Adobe: posted to Software, no question needed.</li>
-        <li>J Smith: if it's labour, check payroll status. If it's construction, CIS applies.</li>
-        <li>M Jones: hold in suspense until the client answers. Not sales by default.</li>
-        <li>Check: 5 lines. Out £1,385.55, in £2,000.00, matching your input.</li>
+        <li><strong>L Wood, £320 (21/10):</strong> if this is a helper paid for grooming work, check employment status. If employee, it should go through payroll. If self-employed, get an invoice and record it as a subcontractor cost. CIS is unlikely to apply to grooming.</li>
+        <li><strong>K Patel, £500 in (15/10):</strong> if it's a loan or the client's own capital, it goes to the loan or capital account, not sales. Check the answer before booking it.</li>
+        <li><strong>Fuel and vehicle costs (13/10, and possibly Admiral):</strong> if the client uses simplified mileage for the vehicle, fuel can't also be claimed as an actual cost. Confirm the method before posting.</li>
+        <li>Totals: out £1,012.84, in £1,642.60. These match the input.</li>
       </ol>
-      <p class="small">Every figure comes from what you pasted. Lines it can't place are left as questions.</p>
+      <p class="small">Extract. We added up the eight lines ourselves and got the same totals. We also ran it on a limited company with a £9,500 cash deposit: the source went to the client as a plain question and the concern stayed in the accountant notes.</p>
     </div>
   </div>
 </section>

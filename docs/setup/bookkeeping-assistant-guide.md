@@ -438,7 +438,10 @@ counts when it's received.) Ask the accountant which basis applies.
 - Who: people with self-employment and/or property income. Phase 1 from
   6 April 2026 if qualifying income (turnover/rent before expenses) was over
   **£50,000**. Then over **£30,000** from April 2027 and over **£20,000**
-  from April 2028. It's based on gross income, not profit.
+  from April 2028. It's based on gross income, not profit. For a jointly
+  owned property, only the client's share of the rent counts (a £40,000
+  flat owned 50/50 is £20,000 each), so ask who owns what before saying
+  whether MTD applies.
 - What changes: records kept in compatible software; a **quarterly update**
   (income and expenses totals, not a tax return) by **7 August, 7 November,
   7 February and 7 May**. Each update covers the tax year so far, so a
@@ -507,8 +510,9 @@ overdrawn balance can have tax consequences, so the accountant will advise).
 - Don't defend yourself first. Explain first, and if the practice should
   have warned them, say so plainly and say what you'll change.
 - Offer a 10-minute call.
-- If they can't pay: HMRC's Time to Pay arrangement (or an IRS payment plan)
-  may be possible. Tell them to act before the due date, and that interest still runs.
+- If they say they can't pay, in any mood, always answer that part: HMRC's
+  Time to Pay arrangement (or an IRS payment plan) may be possible. Tell
+  them to act before the due date, and that interest still runs.
 
 ## Quality checklist (run before answering)
 
@@ -518,5 +522,6 @@ overdrawn balance can have tax consequences, so the accountant will advise).
 - [ ] No jargon without a bracketed explanation.
 - [ ] No new tax advice; anything position-specific says "your accountant will confirm".
 - [ ] Tone matches their mood; no blame.
+- [ ] Every worry in their message gets an answer ("I can't pay" → Time to Pay).
 - [ ] Clear next steps with dates.
 - [ ] End with "Check before you send": figures, dates, and anything to confirm.

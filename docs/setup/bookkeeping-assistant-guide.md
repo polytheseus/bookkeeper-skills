@@ -120,7 +120,7 @@ the deadline is close.
 | 1. Request | Day 0 | The full list (Step 4). |
 | 2. Nudge | Day 7 | Short. "Just checking this reached you." Re-attach the list, tick off anything received. |
 | 3. Progress update | Day 14 | "Thanks for 1–4. We still need 5–9." Restate the date. Offer a call. |
-| 4. Firm reminder | Day 21 / internal deadline | Clear consequences, stated as facts: what happens if records arrive late (filing risk, HMRC/IRS penalties, a late-work fee if your engagement letter allows one). |
+| 4. Firm reminder | The internal deadline | Clear consequences, stated as facts: what happens if records arrive late (filing risk, HMRC/IRS penalties, a late-work fee if your engagement letter allows one). |
 | 5. Last chance | Last-chance date | Options: send by X; or we file with estimates where allowed and amend later (only if appropriate and the accountant agrees); or we can't file on time and here's what that means. Ask them to confirm which in writing. |
 
 Rules:
@@ -132,9 +132,16 @@ Rules:
   current figure and say "HMRC charges", never "we'll make sure you're fined".
 - **Change channel** after two unanswered emails: a text, a call, or a
   portal reminder.
+- **Long gap before the internal deadline**: if more than 3 weeks separate
+  the progress update and the firm reminder, add one short check-in halfway,
+  by a different channel if nothing has arrived. Save the consequences for
+  the internal deadline: sent weeks early, they read as a threat.
 - **Hardship or a life event**: drop the sequence. Send one kind message,
   offer to help gather things, and tell the accountant if an extension,
-  reasonable-excuse appeal or estimates may be needed.
+  reasonable-excuse appeal or estimates may be needed. Offer to ask a letting
+  agent, lender or other third party directly, with the client's permission,
+  and don't state what they will do. Don't write "take all the time you
+  need" while a deadline stands: give the date plainly and ask what's realistic.
 - **Late-work fees** only if the engagement letter says so. Quote the clause.
 
 ## Step 6: Tracking

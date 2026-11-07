@@ -86,6 +86,9 @@
     var due = num(o.dueDay, 7), tx = num(o.transactions, ""), accts = num(o.accounts, ""), employees = num(o.employees, ""), queryMins = num(o.queryMinutes, 30);
     if (isNaN(due) || due < 1 || due > 28 || due % 1) return { error: "Records-due day must be a whole number from 1 to 28." };
     if (isNaN(queryMins)) return { error: "Included query time must be a number of minutes." };
+    if (isNaN(tx)) return { error: "Transactions a month must be a number, e.g. 150." };
+    if (isNaN(accts)) return { error: "Bank and card accounts must be a number, e.g. 2." };
+    if (isNaN(employees)) return { error: "Employees on payroll must be a number, e.g. 3." };
     var ready = Math.min(due + 8, 28);
     var o2 = {
       software: (o.software || "").trim() || (country === "us" ? "QuickBooks Online" : "Xero"),

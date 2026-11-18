@@ -1,0 +1,33 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "polytheseus-bookkeeper-skills",
+  "displayName": "Bookkeeper Skills",
+  "version": "0.1.5",
+  "description": "Specific records requests and chasing sequences tied to filing deadlines, client-friendly transaction query lists with proposed categories, and plain-English explanations of tax bills and accounts.",
+  "logo": "plugins/bookkeeper/.claude-plugin/icon.png",
+  "suggestedPrompts": [
+    "Draft a records request for a client whose Self Assessment is due 31 January",
+    "Turn these uncategorised bank lines into a query list my client can answer",
+    "Explain this client's tax bill and payments on account in plain English"
+  ],
+  "author": {
+    "name": "polytheseus",
+    "url": "https://polytheseus.com"
+  },
+  "homepage": "https://polytheseus.com/bookkeeper-skills/",
+  "repository": "https://github.com/polytheseus/bookkeeper-skills",
+  "license": "MIT",
+  "keywords": [
+    "bookkeeping",
+    "accounting",
+    "accountant",
+    "bookkeeper",
+    "tax",
+    "making-tax-digital",
+    "mtd",
+    "self-assessment",
+    "xero",
+    "quickbooks",
+    "client-communication"
+  ]
+}

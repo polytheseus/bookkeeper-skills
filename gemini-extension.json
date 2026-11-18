@@ -1,0 +1,5 @@
+{
+  "name": "polytheseus-bookkeeper-skills",
+  "version": "0.1.5",
+  "description": "AI skills for bookkeepers and small accounting practices: chasing clients for records, transaction queries, and plain-English client explanations. Works in ChatGPT, Gemini, Claude, Codex, Cursor and more."
+}

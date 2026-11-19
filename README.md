@@ -79,10 +79,11 @@ Five more skills for the rest of the practice workload:
 - `client-onboarding`: the full sequence for a new client, with a UK MLR customer due diligence checklist (beneficial owners, risk rating, EDD/PEP triggers, record keeping), professional clearance letter, agent authorisation, welcome email and 30-day review.
 - `month-end-close`: a small-client close checklist (bank, processors, suspense, ledgers, payroll, VAT/sales tax, adjustments, director's loan), trial-balance red flags, and a 200-word client month summary.
 - `year-end-pack`: a tailored year-end / tax-return questionnaire (UK sole trader, landlord, director; US Schedule C and rental), with the items clients forget, a document checklist and a preparer review list.
+- `return-review`: a pre-filing review of a UK Self Assessment return: ties it to the books and P60, 23 box-by-box slip checks, year-on-year comparison, review note and the client approval email.
 - `fee-review`: find under-priced clients by effective hourly rate, price catch-up and extra work, fee-increase letters by client group and replies to pushback.
 
-It includes all 8 skills as a ready-made ChatGPT / Gemini / Claude setup, a
-copy-paste prompt pack (17 prompts) for any chat app, and the coding-agent
+It includes all 9 skills as a ready-made ChatGPT / Gemini / Claude setup, a
+copy-paste prompt pack (18 prompts) for any chat app, and the coding-agent
 versions.
 
 **[Get Bookkeeper Skills Pro: £24 / $29 / €27](https://polytheseus.com/bookkeeper-skills/#pro)**. You pay once and get updates for life.

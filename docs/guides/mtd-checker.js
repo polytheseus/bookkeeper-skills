@@ -103,7 +103,7 @@
         (r.start === 2026 ? "That means now: HMRC should have written, but it's your responsibility to sign up even without a letter." : "HMRC will write after checking that year's return, but sign up yourself if no letter comes.") + "</p>";
       html += "<p><strong>" + (u.notStarted ? "First" : "Next") + " quarterly update: " + fmt(u.deadline) + "</strong> (" + u.days + " day" + (u.days === 1 ? "" : "s") + " away). " +
         "It's update " + u.q + " for " + u.taxYearLabel + " and covers the tax year so far: <em>" + esc(u.std) + "</em> (standard periods) or <em>" + esc(u.cal) + "</em> (calendar periods). " +
-        (u.points ? "A late update earns a penalty point; 4 points means a £200 penalty." : "No penalty points for late quarterly updates in " + u.taxYearLabel + " (the first MTD year" + (r.start === 2027 ? ", announced in Budget 2026" : "") + "), but you can't file the year's return through the software until all four are sent.") + "</p>";
+        (u.points ? "A late update earns a penalty point; 4 points means a £200 penalty." : "No penalty points for late quarterly updates in " + u.taxYearLabel + " (the first MTD year" + (r.start === 2027 ? ", confirmed by HMRC after Budget 2026" : "") + "), but you can't file the year's return through the software until all four are sent.") + "</p>";
       html += "<p><strong>Next tax return: " + ret.label + ", due " + fmt(ret.due) + "</strong>, " +
         (ret.viaMtd ? "submitted through your MTD software." : "filed the usual way, not through MTD software" + (ret.taxYear <= 2025 ? ", under the current penalty rules." : ".")) + "</p>";
       out.innerHTML = html;
